@@ -13,9 +13,10 @@ Slop Machine compares image and video generation models using attributed public 
 - `npm run data:refresh -- --source aa`: scrape public AA tables with the optional browser setup in `docs/DATA.md`.
 
 ## Current status
-Implemented and locally verified. The catalog has 800 observations in 19 pools across Artificial Analysis, Arena, Design Arena, World Model Arena, and Video Arena (MemeBench), with 480 prices or source quotes. A separate provider-pricing input contains 115 quotes in 34 configuration groups. Research lives in `research/`; the browser consumes `public/data/catalog.json`. Source observations and leaderboard publication dates must remain distinct. The authorized public repository is `Zer0codestuff/slop-machine`.
+Implemented and locally verified. The catalog has 800 observations in 19 pools across Artificial Analysis, Arena, Design Arena, World Model Arena, and Video Arena (MemeBench), with 480 prices or source quotes. A separate provider-pricing input contains 115 quotes in 34 configuration groups. Research lives in `research/`; the browser consumes `public/data/catalog.json`. Source observations and leaderboard publication dates must remain distinct. The authorized public repository is `Zer0codestuff/slopmachine`.
 
 ## Recent changes
+- Replaced the muted provider palette with saturated chart colors, stronger configuration lines, and more opaque cost bars. Light mode uses darker equivalents for readable colored labels. The user rejected washed-out chart colors.
 - Added explicit configuration families, low/medium and native-mode filters, connected setting curves, family toggles, sibling details, and configuration metadata in CSV/PNG exports. Defaults include complete measured families, and switching media prefers a pool with measured configuration curves.
 - Added the 51-row Design Arena image-editing pool. Refreshed all 82 AA silent I2V rows on October 23, preserving source prices even when they differ from creator lists. The two Kling 3.0 Pro quotes are now $0.112/s; Veo 3.1 Lite has no reported price.
 - Added separate provider-setting cost charts and CSV exports for unscored configurations, with source conditions and exact quoted precision.
@@ -27,7 +28,7 @@ Implemented and locally verified. The catalog has 800 observations in 19 pools a
 - Visually checked desktop and narrow mobile layouts. A source-reported zero price is retained; zero-price models are excluded from logarithmic axes with a visible notice and included on linear axes.
 
 ## Preferences and constraints
-- Keep the full-screen chart, narrow model sidebar, black default theme, restrained provider colors, and DM Sans typography.
+- Keep the full-screen chart, narrow model sidebar, black default theme, vivid, saturated provider colors with theme-aware contrast, and DM Sans typography.
 - Keep different sources, tasks, benchmark versions, and audio conditions in separate scoring pools.
 - Configuration membership must be explicit and board-local. Connect at least two visible measured points in setting order, including non-monotonic scores. Provider-only prices have no attached Elo score.
 - Attribute every observation. Show missing prices as unavailable and exclude them from cost charts.
@@ -41,6 +42,7 @@ Implemented and locally verified. The catalog has 800 observations in 19 pools a
 - Imply a snapshot is a live feed, or that overlapping confidence intervals prove a ranking difference.
 - Compare image prices directly with video prices or combine Elo scores from different pools.
 - Add decorative imagery, marketing sections, or a second visual identity.
+- Restore the muted provider palette or weaken series colors with low default opacity.
 - Publish credentials or authenticated source responses.
 - Require an AA API key for this project. The collection workflow uses public browser pages.
 - Treat a catalog rebuild as a fresh source collection or automatically publish refreshed data without reviewing its source changes.
@@ -50,4 +52,4 @@ Implemented and locally verified. The catalog has 800 observations in 19 pools a
 - Arena's public website can return security verification; use its official public leaderboard dataset as documented.
 - GPT Image 2/2.5 have no verified multi-quality series in a single bundled pool. Their low/medium provider prices appear in the separate unscored chart. Design Arena generation Low/Medium response-only points and historical Arena Grok observations remain research evidence, not ranked catalog entries.
 - Some sources omit confidence intervals, prices, or publication dates. Preserve nulls and source-specific qualifications.
-- No hosted website deployment has been requested. `dist/` is ready for static hosting; the local preview uses port 4173.
+- GitHub Pages publication was requested at `https://gabrielemonni.me/slopmachine/`. The public repository is `Zer0codestuff/slopmachine`; Pages inherits the custom domain from the existing user site. Deployment setup is in progress. The local preview uses port 4173.

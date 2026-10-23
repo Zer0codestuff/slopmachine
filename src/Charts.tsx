@@ -75,7 +75,7 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, c
       {xticks.map(t => <g key={t}><line className="axis-line" x1={x(t)} x2={x(t)} y1={bottom} y2={bottom + 5} /><text className="axis-tick" x={x(t)} y={bottom + 24} textAnchor="middle">{money(t)}</text></g>)}
       <text className="axis-title" x={(left + plotRight) / 2} y={height - 9} textAnchor="middle">Cost per {board.priceUnit} (USD{log ? ', log scale' : ''})</text>
       {pareto && <polyline data-testid="pareto-line" points={frontierModels.map(m => `${x(m.price!)},${y(m.score)}`).join(' ')} fill="none" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="4 5" opacity={0.7} />}
-      {connected && groups.filter(group => group.series && group.models.length >= 2).map(group => <polyline key={group.id} data-configuration-series={group.id} aria-label={`${group.name}: measured ${group.series!.dimension} configurations`} points={group.models.map(model => `${x(model.price!)},${y(model.score)}`).join(' ')} fill="none" stroke={identity(group.models[0].provider)[0]} strokeWidth={hoveredSeries === group.id ? 2.5 : 1.8} opacity={!hovered || hoveredSeries === group.id ? 0.8 : 0.15} />)}
+      {connected && groups.filter(group => group.series && group.models.length >= 2).map(group => <polyline key={group.id} data-configuration-series={group.id} aria-label={`${group.name}: measured ${group.series!.dimension} configurations`} points={group.models.map(model => `${x(model.price!)},${y(model.score)}`).join(' ')} fill="none" stroke={identity(group.models[0].provider)[0]} strokeWidth={hoveredSeries === group.id ? 2.8 : 2} opacity={!hovered || hoveredSeries === group.id ? 0.96 : 0.15} />)}
       {data.map(m => {
         const [color] = identity(m.provider);
         const configuration = configurationFor(board, m.id);
@@ -85,7 +85,7 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, c
           {labels && labelY.has(m.id) && <path d={`M${px + 6},${py} L${plotRight + (compact ? 7 : 14)},${labelY.get(m.id)}`} fill="none" stroke={color} strokeWidth={0.6} opacity={hovered === m.id ? 0.8 : 0.22} />}
           <g role="button" tabIndex={0} aria-label={`${m.name}, ${board.scoreType} ${m.score}, ${money(m.price!)} per ${board.priceUnit}`} onMouseEnter={() => setHovered(m.id)} onMouseLeave={() => setHovered(null)} onFocus={() => setHovered(m.id)} onBlur={() => setHovered(null)} onClick={() => onInspect(m)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onInspect(m); } }} className="chart-point">
             <circle cx={px} cy={py} r={13} fill="transparent" />
-            <circle cx={px} cy={py} r={hovered === m.id ? 6 : 4.5} fill={color} stroke="var(--bg)" strokeWidth={1.5} />
+            <circle cx={px} cy={py} r={hovered === m.id ? 6 : 4.8} fill={color} stroke="var(--bg)" strokeWidth={1.5} />
             {connected && configuration && (!compact || hovered === m.id) && <text className="setting-point-label" x={px + 7} y={py - 8} fill={color} aria-hidden="true">{settingSymbol(configuration.point.label)}</text>}
             {hovered === m.id && <circle cx={px} cy={py} r={10} fill="none" stroke={color} strokeWidth={1} opacity={0.5} />}
           </g>
@@ -127,7 +127,7 @@ export function BarChart({ models, board, cost, confidence, quantity, onInspect 
         <text className="rank-number" x={compact ? 0 : 8} y={cy + 4}>{cost ? i + 1 : m.rank}</text>
         {!compact && <text className="provider-mark" x={32} y={cy + 4} fill={color}>{mark}</text>}
         <text className="bar-label" x={compact ? 23 : 58} y={cy + 4}>{barLabel(m, board, compact ? 20 : 29)}</text>
-        <rect x={left} y={cy - 5} width={Math.max(2, x(value) - left)} height={10} rx={1} fill={color} opacity={0.72} />
+        <rect x={left} y={cy - 5} width={Math.max(2, x(value) - left)} height={10} rx={1} fill={color} opacity={0.92} />
         {!cost && confidence && m.confidenceLow !== null && m.confidenceHigh !== null && <g stroke={color} strokeWidth={1.5}><line x1={x(m.confidenceLow)} x2={x(m.confidenceHigh)} y1={cy} y2={cy} /><line x1={x(m.confidenceLow)} x2={x(m.confidenceLow)} y1={cy - 6} y2={cy + 6} /><line x1={x(m.confidenceHigh)} x2={x(m.confidenceHigh)} y1={cy - 6} y2={cy + 6} /></g>}
         <text className="bar-value" x={right + 12} y={cy + 4} fill={color}>{cost ? money(value) : number(value)}</text>
       </g>; })}

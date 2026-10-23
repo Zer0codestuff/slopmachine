@@ -1,14 +1,17 @@
 import type { ConfigurationSeries, Leaderboard, Model } from './types';
 
-const palette = ['#b9c1cb', '#df9676', '#65c78c', '#a89bef', '#71b5e8', '#d6bd70', '#d883b3', '#85c2c0', '#b4a4dc', '#c1b4a6'];
+const colors = ['purple', 'orange', 'green', 'blue', 'cyan', 'yellow', 'pink', 'teal', 'lime', 'red'];
+const palette = colors.map(color => `var(--chart-${color})`);
+const color = (name: string) => `var(--chart-${name})`;
 const providers: Record<string, [string, string]> = {
-  openai: ['#bdc5cf', 'O'], google: ['#58cd89', 'G'], 'black forest labs': ['#e39978', 'F'],
-  bytedance: ['#a99df0', 'B'], kuaishou: ['#dfb465', 'K'], kling: ['#dfb465', 'K'],
-  alibaba: ['#c09cdb', 'Q'], 'xai': ['#ddd9d5', 'X'], spacexai: ['#ddd9d5', 'X'],
-  runway: ['#9bc4b7', 'R'], 'recraft': ['#e2a48c', 'r'], tencent: ['#7ab7dc', 'T'],
-  ideogram: ['#c5bb82', 'i'], midjourney: ['#9dc8dd', 'M'], 'luma': ['#a0b4df', 'L'],
-  minimax: ['#dc92af', 'm'], 'z.ai': ['#8ebda8', 'Z'], 'fal': ['#bda8c9', 'f'],
-  bfl: ['#e39978', 'F'], meta: ['#71b5e8', '∞'],
+  openai: [color('purple'), 'O'], google: [color('green'), 'G'], 'black forest labs': [color('orange'), 'F'],
+  bytedance: [color('blue'), 'B'], kuaishou: [color('yellow'), 'K'], kling: [color('yellow'), 'K'],
+  alibaba: [color('pink'), 'Q'], xai: [color('red'), 'X'], spacexai: [color('red'), 'X'],
+  runway: [color('teal'), 'R'], recraft: [color('red'), 'r'], tencent: [color('cyan'), 'T'],
+  ideogram: [color('yellow'), 'i'], midjourney: [color('cyan'), 'M'], luma: [color('purple'), 'L'],
+  minimax: [color('pink'), 'm'], 'z.ai': [color('lime'), 'Z'], fal: [color('purple'), 'f'],
+  bfl: [color('orange'), 'F'], meta: [color('blue'), '∞'], microsoft: [color('orange'), 'M'],
+  pruna: [color('cyan'), 'P'],
 };
 export function identity(provider: string): [string, string] {
   const key = provider.toLowerCase();
