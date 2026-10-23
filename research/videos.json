@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T23:13:53.721617+00:00",
+  "generatedAt": "2026-10-23T06:32:05.696Z",
   "leaderboards": [
     {
       "id": "aa-video-t2v-v2-1",
@@ -1378,19 +1378,17 @@
       "task": "Image to video without audio (AA-Video-I2V-Silent v1.0)",
       "shortTask": "Image to Video Silent",
       "scoreType": "Elo",
-      "observedAt": "2026-10-22T18:40:31.947Z",
+      "observedAt": "2026-10-23T06:31:00.236Z",
       "sourceUpdatedAt": null,
       "priceUnit": "second",
       "notes": [
-        "Public browser snapshot of AA-Video-I2V-Silent v1.0; the captured URL sets models=all and exact model variant labels are retained.",
-        "Silent output pool; source evaluates video without audio.",
-        "This source, task, benchmark version, and audio condition form a separate scoring pool. Do not compare Elo values across pools.",
-        "Source publication date is not stated in the captured public table. Released is a model release month, not a leaderboard update date; sourceUpdatedAt is null.",
-        "The source labels counts Samples; they are retained in votes as the public preference sample count, not a count of unique raters.",
-        "Prices come only from this exact source/task/audio row. Displayed USD per minute is divided by 60. The source's general 1080p/default-settings footnote can differ from an explicitly labeled resolution; both are preserved in priceNote.",
-        "Provider strings preserve the public logo labels, including Fal where displayed. They are not inferred model-creator identities.",
-        "Point ranks and source 95% score intervals are retained. Overlapping intervals do not establish a ranking difference. The methodology treats votes as independent and cautions that evaluator or prompt correlation may narrow intervals.",
-        "Fixed Elo anchor with no estimated confidence interval: Wan 2.1 14B. Its confidence bounds remain null."
+        "Attribution: Artificial Analysis, https://artificialanalysis.ai/. Public browser capture of AA-Video-I2V-Silent v1.0; Overall category, all models and no audio. All 82 rendered rows are included.",
+        "Retrieval time is observedAt. No leaderboard publication date is stated by this public table; model release dates and Updated badges are not publication timestamps.",
+        "Displayed USD per minute is divided by 60. Each price retains its exact row variant and the public configuration footnote. No cross-source price joins are applied.",
+        "Samples are source-reported preference appearances, not unique voters. Source 95% confidence bounds are preserved; fixed Anchor rows have null bounds. Overlapping intervals do not establish a distinct rank.",
+        "Provider strings preserve public logo labels, including an inference provider where shown; they do not assert a model creator identity.",
+        "Keep source, task, benchmark version, and audio condition in separate scoring pools.",
+        "The October 23 capture changes Kling 3.0 and Omni Pro quotes to $0.112/s; Standard remains $0.168/s. The creator cash list quotes silent 720p at $0.084/s and 1080p at $0.112/s. These are retained as AA source quotes, not reconciled evaluation-run costs. See Unscored settings & prices for separate creator quotes."
       ],
       "entries": [
         {
@@ -1404,7 +1402,7 @@
           "votes": 5821,
           "price": 0.1,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Gemini Omni Flash.",
+          "priceNote": "Source displays $6.00 /min. Divided by 60 to express USD per second. Exact source variant: Gemini Omni Flash. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1419,7 +1417,7 @@
           "votes": 5519,
           "price": 0.12000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Bach 1.0 Pro.",
+          "priceNote": "Source displays $7.20 /min. Divided by 60 to express USD per second. Exact source variant: Bach 1.0 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1434,7 +1432,7 @@
           "votes": 3137,
           "price": 0.2,
           "priceUnit": "second",
-          "priceNote": "Source price: $12.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 3.0.",
+          "priceNote": "Source displays $12.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 3.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1449,7 +1447,7 @@
           "votes": 5745,
           "price": 0.13,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: MiniMax H3.",
+          "priceNote": "Source displays $7.80 /min. Divided by 60 to express USD per second. Exact source variant: MiniMax H3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
         },
@@ -1464,7 +1462,7 @@
           "votes": 5084,
           "price": 0.05,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vimoo 1.0.",
+          "priceNote": "Source displays $3.00 /min. Divided by 60 to express USD per second. Exact source variant: Vimoo 1.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1479,7 +1477,7 @@
           "votes": 7258,
           "price": 0.15116666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.07 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Dreamina Seedance 2.0 720p.",
+          "priceNote": "Source displays $9.07 /min. Divided by 60 to express USD per second. Exact source variant: Dreamina Seedance 2.0 720p. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1494,7 +1492,7 @@
           "votes": 5655,
           "price": 0.09000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V6.",
+          "priceNote": "Source displays $5.40 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V6. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1509,7 +1507,7 @@
           "votes": 3392,
           "price": 0.14,
           "priceUnit": "second",
-          "priceNote": "Source price: $8.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Grok Imagine Video 1.5.",
+          "priceNote": "Source displays $8.40 /min. Divided by 60 to express USD per second. Exact source variant: Grok Imagine Video 1.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1524,7 +1522,7 @@
           "votes": 7810,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: grok-imagine-video.",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: grok-imagine-video. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1539,7 +1537,7 @@
           "votes": 5734,
           "price": 0.165,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.90 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: HappyHorse-1.1.",
+          "priceNote": "Source displays $9.90 /min. Divided by 60 to express USD per second. Exact source variant: HappyHorse-1.1. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1554,7 +1552,7 @@
           "votes": 6652,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.5 Turbo 1080p.",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.5 Turbo 1080p. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1569,7 +1567,7 @@
           "votes": 6478,
           "price": 0.22,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: HappyHorse-1.0.",
+          "priceNote": "Source displays $13.20 /min. Divided by 60 to express USD per second. Exact source variant: HappyHorse-1.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1584,7 +1582,7 @@
           "votes": 8308,
           "price": 0.16,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.60 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q3 Pro.",
+          "priceNote": "Source displays $9.60 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q3 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1599,7 +1597,7 @@
           "votes": 4165,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.6.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5.6. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1614,7 +1612,7 @@
           "votes": 665,
           "price": 0.168,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling O1 Pro (December).",
+          "priceNote": "Source displays $10.08 /min. Divided by 60 to express USD per second. Exact source variant: Kling O1 Pro (December). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1627,9 +1625,9 @@
           "confidenceLow": 1270,
           "confidenceHigh": 1290,
           "votes": 4051,
-          "price": 0.224,
+          "price": 0.112,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.44 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 Omni 1080p (Pro).",
+          "priceNote": "Source displays $6.72 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 Omni 1080p (Pro). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1642,9 +1640,9 @@
           "confidenceLow": 1268,
           "confidenceHigh": 1286,
           "votes": 7240,
-          "price": 0.224,
+          "price": 0.112,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.44 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 1080p (Pro).",
+          "priceNote": "Source displays $6.72 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 1080p (Pro). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1659,7 +1657,7 @@
           "votes": 5120,
           "price": 0.10666666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.",
+          "priceNote": "Source displays $6.40 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1674,7 +1672,7 @@
           "votes": 3932,
           "price": 0.10666666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.5.",
+          "priceNote": "Source displays $6.40 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1689,7 +1687,7 @@
           "votes": 2839,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video"
         },
@@ -1704,7 +1702,7 @@
           "votes": 4107,
           "price": 0.168,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 Omni 720p (Standard).",
+          "priceNote": "Source displays $10.08 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 Omni 720p (Standard). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1719,7 +1717,7 @@
           "votes": 3112,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.7.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.7. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1734,7 +1732,7 @@
           "votes": 7081,
           "price": 0.168,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 720p (Standard).",
+          "priceNote": "Source displays $10.08 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 720p (Standard). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1749,7 +1747,7 @@
           "votes": 3911,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -1764,7 +1762,7 @@
           "votes": 4732,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Pro (January).",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.6 Pro (January). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1779,7 +1777,7 @@
           "votes": 3578,
           "price": 0.12000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Runway Gen-4.5 (720p).",
+          "priceNote": "Source displays $7.20 /min. Divided by 60 to express USD per second. Exact source variant: Runway Gen-4.5 (720p). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1794,7 +1792,7 @@
           "votes": 4100,
           "price": 0.042,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.52 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Standard (January).",
+          "priceNote": "Source displays $2.52 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.6 Standard (January). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1809,7 +1807,7 @@
           "votes": 6430,
           "price": 0.1,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.1 Fast.",
+          "priceNote": "Source displays $6.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 3.1 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1824,7 +1822,7 @@
           "votes": 4865,
           "price": 0.016666666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 2.3 Fast.",
+          "priceNote": "Source displays $1.00 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 2.3 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1839,7 +1837,7 @@
           "votes": 5673,
           "price": 0.09883333333333333,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.93 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Seedance 1.5 pro.",
+          "priceNote": "Source displays $5.93 /min. Divided by 60 to express USD per second. Exact source variant: Seedance 1.5 pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1854,7 +1852,7 @@
           "votes": 6605,
           "price": 0.04666666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 2.3.",
+          "priceNote": "Source displays $2.80 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 2.3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1869,7 +1867,7 @@
           "votes": 4304,
           "price": 0.2,
           "priceUnit": "second",
-          "priceNote": "Source price: $12.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.1.",
+          "priceNote": "Source displays $12.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 3.1. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1884,7 +1882,7 @@
           "votes": 3055,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video"
         },
@@ -1899,7 +1897,7 @@
           "votes": 3732,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Pro (December).",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.6 Pro (December). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1914,7 +1912,7 @@
           "votes": 3761,
           "price": 0.08166666666666668,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.90 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 02 Pro.",
+          "priceNote": "Source displays $4.90 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 02 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1929,7 +1927,7 @@
           "votes": 4045,
           "price": 0.04666666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 02 Standard.",
+          "priceNote": "Source displays $2.80 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 02 Standard. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1944,7 +1942,7 @@
           "votes": 6112,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.5 Preview.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.5 Preview. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1959,7 +1957,7 @@
           "votes": 4087,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.6 (January).",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5.6 (January). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -1974,7 +1972,7 @@
           "votes": 2566,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -1987,10 +1985,10 @@
           "confidenceLow": 1230,
           "confidenceHigh": 1254,
           "votes": 1892,
-          "price": 0.05,
-          "priceUnit": "second",
-          "priceNote": "Source price: $3.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.1 Lite.",
-          "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "Source displays Coming soon.",
+          "priceSourceUrl": null,
           "modelUrl": null
         },
         {
@@ -2004,7 +2002,7 @@
           "votes": 4030,
           "price": 0.06666666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q2 Turbo.",
+          "priceNote": "Source displays $4.00 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q2 Turbo. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2019,7 +2017,7 @@
           "votes": 4732,
           "price": 0.12200000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.32 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Seedance 1.0.",
+          "priceNote": "Source displays $7.32 /min. Divided by 60 to express USD per second. Exact source variant: Seedance 1.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2034,7 +2032,7 @@
           "votes": 4024,
           "price": 0.10166666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.10 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q2 Pro.",
+          "priceNote": "Source displays $6.10 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q2 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2049,7 +2047,7 @@
           "votes": 3150,
           "price": 0.065,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.90 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q3 Turbo.",
+          "priceNote": "Source displays $3.90 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q3 Turbo. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2064,7 +2062,7 @@
           "votes": 3808,
           "price": 0.2,
           "priceUnit": "second",
-          "priceNote": "Source price: $12.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.",
+          "priceNote": "Source displays $12.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2079,7 +2077,7 @@
           "votes": 2327,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.6.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.6. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2094,7 +2092,7 @@
           "votes": 4055,
           "price": 0.22,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Ray 3.",
+          "priceNote": "Source displays $13.20 /min. Divided by 60 to express USD per second. Exact source variant: Ray 3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2109,7 +2107,7 @@
           "votes": 2357,
           "price": 0.13,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.5 Fast.",
+          "priceNote": "Source displays $7.80 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.5 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.5"
         },
@@ -2124,7 +2122,7 @@
           "votes": 2386,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2139,7 +2137,7 @@
           "votes": 4121,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2154,7 +2152,7 @@
           "votes": 5127,
           "price": 0.060000000000000005,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.60 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2 Pro.",
+          "priceNote": "Source displays $3.60 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2"
         },
@@ -2169,7 +2167,7 @@
           "votes": 4113,
           "price": 0.09000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Pika 2.5.",
+          "priceNote": "Source displays $5.40 /min. Divided by 60 to express USD per second. Exact source variant: Pika 2.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2184,7 +2182,7 @@
           "votes": 2339,
           "price": 0.16999999999999998,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.5 Pro.",
+          "priceNote": "Source displays $10.20 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.5 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.5"
         },
@@ -2199,7 +2197,7 @@
           "votes": 5122,
           "price": 0.04,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2 Fast.",
+          "priceNote": "Source displays $2.40 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2"
         },
@@ -2214,7 +2212,7 @@
           "votes": 2178,
           "price": 0.098,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.88 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.1 Pro.",
+          "priceNote": "Source displays $5.88 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.1 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2229,7 +2227,7 @@
           "votes": 4097,
           "price": 0.28,
           "priceUnit": "second",
-          "priceNote": "Source price: $16.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.0.",
+          "priceNote": "Source displays $16.80 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2244,7 +2242,7 @@
           "votes": 2804,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2259,7 +2257,7 @@
           "votes": 2228,
           "price": 0.056,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.36 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.1 Standard.",
+          "priceNote": "Source displays $3.36 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.1 Standard. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2274,7 +2272,7 @@
           "votes": 2221,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2289,7 +2287,7 @@
           "votes": 4106,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.3 Pro.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.3 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.3"
         },
@@ -2304,7 +2302,7 @@
           "votes": 2258,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V4.5.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V4.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2319,7 +2317,7 @@
           "votes": 4077,
           "price": 0.04,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.3 Fast.",
+          "priceNote": "Source displays $2.40 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.3 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.3"
         },
@@ -2334,7 +2332,7 @@
           "votes": 2297,
           "price": 0.08816666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.29 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Seedance 1.0 Mini.",
+          "priceNote": "Source displays $5.29 /min. Divided by 60 to express USD per second. Exact source variant: Seedance 1.0 Mini. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2349,7 +2347,7 @@
           "votes": 4725,
           "price": 0.098,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.88 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 1.6 Pro.",
+          "priceNote": "Source displays $5.88 /min. Divided by 60 to express USD per second. Exact source variant: Kling 1.6 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2364,7 +2362,7 @@
           "votes": 2715,
           "price": 0.075,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.50 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: HunyuanVideo-1.5 (Fal).",
+          "priceNote": "Source displays $4.50 /min. Divided by 60 to express USD per second. Exact source variant: HunyuanVideo-1.5 (Fal). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/tencent/HunyuanVideo-1.5"
         },
@@ -2379,7 +2377,7 @@
           "votes": 3803,
           "price": 0.02,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: P-Video.",
+          "priceNote": "Source displays $1.20 /min. Divided by 60 to express USD per second. Exact source variant: P-Video. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2394,7 +2392,7 @@
           "votes": 2688,
           "price": 0.005,
           "priceUnit": "second",
-          "priceNote": "Source price: $0.30 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Agnes-Video-V2.0.",
+          "priceNote": "Source displays $0.30 /min. Divided by 60 to express USD per second. Exact source variant: Agnes-Video-V2.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2409,7 +2407,7 @@
           "votes": 3722,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.2 A14B.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.2 A14B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B"
         },
@@ -2424,7 +2422,7 @@
           "votes": 4562,
           "price": 0.5,
           "priceUnit": "second",
-          "priceNote": "Source price: $30.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 2.",
+          "priceNote": "Source displays $30.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 2. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2439,7 +2437,7 @@
           "votes": 9124,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2454,7 +2452,7 @@
           "votes": 8770,
           "price": 0.07166666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.30 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: I2V-01-Director.",
+          "priceNote": "Source displays $4.30 /min. Divided by 60 to express USD per second. Exact source variant: I2V-01-Director. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2469,7 +2467,7 @@
           "votes": 2420,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q1.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q1. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2484,7 +2482,7 @@
           "votes": 2080,
           "price": 0.02,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX Video v0.9.7 13B.",
+          "priceNote": "Source displays $1.20 /min. Divided by 60 to express USD per second. Exact source variant: LTX Video v0.9.7 13B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-Video-0.9.7-dev"
         },
@@ -2499,7 +2497,7 @@
           "votes": 2451,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2514,7 +2512,7 @@
           "votes": 4558,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2529,7 +2527,7 @@
           "votes": 4854,
           "price": 0.09000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Pika 2.2.",
+          "priceNote": "Source displays $5.40 /min. Divided by 60 to express USD per second. Exact source variant: Pika 2.2. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2544,7 +2542,7 @@
           "votes": 4133,
           "price": 0.3,
           "priceUnit": "second",
-          "priceNote": "Source price: $18.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Marey.",
+          "priceNote": "Source displays $18.00 /min. Divided by 60 to express USD per second. Exact source variant: Marey. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -2559,7 +2557,7 @@
           "votes": 8927,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2574,7 +2572,7 @@
           "votes": 4603,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.1 14B.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.1 14B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://github.com/Wan-Video/Wan2.1"
         },
@@ -2589,7 +2587,7 @@
           "votes": 3520,
           "price": 0.030000000000000002,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.2 5B.",
+          "priceNote": "Source displays $1.80 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.2 5B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B"
         },
@@ -2604,7 +2602,7 @@
           "votes": 4387,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -2619,7 +2617,7 @@
           "votes": 4616,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hunyuan Video (Fal).",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Hunyuan Video (Fal). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/tencent/HunyuanVideo"
         }

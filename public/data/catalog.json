@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T23:14:11.911Z",
+  "generatedAt": "2026-10-23T11:52:32.304Z",
   "leaderboards": [
     {
       "id": "aa-image-text-to-image",
@@ -1596,6 +1596,197 @@
           "priceSourceUrl": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
           "modelUrl": "https://huggingface.co/ByteDance-Seed/BAGEL-7B-MoT"
         }
+      ],
+      "series": [
+        {
+          "id": "aa-image-text-to-image-p-image-ideogram-quality",
+          "name": "P-Image-Ideogram",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
+            "https://developer.ideogram.ai/api-reference/images/generate/p-image-ideogram",
+            "https://artificialanalysis.ai/methodology/image"
+          ],
+          "note": "Five source-labeled quality settings of P-Image-Ideogram. Very High has a slightly lower measured score than High; scores are preserved in setting order. AA lists representative 1024-square API prices, while its methodology evaluates the highest supported resolution. These quotes do not establish actual evaluation-run spend.",
+          "points": [
+            {
+              "modelId": "p-image-ideogram-very-low-053f7732b9",
+              "label": "Very low",
+              "order": 1
+            },
+            {
+              "modelId": "p-image-ideogram-low-e39d9b836d",
+              "label": "Low",
+              "order": 2
+            },
+            {
+              "modelId": "p-image-ideogram-medium-28a4d65b56",
+              "label": "Medium",
+              "order": 3
+            },
+            {
+              "modelId": "p-image-ideogram-high-d0240a7ab0",
+              "label": "High",
+              "order": 4
+            },
+            {
+              "modelId": "p-image-ideogram-very-high-303fff4c23",
+              "label": "Very high",
+              "order": 5
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-ideogram-4-rendering",
+          "name": "Ideogram 4.0",
+          "dimension": "mode",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://developer.ideogram.ai/api-reference/images/generate/ideogram-4",
+            "https://ideogram.ai/models/4.0/",
+            "https://artificialanalysis.ai/methodology/image"
+          ],
+          "note": "Default and Quality are rendering-speed settings of native Ideogram 4.0. The unlabeled AA row is interpreted as Default under its default-settings policy; exact evaluated requests are unpublished. Turbo has a provider quote but no measured counterpart here.",
+          "points": [
+            {
+              "modelId": "ideogram-4-0-4237233ef4",
+              "label": "Default",
+              "order": 2
+            },
+            {
+              "modelId": "ideogram-4-0-quality-1913d2d98f",
+              "label": "Quality",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-ideogram-4-fast-rendering",
+          "name": "Ideogram 4.0 Fast",
+          "dimension": "mode",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://fal.ai/models/ideogram/v4/fast/api",
+            "https://huggingface.co/fal/ideogram-v4-fast",
+            "https://artificialanalysis.ai/methodology/image"
+          ],
+          "note": "Balanced (default) and Quality are rendering presets within the separate Ideogram 4.0 Fast model. The unlabeled row follows the documented default-settings policy. Representative 1K API prices do not establish the cost of the highest-resolution benchmark requests.",
+          "points": [
+            {
+              "modelId": "ideogram-4-0-fast-6927a964c5",
+              "label": "Balanced (default)",
+              "order": 2
+            },
+            {
+              "modelId": "ideogram-4-0-fast-quality-1908bfeb2a",
+              "label": "Quality",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-gpt-image-2-5-sunburst-quality",
+          "name": "GPT Image 2.5 Sunburst",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-5-sunburst-max-882f01c259",
+              "label": "Max",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-gpt-image-2-5-flare-quality",
+          "name": "GPT Image 2.5 Flare",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-5-flare-max-582ae6023b",
+              "label": "Max",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-gpt-image-2-quality",
+          "name": "GPT Image 2",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-high-8261247915",
+              "label": "High",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-gpt-image-1-5-quality",
+          "name": "GPT Image 1.5",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-1-5-high-d20abff009",
+              "label": "High",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-gpt-image-1-quality",
+          "name": "GPT Image 1",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-1-high-354f18eb60",
+              "label": "High",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-text-to-image-gpt-image-1-mini-quality",
+          "name": "GPT Image 1 Mini",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-1-mini-medium-25c5875847",
+              "label": "Medium",
+              "order": 1
+            }
+          ]
+        }
       ]
     },
     {
@@ -2727,6 +2918,110 @@
           "priceNote": "Source displays $30.0 /1k imgs. Divided by 1,000 to express USD per image. 1 API Pricing reflects the cost to generate 1,000 images on the model creator's API at 1024x1024 with the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/image/leaderboard/editing",
           "modelUrl": "https://huggingface.co/stepfun-ai/Step1X-Edit"
+        }
+      ],
+      "series": [
+        {
+          "id": "aa-image-editing-gpt-image-2-5-sunburst-quality",
+          "name": "GPT Image 2.5 Sunburst",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/editing",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-5-sunburst-max-882f01c259",
+              "label": "Max",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-editing-gpt-image-2-5-flare-quality",
+          "name": "GPT Image 2.5 Flare",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/editing",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-5-flare-max-582ae6023b",
+              "label": "Max",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-editing-gpt-image-2-quality",
+          "name": "GPT Image 2",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/editing",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-high-8261247915",
+              "label": "High",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-editing-gpt-image-1-5-quality",
+          "name": "GPT Image 1.5",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/editing",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-1-5-high-d20abff009",
+              "label": "High",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-editing-gpt-image-1-quality",
+          "name": "GPT Image 1",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/editing",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-1-high-354f18eb60",
+              "label": "High",
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "aa-image-editing-gpt-image-1-mini-quality",
+          "name": "GPT Image 1 Mini",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/image/leaderboard/editing",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-1-mini-medium-25c5875847",
+              "label": "Medium",
+              "order": 1
+            }
+          ]
         }
       ]
     },
@@ -3983,6 +4278,25 @@
           "priceSourceUrl": null,
           "modelUrl": null
         }
+      ],
+      "series": [
+        {
+          "id": "arena-image-text-to-image-gpt-image-2-quality",
+          "name": "GPT Image 2",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://arena.ai/leaderboard/text-to-image",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-medium-4c6f379b18",
+              "label": "Medium",
+              "order": 1
+            }
+          ]
+        }
       ]
     },
     {
@@ -4907,6 +5221,25 @@
           "priceNote": "The official export does not publish an image price or generation configuration.",
           "priceSourceUrl": null,
           "modelUrl": null
+        }
+      ],
+      "series": [
+        {
+          "id": "arena-image-editing-gpt-image-2-quality",
+          "name": "GPT Image 2",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://arena.ai/leaderboard/image-edit",
+            "https://developers.openai.com/api/docs/guides/image-generation"
+          ],
+          "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+          "points": [
+            {
+              "modelId": "gpt-image-2-medium-2b4ed04fce",
+              "label": "Medium",
+              "order": 1
+            }
+          ]
         }
       ]
     },
@@ -6176,6 +6509,847 @@
           "priceNote": "Source public price-chart registry publishes image.perImage = 0.02, USD per image, matched by exact displayed model name. Resolution, quality, pricing date, and agreement with the evaluation configuration are not specified. This is a source quote, not a standardized generation-cost estimate.",
           "priceSourceUrl": "https://www.designarena.ai/leaderboard?tab=image",
           "modelUrl": null
+        }
+      ],
+      "series": [
+        {
+          "id": "design-arena-image-generation-p-image-ideogram-quality",
+          "name": "P-Image-Ideogram",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://www.designarena.ai/leaderboard?tab=image",
+            "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
+            "https://developer.ideogram.ai/api-reference/images/generate/p-image-ideogram"
+          ],
+          "note": "Three ranked settings from the October 22 source snapshot. Low and Medium appear in the newer public response without published ranks and are excluded from this chart. Evaluation resolution, checkpoint and exact request settings are unpublished. Source price quotes are not certified evaluation-run costs.",
+          "points": [
+            {
+              "modelId": "p-image-ideogram-very-low-a3acff7e1c",
+              "label": "Very low",
+              "order": 1
+            },
+            {
+              "modelId": "p-image-ideogram-high-715300a7de",
+              "label": "High",
+              "order": 4
+            },
+            {
+              "modelId": "p-image-ideogram-very-high-4d7531e2b8",
+              "label": "Very high",
+              "order": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "design-arena-image-editing",
+      "media": "image",
+      "sourceName": "Design Arena",
+      "sourceUrl": "https://www.designarena.ai/leaderboard/image-to-image",
+      "methodologyUrl": "https://notes.designarena.ai/methodology/",
+      "task": "Image editing",
+      "shortTask": "Image editing",
+      "scoreType": "Design Arena Elo (Bradley-Terry)",
+      "observedAt": "2026-10-23T06:21:53.855Z",
+      "sourceUpdatedAt": "2026-10-23T06:16:14.051352+00:00",
+      "priceUnit": "image",
+      "notes": [
+        "All 51 ranked rows rendered in the expanded Image Editing browser table are included. The public response-only Riverflow row has no displayed rank and is excluded. No API key or authenticated response was used.",
+        "Attribution: DesignArena by Intelligence. Image editing is a separate source category from image generation, AA, and Arena. Source version identifier and evaluated resolution are unpublished.",
+        "Displayed ranks, Elo and Battles are preserved. Votes stores battles, not unique voters. Explicit Elo confidence endpoints are unavailable; raw btStdErr and percentage win-rate margins are not converted into Elo confidence intervals.",
+        "Prices are same-source registry quotes matched by source model ID. Resolution, endpoint, checkpoint, pricing date, and agreement with the evaluated configuration are unspecified."
+      ],
+      "entries": [
+        {
+          "id": "design-edit-gpt-image-2-5-sunburst-525c8a57",
+          "name": "GPT-Image-2.5 Sunburst",
+          "provider": "OpenAI",
+          "rank": 1,
+          "score": 1401,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 8559,
+          "price": 0.053,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-gpt-image-2-5-flare-033fed5b",
+          "name": "GPT-Image-2.5 Flare",
+          "provider": "OpenAI",
+          "rank": 2,
+          "score": 1370,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 8721,
+          "price": 0.053,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-gpt-image-2-9ba28272",
+          "name": "GPT Image 2",
+          "provider": "OpenAI",
+          "rank": 3,
+          "score": 1342,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 16102,
+          "price": 0.053,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-hawaii-195f33b5",
+          "name": "Krea 3 (Ultra Thinking)",
+          "provider": "Krea",
+          "rank": 4,
+          "score": 1298,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 4129,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-babylon-2-7894c1b0",
+          "name": "Reve 2.0",
+          "provider": "Reve",
+          "rank": 5,
+          "score": 1291,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 2694,
+          "price": 0.2,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-carillon-30ed264d",
+          "name": "Reve 2.1",
+          "provider": "Reve",
+          "rank": 6,
+          "score": 1290,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 2760,
+          "price": 0.2,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-hazel-9d053755",
+          "name": "ChatGPT Image",
+          "provider": "OpenAI",
+          "rank": 7,
+          "score": 1289,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 50083,
+          "price": 0.034,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-grok-imagine-image-2-auto-f4ed4cac",
+          "name": "Grok Imagine Image 2 Auto",
+          "provider": "xAI",
+          "rank": 8,
+          "score": 1272,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 7130,
+          "price": 0.04,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-grok-imagine-image-2-medium-8776f160",
+          "name": "Grok Imagine Image 2 Medium",
+          "provider": "xAI",
+          "rank": 9,
+          "score": 1271,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 6924,
+          "price": 0.06,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-muse-image-1-0-0f8e8904",
+          "name": "Muse Image",
+          "provider": "Meta",
+          "rank": 10,
+          "score": 1271,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 33717,
+          "price": 0.01,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-seedream-5-0-pro-edit-c7de3d21",
+          "name": "Seedream 5.0 Pro Edit",
+          "provider": "ByteDance",
+          "rank": 11,
+          "score": 1263,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 6773,
+          "price": 0.045,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-mai-image-2-6-flash-f3f7290b",
+          "name": "MAI-Image-2.6 Flash",
+          "provider": "Microsoft",
+          "rank": 12,
+          "score": 1261,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 9947,
+          "price": 0.019,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-dakota-b2c03f7e",
+          "name": "Krea 3",
+          "provider": "Krea",
+          "rank": 13,
+          "score": 1253,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 4755,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-cherryblossom-e87dbc11",
+          "name": "GPT-Image-1.5",
+          "provider": "OpenAI",
+          "rank": 14,
+          "score": 1249,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 59880,
+          "price": 0.034,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-gemini-3-pro-image-preview-2k-207a64a7",
+          "name": "Gemini 3 Pro Image Preview 2K",
+          "provider": "Google",
+          "rank": 15,
+          "score": 1248,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 63285,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-mai-image-2-6-f12739e4",
+          "name": "MAI-Image-2.6",
+          "provider": "Microsoft",
+          "rank": 16,
+          "score": 1248,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 3993,
+          "price": 0.039,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-gemini-3-pro-image-preview-7afd3315",
+          "name": "Gemini 3 Pro Image Preview",
+          "provider": "Google",
+          "rank": 17,
+          "score": 1241,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 32936,
+          "price": 0.134,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-dragonfly-e2ca6aec",
+          "name": "Ideogram 4.5 (High)",
+          "provider": "Ideogram",
+          "rank": 18,
+          "score": 1240,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 12765,
+          "price": 0.22,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-flux-3-image-edit-7c4ac65c",
+          "name": "FLUX 3 Image Edit",
+          "provider": "Black Forest Labs",
+          "rank": 19,
+          "score": 1238,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 1065,
+          "price": 0.048,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-qwen-image-3-5e9060ca",
+          "name": "Qwen Image 3 Pro",
+          "provider": "Alibaba",
+          "rank": 20,
+          "score": 1230,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 5320,
+          "price": 0.075,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-mai-image-2-5-65d4c1ab",
+          "name": "MAI-Image-2.5",
+          "provider": "Microsoft",
+          "rank": 21,
+          "score": 1227,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 5915,
+          "price": 0.048,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-aurora-edit-6e3ee075",
+          "name": "Grok Imagine",
+          "provider": "xAI",
+          "rank": 22,
+          "score": 1198,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 41550,
+          "price": 0.02,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-gemini-3-1-flash-lite-image-064403eb",
+          "name": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite)",
+          "provider": "Google",
+          "rank": 23,
+          "score": 1192,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 30665,
+          "price": 0.034,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-uni-1-1-7ae6f5e0",
+          "name": "UNI-1.1",
+          "provider": "Luma Labs",
+          "rank": 24,
+          "score": 1190,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 2782,
+          "price": 0.0404,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-seedream-lite-v5-edit-c33f9c9c",
+          "name": "Seedream Lite 5.0 Edit",
+          "provider": "ByteDance",
+          "rank": 25,
+          "score": 1189,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 32133,
+          "price": 0.035,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-ladybug-0b2319dc",
+          "name": "Ideogram 4.5 (Very Low)",
+          "provider": "Ideogram",
+          "rank": 26,
+          "score": 1187,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 9395,
+          "price": 0.008,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-uni-1-1-max-c17ab472",
+          "name": "UNI-1.1 Max",
+          "provider": "Luma Labs",
+          "rank": 27,
+          "score": 1167,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 1490,
+          "price": 0.1,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-seedream-v45-edit-615e3f02",
+          "name": "Seedream 4.5 Edit",
+          "provider": "ByteDance",
+          "rank": 28,
+          "score": 1162,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 26748,
+          "price": 0.04,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-wan-v2-7-edit-8858daf9",
+          "name": "Wan 2.7",
+          "provider": "Alibaba",
+          "rank": 29,
+          "score": 1148,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 9886,
+          "price": 0.04,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-wan-v2-7-pro-edit-cd6db632",
+          "name": "Wan 2.7 Pro",
+          "provider": "Alibaba",
+          "rank": 30,
+          "score": 1144,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 11523,
+          "price": 0.075,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-dreamimage-2-0-012a54d8",
+          "name": "DreamImage 2.0",
+          "provider": "NewPort AI",
+          "rank": 31,
+          "score": 1132,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 10115,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-flux-2-pro-edit-4116dffa",
+          "name": "FLUX.2 Pro Edit",
+          "provider": "Black Forest Labs",
+          "rank": 32,
+          "score": 1132,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 57968,
+          "price": 0.03,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-imagineart-2-0-edit-459f3e66",
+          "name": "ImagineArt 2.0 Edit",
+          "provider": "ImagineArt",
+          "rank": 33,
+          "score": 1124,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 33583,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-seedream-v4-edit-4k-1c944a9f",
+          "name": "Seedream 4.0 Edit 4K",
+          "provider": "ByteDance",
+          "rank": 34,
+          "score": 1120,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 25070,
+          "price": 0.05,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-seedream-v4-edit-8c5ed322",
+          "name": "Seedream 4.0 Edit",
+          "provider": "ByteDance",
+          "rank": 35,
+          "score": 1116,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 56164,
+          "price": 0.03,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-gpt-image-1-edit-14e4039c",
+          "name": "GPT-Image-1",
+          "provider": "OpenAI",
+          "rank": 36,
+          "score": 1103,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 27694,
+          "price": 0.042,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-flux-2-klein-9b-edit-b15def2f",
+          "name": "FLUX.2 Klein 9B Edit",
+          "provider": "Black Forest Labs",
+          "rank": 37,
+          "score": 1096,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 52746,
+          "price": 0.011,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-reve-edit-20250915-a0ae41b4",
+          "name": "Reve Edit",
+          "provider": "Reve",
+          "rank": 38,
+          "score": 1089,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 1790,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-qwen-image-edit-2511-e065cdaa",
+          "name": "Qwen Image Edit (2511)",
+          "provider": "Alibaba",
+          "rank": 39,
+          "score": 1085,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 46400,
+          "price": 0.03,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-reve-edit-fast-20251030-3362b8a3",
+          "name": "Reve Edit Fast",
+          "provider": "Reve",
+          "rank": 40,
+          "score": 1066,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 1764,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-pear-97cfbe87",
+          "name": "P-Image-Edit",
+          "provider": "Pruna AI",
+          "rank": 41,
+          "score": 1064,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 3968,
+          "price": 0.01,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-flux-2-klein-4b-edit-94e28ab5",
+          "name": "FLUX.2 Klein 4B Edit",
+          "provider": "Black Forest Labs",
+          "rank": 42,
+          "score": 1052,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 40824,
+          "price": 0.009,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-flux-2-klein-4b-distilled-edit-b421bde7",
+          "name": "FLUX.2 Klein 4B Distilled Edit",
+          "provider": "Black Forest Labs",
+          "rank": 43,
+          "score": 1051,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 40961,
+          "price": 0.014,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-flux-kontext-max-edit-92f6a6ce",
+          "name": "FLUX Kontext Max Edit",
+          "provider": "Black Forest Labs",
+          "rank": 44,
+          "score": 1038,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 23193,
+          "price": 0.08,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-boogu-image-63815ba1",
+          "name": "Boogu-Image-0.1",
+          "provider": "Boogu",
+          "rank": 45,
+          "score": 1032,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 6775,
+          "price": 0.04,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-flux-kontext-pro-edit-8b39e7ec",
+          "name": "FLUX Kontext Pro Edit",
+          "provider": "Black Forest Labs",
+          "rank": 46,
+          "score": 1022,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 23370,
+          "price": 0.04,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-qwen-image-edit-17ff337e",
+          "name": "Qwen Image Edit",
+          "provider": "Alibaba",
+          "rank": 47,
+          "score": 1021,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 28514,
+          "price": 0.03,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-hidream-o1-image-edit-e90df2e1",
+          "name": "HiDream O1 Image Edit",
+          "provider": "HiDream",
+          "rank": 48,
+          "score": 990,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 7207,
+          "price": 0.04,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-hidream-o1-image-dev-edit-b3843164",
+          "name": "HiDream O1 Image Dev Edit",
+          "provider": "HiDream",
+          "rank": 49,
+          "score": 986,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 7955,
+          "price": 0.02,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-gemini-2-0-flash-image-edit-d5ad221f",
+          "name": "Gemini 2.0 Flash Edit",
+          "provider": "Google",
+          "rank": 50,
+          "score": 927,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 14376,
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "No source image price quote was published for this exact model ID.",
+          "priceSourceUrl": null,
+          "modelUrl": null
+        },
+        {
+          "id": "design-edit-recraftv3-edit-5bcfb9da",
+          "name": "Recraft V3 Edit",
+          "provider": "Recraft",
+          "rank": 51,
+          "score": 808,
+          "confidenceLow": null,
+          "confidenceHigh": null,
+          "votes": 14013,
+          "price": 0.04,
+          "priceUnit": "image",
+          "priceNote": "Source public registry image.perImage quote, matched by exact source model ID. Resolution, quality, pricing date, and agreement with the scored evaluation configuration are unspecified. This is a source quote, not verified evaluation-run spend.",
+          "priceSourceUrl": "https://www.designarena.ai/api/registry",
+          "modelUrl": null
+        }
+      ],
+      "series": [
+        {
+          "id": "design-arena-image-editing-ideogram-4-5-quality",
+          "name": "Ideogram 4.5",
+          "dimension": "quality",
+          "sourceUrls": [
+            "https://www.designarena.ai/leaderboard/image-to-image",
+            "https://ideogram.ai/models/4.5/",
+            "https://developer.ideogram.ai/api-reference/images/generate/ideogram-4-5"
+          ],
+          "note": "Very Low and High are documented quality modes of Ideogram 4.5, measured separately in this editing pool. Low and Medium have provider prices but no measured score here. The arena does not publish evaluation resolution or endpoint. Source price quotes may use different generation conditions.",
+          "points": [
+            {
+              "modelId": "design-edit-ladybug-0b2319dc",
+              "label": "Very low",
+              "order": 1
+            },
+            {
+              "modelId": "design-edit-dragonfly-e2ca6aec",
+              "label": "High",
+              "order": 4
+            }
+          ]
         }
       ]
     },
@@ -7556,19 +8730,17 @@
       "task": "Image to video without audio (AA-Video-I2V-Silent v1.0)",
       "shortTask": "Image to Video Silent",
       "scoreType": "Elo",
-      "observedAt": "2026-10-22T18:40:31.947Z",
+      "observedAt": "2026-10-23T06:31:00.236Z",
       "sourceUpdatedAt": null,
       "priceUnit": "second",
       "notes": [
-        "Public browser snapshot of AA-Video-I2V-Silent v1.0; the captured URL sets models=all and exact model variant labels are retained.",
-        "Silent output pool; source evaluates video without audio.",
-        "This source, task, benchmark version, and audio condition form a separate scoring pool. Do not compare Elo values across pools.",
-        "Source publication date is not stated in the captured public table. Released is a model release month, not a leaderboard update date; sourceUpdatedAt is null.",
-        "The source labels counts Samples; they are retained in votes as the public preference sample count, not a count of unique raters.",
-        "Prices come only from this exact source/task/audio row. Displayed USD per minute is divided by 60. The source's general 1080p/default-settings footnote can differ from an explicitly labeled resolution; both are preserved in priceNote.",
-        "Provider strings preserve the public logo labels, including Fal where displayed. They are not inferred model-creator identities.",
-        "Point ranks and source 95% score intervals are retained. Overlapping intervals do not establish a ranking difference. The methodology treats votes as independent and cautions that evaluator or prompt correlation may narrow intervals.",
-        "Fixed Elo anchor with no estimated confidence interval: Wan 2.1 14B. Its confidence bounds remain null."
+        "Attribution: Artificial Analysis, https://artificialanalysis.ai/. Public browser capture of AA-Video-I2V-Silent v1.0; Overall category, all models and no audio. All 82 rendered rows are included.",
+        "Retrieval time is observedAt. No leaderboard publication date is stated by this public table; model release dates and Updated badges are not publication timestamps.",
+        "Displayed USD per minute is divided by 60. Each price retains its exact row variant and the public configuration footnote. No cross-source price joins are applied.",
+        "Samples are source-reported preference appearances, not unique voters. Source 95% confidence bounds are preserved; fixed Anchor rows have null bounds. Overlapping intervals do not establish a distinct rank.",
+        "Provider strings preserve public logo labels, including an inference provider where shown; they do not assert a model creator identity.",
+        "Keep source, task, benchmark version, and audio condition in separate scoring pools.",
+        "The October 23 capture changes Kling 3.0 and Omni Pro quotes to $0.112/s; Standard remains $0.168/s. The creator cash list quotes silent 720p at $0.084/s and 1080p at $0.112/s. These are retained as AA source quotes, not reconciled evaluation-run costs. See Unscored settings & prices for separate creator quotes."
       ],
       "entries": [
         {
@@ -7582,7 +8754,7 @@
           "votes": 5821,
           "price": 0.1,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Gemini Omni Flash.",
+          "priceNote": "Source displays $6.00 /min. Divided by 60 to express USD per second. Exact source variant: Gemini Omni Flash. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7597,7 +8769,7 @@
           "votes": 5519,
           "price": 0.12000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Bach 1.0 Pro.",
+          "priceNote": "Source displays $7.20 /min. Divided by 60 to express USD per second. Exact source variant: Bach 1.0 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7612,7 +8784,7 @@
           "votes": 3137,
           "price": 0.2,
           "priceUnit": "second",
-          "priceNote": "Source price: $12.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 3.0.",
+          "priceNote": "Source displays $12.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 3.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7627,7 +8799,7 @@
           "votes": 5745,
           "price": 0.13,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: MiniMax H3.",
+          "priceNote": "Source displays $7.80 /min. Divided by 60 to express USD per second. Exact source variant: MiniMax H3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
         },
@@ -7642,7 +8814,7 @@
           "votes": 5084,
           "price": 0.05,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vimoo 1.0.",
+          "priceNote": "Source displays $3.00 /min. Divided by 60 to express USD per second. Exact source variant: Vimoo 1.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7657,7 +8829,7 @@
           "votes": 7258,
           "price": 0.15116666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.07 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Dreamina Seedance 2.0 720p.",
+          "priceNote": "Source displays $9.07 /min. Divided by 60 to express USD per second. Exact source variant: Dreamina Seedance 2.0 720p. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7672,7 +8844,7 @@
           "votes": 5655,
           "price": 0.09000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V6.",
+          "priceNote": "Source displays $5.40 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V6. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7687,7 +8859,7 @@
           "votes": 3392,
           "price": 0.14,
           "priceUnit": "second",
-          "priceNote": "Source price: $8.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Grok Imagine Video 1.5.",
+          "priceNote": "Source displays $8.40 /min. Divided by 60 to express USD per second. Exact source variant: Grok Imagine Video 1.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7702,7 +8874,7 @@
           "votes": 7810,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: grok-imagine-video.",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: grok-imagine-video. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7717,7 +8889,7 @@
           "votes": 5734,
           "price": 0.165,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.90 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: HappyHorse-1.1.",
+          "priceNote": "Source displays $9.90 /min. Divided by 60 to express USD per second. Exact source variant: HappyHorse-1.1. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7732,7 +8904,7 @@
           "votes": 6652,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.5 Turbo 1080p.",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.5 Turbo 1080p. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7747,7 +8919,7 @@
           "votes": 6478,
           "price": 0.22,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: HappyHorse-1.0.",
+          "priceNote": "Source displays $13.20 /min. Divided by 60 to express USD per second. Exact source variant: HappyHorse-1.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7762,7 +8934,7 @@
           "votes": 8308,
           "price": 0.16,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.60 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q3 Pro.",
+          "priceNote": "Source displays $9.60 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q3 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7777,7 +8949,7 @@
           "votes": 4165,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.6.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5.6. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7792,7 +8964,7 @@
           "votes": 665,
           "price": 0.168,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling O1 Pro (December).",
+          "priceNote": "Source displays $10.08 /min. Divided by 60 to express USD per second. Exact source variant: Kling O1 Pro (December). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7805,9 +8977,9 @@
           "confidenceLow": 1270,
           "confidenceHigh": 1290,
           "votes": 4051,
-          "price": 0.224,
+          "price": 0.112,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.44 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 Omni 1080p (Pro).",
+          "priceNote": "Source displays $6.72 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 Omni 1080p (Pro). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7820,9 +8992,9 @@
           "confidenceLow": 1268,
           "confidenceHigh": 1286,
           "votes": 7240,
-          "price": 0.224,
+          "price": 0.112,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.44 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 1080p (Pro).",
+          "priceNote": "Source displays $6.72 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 1080p (Pro). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7837,7 +9009,7 @@
           "votes": 5120,
           "price": 0.10666666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.",
+          "priceNote": "Source displays $6.40 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7852,7 +9024,7 @@
           "votes": 3932,
           "price": 0.10666666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.5.",
+          "priceNote": "Source displays $6.40 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7867,7 +9039,7 @@
           "votes": 2839,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video"
         },
@@ -7882,7 +9054,7 @@
           "votes": 4107,
           "price": 0.168,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 Omni 720p (Standard).",
+          "priceNote": "Source displays $10.08 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 Omni 720p (Standard). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7897,7 +9069,7 @@
           "votes": 3112,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.7.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.7. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7912,7 +9084,7 @@
           "votes": 7081,
           "price": 0.168,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 720p (Standard).",
+          "priceNote": "Source displays $10.08 /min. Divided by 60 to express USD per second. Exact source variant: Kling 3.0 720p (Standard). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7927,7 +9099,7 @@
           "votes": 3911,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -7942,7 +9114,7 @@
           "votes": 4732,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Pro (January).",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.6 Pro (January). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7957,7 +9129,7 @@
           "votes": 3578,
           "price": 0.12000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Runway Gen-4.5 (720p).",
+          "priceNote": "Source displays $7.20 /min. Divided by 60 to express USD per second. Exact source variant: Runway Gen-4.5 (720p). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7972,7 +9144,7 @@
           "votes": 4100,
           "price": 0.042,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.52 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Standard (January).",
+          "priceNote": "Source displays $2.52 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.6 Standard (January). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -7987,7 +9159,7 @@
           "votes": 6430,
           "price": 0.1,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.1 Fast.",
+          "priceNote": "Source displays $6.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 3.1 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8002,7 +9174,7 @@
           "votes": 4865,
           "price": 0.016666666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 2.3 Fast.",
+          "priceNote": "Source displays $1.00 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 2.3 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8017,7 +9189,7 @@
           "votes": 5673,
           "price": 0.09883333333333333,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.93 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Seedance 1.5 pro.",
+          "priceNote": "Source displays $5.93 /min. Divided by 60 to express USD per second. Exact source variant: Seedance 1.5 pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8032,7 +9204,7 @@
           "votes": 6605,
           "price": 0.04666666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 2.3.",
+          "priceNote": "Source displays $2.80 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 2.3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8047,7 +9219,7 @@
           "votes": 4304,
           "price": 0.2,
           "priceUnit": "second",
-          "priceNote": "Source price: $12.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.1.",
+          "priceNote": "Source displays $12.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 3.1. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8062,7 +9234,7 @@
           "votes": 3055,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video"
         },
@@ -8077,7 +9249,7 @@
           "votes": 3732,
           "price": 0.07,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Pro (December).",
+          "priceNote": "Source displays $4.20 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.6 Pro (December). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8092,7 +9264,7 @@
           "votes": 3761,
           "price": 0.08166666666666668,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.90 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 02 Pro.",
+          "priceNote": "Source displays $4.90 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 02 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8107,7 +9279,7 @@
           "votes": 4045,
           "price": 0.04666666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 02 Standard.",
+          "priceNote": "Source displays $2.80 /min. Divided by 60 to express USD per second. Exact source variant: Hailuo 02 Standard. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8122,7 +9294,7 @@
           "votes": 6112,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.5 Preview.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.5 Preview. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8137,7 +9309,7 @@
           "votes": 4087,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V5.6 (January).",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V5.6 (January). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8152,7 +9324,7 @@
           "votes": 2566,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8165,10 +9337,10 @@
           "confidenceLow": 1230,
           "confidenceHigh": 1254,
           "votes": 1892,
-          "price": 0.05,
-          "priceUnit": "second",
-          "priceNote": "Source price: $3.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.1 Lite.",
-          "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+          "price": null,
+          "priceUnit": null,
+          "priceNote": "Source displays Coming soon.",
+          "priceSourceUrl": null,
           "modelUrl": null
         },
         {
@@ -8182,7 +9354,7 @@
           "votes": 4030,
           "price": 0.06666666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q2 Turbo.",
+          "priceNote": "Source displays $4.00 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q2 Turbo. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8197,7 +9369,7 @@
           "votes": 4732,
           "price": 0.12200000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.32 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Seedance 1.0.",
+          "priceNote": "Source displays $7.32 /min. Divided by 60 to express USD per second. Exact source variant: Seedance 1.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8212,7 +9384,7 @@
           "votes": 4024,
           "price": 0.10166666666666666,
           "priceUnit": "second",
-          "priceNote": "Source price: $6.10 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q2 Pro.",
+          "priceNote": "Source displays $6.10 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q2 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8227,7 +9399,7 @@
           "votes": 3150,
           "price": 0.065,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.90 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q3 Turbo.",
+          "priceNote": "Source displays $3.90 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q3 Turbo. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8242,7 +9414,7 @@
           "votes": 3808,
           "price": 0.2,
           "priceUnit": "second",
-          "priceNote": "Source price: $12.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 3.",
+          "priceNote": "Source displays $12.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8257,7 +9429,7 @@
           "votes": 2327,
           "price": 0.15,
           "priceUnit": "second",
-          "priceNote": "Source price: $9.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.6.",
+          "priceNote": "Source displays $9.00 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.6. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8272,7 +9444,7 @@
           "votes": 4055,
           "price": 0.22,
           "priceUnit": "second",
-          "priceNote": "Source price: $13.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Ray 3.",
+          "priceNote": "Source displays $13.20 /min. Divided by 60 to express USD per second. Exact source variant: Ray 3. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8287,7 +9459,7 @@
           "votes": 2357,
           "price": 0.13,
           "priceUnit": "second",
-          "priceNote": "Source price: $7.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.5 Fast.",
+          "priceNote": "Source displays $7.80 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.5 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.5"
         },
@@ -8302,7 +9474,7 @@
           "votes": 2386,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8317,7 +9489,7 @@
           "votes": 4121,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8332,7 +9504,7 @@
           "votes": 5127,
           "price": 0.060000000000000005,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.60 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2 Pro.",
+          "priceNote": "Source displays $3.60 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2"
         },
@@ -8347,7 +9519,7 @@
           "votes": 4113,
           "price": 0.09000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Pika 2.5.",
+          "priceNote": "Source displays $5.40 /min. Divided by 60 to express USD per second. Exact source variant: Pika 2.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8362,7 +9534,7 @@
           "votes": 2339,
           "price": 0.16999999999999998,
           "priceUnit": "second",
-          "priceNote": "Source price: $10.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.5 Pro.",
+          "priceNote": "Source displays $10.20 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.5 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.5"
         },
@@ -8377,7 +9549,7 @@
           "votes": 5122,
           "price": 0.04,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2 Fast.",
+          "priceNote": "Source displays $2.40 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2"
         },
@@ -8392,7 +9564,7 @@
           "votes": 2178,
           "price": 0.098,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.88 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.1 Pro.",
+          "priceNote": "Source displays $5.88 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.1 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8407,7 +9579,7 @@
           "votes": 4097,
           "price": 0.28,
           "priceUnit": "second",
-          "priceNote": "Source price: $16.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.0.",
+          "priceNote": "Source displays $16.80 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8422,7 +9594,7 @@
           "votes": 2804,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8437,7 +9609,7 @@
           "votes": 2228,
           "price": 0.056,
           "priceUnit": "second",
-          "priceNote": "Source price: $3.36 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.1 Standard.",
+          "priceNote": "Source displays $3.36 /min. Divided by 60 to express USD per second. Exact source variant: Kling 2.1 Standard. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8452,7 +9624,7 @@
           "votes": 2221,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8467,7 +9639,7 @@
           "votes": 4106,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.3 Pro.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.3 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.3"
         },
@@ -8482,7 +9654,7 @@
           "votes": 2258,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: PixVerse V4.5.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: PixVerse V4.5. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8497,7 +9669,7 @@
           "votes": 4077,
           "price": 0.04,
           "priceUnit": "second",
-          "priceNote": "Source price: $2.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX-2.3 Fast.",
+          "priceNote": "Source displays $2.40 /min. Divided by 60 to express USD per second. Exact source variant: LTX-2.3 Fast. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-2.3"
         },
@@ -8512,7 +9684,7 @@
           "votes": 2297,
           "price": 0.08816666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.29 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Seedance 1.0 Mini.",
+          "priceNote": "Source displays $5.29 /min. Divided by 60 to express USD per second. Exact source variant: Seedance 1.0 Mini. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8527,7 +9699,7 @@
           "votes": 4725,
           "price": 0.098,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.88 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 1.6 Pro.",
+          "priceNote": "Source displays $5.88 /min. Divided by 60 to express USD per second. Exact source variant: Kling 1.6 Pro. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8542,7 +9714,7 @@
           "votes": 2715,
           "price": 0.075,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.50 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: HunyuanVideo-1.5 (Fal).",
+          "priceNote": "Source displays $4.50 /min. Divided by 60 to express USD per second. Exact source variant: HunyuanVideo-1.5 (Fal). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/tencent/HunyuanVideo-1.5"
         },
@@ -8557,7 +9729,7 @@
           "votes": 3803,
           "price": 0.02,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: P-Video.",
+          "priceNote": "Source displays $1.20 /min. Divided by 60 to express USD per second. Exact source variant: P-Video. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8572,7 +9744,7 @@
           "votes": 2688,
           "price": 0.005,
           "priceUnit": "second",
-          "priceNote": "Source price: $0.30 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Agnes-Video-V2.0.",
+          "priceNote": "Source displays $0.30 /min. Divided by 60 to express USD per second. Exact source variant: Agnes-Video-V2.0. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8587,7 +9759,7 @@
           "votes": 3722,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.2 A14B.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.2 A14B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B"
         },
@@ -8602,7 +9774,7 @@
           "votes": 4562,
           "price": 0.5,
           "priceUnit": "second",
-          "priceNote": "Source price: $30.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Veo 2.",
+          "priceNote": "Source displays $30.00 /min. Divided by 60 to express USD per second. Exact source variant: Veo 2. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8617,7 +9789,7 @@
           "votes": 9124,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8632,7 +9804,7 @@
           "votes": 8770,
           "price": 0.07166666666666667,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.30 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: I2V-01-Director.",
+          "priceNote": "Source displays $4.30 /min. Divided by 60 to express USD per second. Exact source variant: I2V-01-Director. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8647,7 +9819,7 @@
           "votes": 2420,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Vidu Q1.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Vidu Q1. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8662,7 +9834,7 @@
           "votes": 2080,
           "price": 0.02,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: LTX Video v0.9.7 13B.",
+          "priceNote": "Source displays $1.20 /min. Divided by 60 to express USD per second. Exact source variant: LTX Video v0.9.7 13B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Lightricks/LTX-Video-0.9.7-dev"
         },
@@ -8677,7 +9849,7 @@
           "votes": 2451,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: Coming soon. No numeric API price published in this row.",
+          "priceNote": "Source displays Coming soon.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8692,7 +9864,7 @@
           "votes": 4558,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8707,7 +9879,7 @@
           "votes": 4854,
           "price": 0.09000000000000001,
           "priceUnit": "second",
-          "priceNote": "Source price: $5.40 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Pika 2.2.",
+          "priceNote": "Source displays $5.40 /min. Divided by 60 to express USD per second. Exact source variant: Pika 2.2. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8722,7 +9894,7 @@
           "votes": 4133,
           "price": 0.3,
           "priceUnit": "second",
-          "priceNote": "Source price: $18.00 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Marey.",
+          "priceNote": "Source displays $18.00 /min. Divided by 60 to express USD per second. Exact source variant: Marey. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": null
         },
@@ -8737,7 +9909,7 @@
           "votes": 8927,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8752,7 +9924,7 @@
           "votes": 4603,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.1 14B.",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.1 14B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://github.com/Wan-Video/Wan2.1"
         },
@@ -8767,7 +9939,7 @@
           "votes": 3520,
           "price": 0.030000000000000002,
           "priceUnit": "second",
-          "priceNote": "Source price: $1.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Wan 2.2 5B.",
+          "priceNote": "Source displays $1.80 /min. Divided by 60 to express USD per second. Exact source variant: Wan 2.2 5B. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B"
         },
@@ -8782,7 +9954,7 @@
           "votes": 4387,
           "price": null,
           "priceUnit": null,
-          "priceNote": "Source availability: No API available. No numeric API price published in this row.",
+          "priceNote": "Source displays No API available.",
           "priceSourceUrl": null,
           "modelUrl": null
         },
@@ -8797,9 +9969,107 @@
           "votes": 4616,
           "price": 0.08,
           "priceUnit": "second",
-          "priceNote": "Source price: $4.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hunyuan Video (Fal).",
+          "priceNote": "Source displays $4.80 /min. Divided by 60 to express USD per second. Exact source variant: Hunyuan Video (Fal). 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings",
           "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
           "modelUrl": "https://huggingface.co/tencent/HunyuanVideo"
+        }
+      ],
+      "series": [
+        {
+          "id": "aa-video-i2v-silent-v1-0-kling-2-1-mode",
+          "name": "Kling 2.1",
+          "dimension": "mode",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://artificialanalysis.ai/methodology/video",
+            "https://kling.ai/release-note/release-notes/2025052696",
+            "https://kling.ai/document-api/apiReference/updateNotice?date=2026-02-11"
+          ],
+          "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs.",
+          "points": [
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-2-1-standard",
+              "label": "Standard (720p)",
+              "order": 1
+            },
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-2-1-pro",
+              "label": "Pro (1080p)",
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "aa-video-i2v-silent-v1-0-kling-2-6-january-mode",
+          "name": "Kling 2.6 (January)",
+          "dimension": "mode",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://artificialanalysis.ai/methodology/video",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs.",
+          "points": [
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-2-6-standard-january",
+              "label": "Standard (720p)",
+              "order": 1
+            },
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-2-6-pro-january",
+              "label": "Pro (1080p)",
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "aa-video-i2v-silent-v1-0-kling-3-0-mode",
+          "name": "Kling 3.0",
+          "dimension": "mode",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://artificialanalysis.ai/methodology/video",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs. The full October 23 AA capture reports Pro at $0.112/s and Standard at $0.168/s. Creator silent list prices differ: 720p $0.084/s, 1080p $0.112/s. Preserve these AA quotes without substituting creator prices.",
+          "points": [
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-720p-standard",
+              "label": "Standard (720p)",
+              "order": 1
+            },
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-1080p-pro",
+              "label": "Pro (1080p)",
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "aa-video-i2v-silent-v1-0-kling-3-0-omni-mode",
+          "name": "Kling 3.0 Omni",
+          "dimension": "mode",
+          "sourceUrls": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://artificialanalysis.ai/methodology/video",
+            "https://kling.ai/document-api/api/video/3-0-omni/video-omni/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs. The full October 23 AA capture reports Pro at $0.112/s and Standard at $0.168/s. Creator silent list prices differ: 720p $0.084/s, 1080p $0.112/s. Preserve these AA quotes without substituting creator prices.",
+          "points": [
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-omni-720p-standard",
+              "label": "Standard (720p)",
+              "order": 1
+            },
+            {
+              "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-omni-1080p-pro",
+              "label": "Pro (1080p)",
+              "order": 2
+            }
+          ]
         }
       ]
     },
@@ -11677,6 +12947,31 @@
           "priceNote": "Source price: $0.10 USD per output second, retained without conversion. Source model/configuration ID: wan-27. Source pricing basis: Unit: USD per output second; First-party public API, platform, or cloud list prices only; no Fal, WaveSpeed, or other third-party hosting prices except fal's own H3 Max; Resolution: 720p; Kling Pro endpoints use their actual 1080p tier, and MiniMax H3 and H3 Max use 768P; Audio: optional audio off; inseparable native audio remains included; Kling's official API price table states each point charge and its CNY equivalent; USD uses the fixed display rate; Fixed input fees are excluded; Grok image-to-video adds $0.01 per input image; Ray 3.2 is the official 5-second benchmark equivalent; its 10-second tier is non-linear; Prices checked: 2026-09-01. Temporary discounts, free quotas, off-peak rates, and subscriptions are excluded.",
           "priceSourceUrl": "https://video-arena.com/memebench/leaderboard",
           "modelUrl": null
+        }
+      ],
+      "series": [
+        {
+          "id": "memebench-i2v-silent-kling-3-0-mode",
+          "name": "Kling 3.0",
+          "dimension": "mode",
+          "sourceUrls": [
+            "https://video-arena.com/memebench/leaderboard",
+            "https://video-arena.com/blog/memebench",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy"
+          ],
+          "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs.",
+          "points": [
+            {
+              "modelId": "memebench-i2v-silent-kling-v3-standard",
+              "label": "Standard (720p)",
+              "order": 1
+            },
+            {
+              "modelId": "memebench-i2v-silent-kling-v3-pro",
+              "label": "Pro (1080p)",
+              "order": 2
+            }
+          ]
         }
       ]
     }

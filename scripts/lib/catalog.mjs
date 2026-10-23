@@ -8,8 +8,10 @@ export const MODEL_FIELDS = [
 ];
 export const BOARD_FIELDS = [
   'id', 'media', 'sourceName', 'sourceUrl', 'methodologyUrl', 'task', 'shortTask',
-  'scoreType', 'observedAt', 'sourceUpdatedAt', 'priceUnit', 'notes', 'entries',
+  'scoreType', 'observedAt', 'sourceUpdatedAt', 'priceUnit', 'notes', 'entries', 'series',
 ];
+export const SERIES_FIELDS = ['id', 'name', 'dimension', 'sourceUrls', 'note', 'points'];
+const POINT_FIELDS = ['modelId', 'label', 'order'];
 
 // Explicit denominators prevent a numeric price from silently changing meaning.
 // These labels are the public UI contract. Conversion requires source context.
@@ -51,9 +53,9 @@ export function validDate(value, timestamp = false) {
 export function validateCatalog(catalog, { now = Date.now() } = {}) {
   const errors = [];
   const fail = (path, message) => { errors.push(`${path}: ${message}`); };
-  const keys = (value, expected, path) => {
+  const keys = (value, expected, path, optional = []) => {
     if (!object(value)) { fail(path, 'must be an object'); return false; }
-    for (const key of expected) if (!Object.hasOwn(value, key)) fail(`${path}.${key}`, 'required field is missing');
+    for (const key of expected) if (!optional.includes(key) && !Object.hasOwn(value, key)) fail(`${path}.${key}`, 'required field is missing');
     for (const key of Object.keys(value)) if (!expected.includes(key)) fail(`${path}.${key}`, 'unknown field');
     return true;
   };
@@ -74,9 +76,10 @@ export function validateCatalog(catalog, { now = Date.now() } = {}) {
   }
   const boardIds = new Set();
   const pools = new Set();
+  const seriesIds = new Set();
   for (const [index, board] of catalog.leaderboards.entries()) {
     const path = `leaderboards[${index}]`;
-    if (!keys(board, BOARD_FIELDS, path)) continue;
+    if (!keys(board, BOARD_FIELDS, path, ['series'])) continue;
     if (!id(board.id)) fail(`${path}.id`, 'must be a lowercase stable identifier');
     if (boardIds.has(board.id)) fail(`${path}.id`, 'duplicate leaderboard identifier');
     boardIds.add(board.id);
@@ -139,6 +142,47 @@ export function validateCatalog(catalog, { now = Date.now() } = {}) {
         if (entry.priceUnit !== board.priceUnit) fail(`${entryPath}.priceUnit`, 'must exactly match its leaderboard unit; mixed denominators are forbidden');
         if (!validUrl(entry.priceSourceUrl)) fail(`${entryPath}.priceSourceUrl`, 'a numeric price requires source provenance');
         if (!string(entry.priceNote)) fail(`${entryPath}.priceNote`, 'a numeric price requires source configuration or unit context');
+      }
+    }
+    if (Object.hasOwn(board, 'series')) {
+      if (!Array.isArray(board.series)) {
+        fail(`${path}.series`, 'must be an array when present');
+        continue;
+      }
+      const memberships = new Set();
+      for (const [seriesIndex, series] of board.series.entries()) {
+        const seriesPath = `${path}.series[${seriesIndex}]`;
+        if (!keys(series, SERIES_FIELDS, seriesPath)) continue;
+        if (!id(series.id)) fail(`${seriesPath}.id`, 'must be a lowercase stable identifier');
+        if (seriesIds.has(series.id)) fail(`${seriesPath}.id`, 'duplicate configuration series identifier');
+        seriesIds.add(series.id);
+        text(series.name, `${seriesPath}.name`);
+        text(series.note, `${seriesPath}.note`);
+        if (!['quality', 'resolution', 'mode'].includes(series.dimension)) fail(`${seriesPath}.dimension`, 'must be quality, resolution, or mode');
+        if (!Array.isArray(series.sourceUrls) || series.sourceUrls.length === 0) {
+          fail(`${seriesPath}.sourceUrls`, 'must be a nonempty array of source URLs');
+        } else {
+          for (const [sourceIndex, sourceUrl] of series.sourceUrls.entries()) url(sourceUrl, `${seriesPath}.sourceUrls[${sourceIndex}]`);
+        }
+        // Single observations may document a known configuration, but do not
+        // establish a curve. Membership never comes from model name matching.
+        if (!Array.isArray(series.points) || series.points.length === 0) {
+          fail(`${seriesPath}.points`, 'must be a nonempty array of explicit model references');
+          continue;
+        }
+        const orders = new Set();
+        for (const [pointIndex, point] of series.points.entries()) {
+          const pointPath = `${seriesPath}.points[${pointIndex}]`;
+          if (!keys(point, POINT_FIELDS, pointPath)) continue;
+          if (!id(point.modelId)) fail(`${pointPath}.modelId`, 'must be a lowercase stable identifier');
+          if (!entryIds.has(point.modelId)) fail(`${pointPath}.modelId`, 'must reference an entry in this leaderboard');
+          if (memberships.has(point.modelId)) fail(`${pointPath}.modelId`, 'duplicate configuration model membership in this leaderboard');
+          memberships.add(point.modelId);
+          text(point.label, `${pointPath}.label`);
+          if (!finite(point.order) || point.order <= 0) fail(`${pointPath}.order`, 'must be a positive finite number');
+          if (orders.has(point.order)) fail(`${pointPath}.order`, 'duplicate configuration order in this series');
+          orders.add(point.order);
+        }
       }
     }
   }

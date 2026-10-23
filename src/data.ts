@@ -1,4 +1,4 @@
-import type { Leaderboard, Model } from './types';
+import type { ConfigurationSeries, Leaderboard, Model } from './types';
 
 const palette = ['#b9c1cb', '#df9676', '#65c78c', '#a89bef', '#71b5e8', '#d6bd70', '#d883b3', '#85c2c0', '#b4a4dc', '#c1b4a6'];
 const providers: Record<string, [string, string]> = {
@@ -28,8 +28,12 @@ export function frontier(models: Model[]) {
     return true;
   });
 }
-export function defaultSelection(models: Model[]) {
-  return new Set([...models.slice(0, 8), ...frontier(models)].map(model => model.id));
+export function defaultSelection(models: Model[], series: ConfigurationSeries[] = []) {
+  const selected = new Set([...models.slice(0, 8), ...frontier(models)].map(model => model.id));
+  const ranked = new Map(models.map(model => [model.id, model.rank]));
+  const curves = series.filter(family => family.points.length >= 2).sort((a, b) => b.points.length - a.points.length || Math.min(...a.points.map(point => ranked.get(point.modelId) ?? Infinity)) - Math.min(...b.points.map(point => ranked.get(point.modelId) ?? Infinity)));
+  for (const family of curves.slice(0, 4)) for (const point of family.points) selected.add(point.modelId);
+  return selected;
 }
 export function taskFamily(board: Leaderboard) {
   const task = `${board.task} ${board.shortTask}`.toLowerCase();

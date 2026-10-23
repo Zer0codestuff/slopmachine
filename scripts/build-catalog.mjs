@@ -2,8 +2,10 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertCatalog, atomicWriteJson, summarizeCatalog } from './lib/catalog.mjs';
+import { mergeConfigurations } from './lib/configurations.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
+const defaultConfigurations = resolve(root, 'research/configurations.json');
 
 export function normalizeSnapshot(snapshot, filename = 'snapshot') {
   const leaderboards = Array.isArray(snapshot) ? snapshot : snapshot?.leaderboards;
@@ -32,14 +34,19 @@ export function replacePools(original, replacements) {
       || (board.sourceUpdatedAt !== null && (replacement.sourceUpdatedAt === null || Date.parse(replacement.sourceUpdatedAt) < Date.parse(board.sourceUpdatedAt)))) {
       throw new Error(`${board.id}: overlay is older than the saved observation or publication`);
     }
-    return replacement;
+    // An observation overlay without series does not erase explicit metadata.
+    // A removed member will fail final candidate validation rather than vanish.
+    return !Object.hasOwn(replacement, 'series') && Object.hasOwn(board, 'series')
+      ? { ...replacement, series: board.series }
+      : replacement;
   });
 }
 
-export async function buildCatalog({ inputs, output, overlays = [], arenaSnapshot = null, check = false }) {
+export async function buildCatalog({ inputs, output, overlays = [], arenaSnapshot = null, configurations, check = false }) {
   if (!Array.isArray(inputs) || !inputs.length) throw new Error('At least one input snapshot is required');
   const overlayFiles = [...overlays, ...(arenaSnapshot ? [arenaSnapshot] : [])];
-  if ([...inputs, ...overlayFiles].some((file) => resolve(file) === resolve(output))) throw new Error('Output must differ from every input and overlay');
+  const configurationFile = configurations === null ? null : resolve(configurations ?? defaultConfigurations);
+  if ([...inputs, ...overlayFiles, ...(configurationFile ? [configurationFile] : [])].some((file) => resolve(file) === resolve(output))) throw new Error('Output must differ from every input, overlay, and configuration file');
   // Read and validate every input before touching the last good public snapshot.
   let leaderboards = (await Promise.all(inputs.map(readSnapshot))).flat();
   assertCatalog({ generatedAt: new Date().toISOString(), leaderboards });
@@ -52,6 +59,17 @@ export async function buildCatalog({ inputs, output, overlays = [], arenaSnapsho
       if (!leaderboards.some((original) => original.id === board.id)) throw new Error(`${file}: unknown overlay pool ${board.id}; use an explicit --input to include a new pool`);
     }
     leaderboards = replacePools(leaderboards, replacements);
+  }
+  if (configurationFile) {
+    let contents;
+    try { contents = await readFile(configurationFile, 'utf8'); }
+    catch (error) {
+      if (configurations !== undefined || error.code !== 'ENOENT') throw new Error(`Cannot read configurations from ${configurationFile}: ${error.message}`);
+    }
+    if (contents !== undefined) {
+      try { leaderboards = mergeConfigurations(leaderboards, JSON.parse(contents), configurationFile); }
+      catch (error) { throw new Error(`Cannot build configurations from ${configurationFile}: ${error.message}`); }
+    }
   }
   const catalog = assertCatalog({ generatedAt: new Date().toISOString(), leaderboards });
   let previous = null;
@@ -68,8 +86,9 @@ export async function buildCatalog({ inputs, output, overlays = [], arenaSnapsho
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2);
   if (args.includes('--help')) {
-    console.log('Usage: node scripts/build-catalog.mjs [--input FILE ...] [--output FILE] [--overlay FILE ...] [--arena-snapshot FILE] [--check]');
+    console.log('Usage: node scripts/build-catalog.mjs [--input FILE ...] [--output FILE] [--overlay FILE ...] [--arena-snapshot FILE] [--configurations FILE] [--check]');
     console.log('Defaults to research/images.json + research/videos.json, writing public/data/catalog.json. No network requests.');
+    console.log('Merges research/configurations.json when present, or --configurations FILE, after observation overlays.');
     console.log('--check validates the proposed build without writing or claiming to refresh any source.');
   } else {
     try {
@@ -77,18 +96,20 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       const overlays = [];
       let output = resolve(root, 'public/data/catalog.json');
       let arenaSnapshot = null;
+      let configurations;
       let check = false;
       for (let index = 0; index < args.length; index++) {
         const arg = args[index];
         if (arg === '--check') { check = true; continue; }
-        if (!['--input', '--output', '--overlay', '--arena-snapshot'].includes(arg) || !args[index + 1] || args[index + 1].startsWith('--')) throw new Error(`Unknown or incomplete argument: ${arg}`);
+        if (!['--input', '--output', '--overlay', '--arena-snapshot', '--configurations'].includes(arg) || !args[index + 1] || args[index + 1].startsWith('--')) throw new Error(`Unknown or incomplete argument: ${arg}`);
         const file = resolve(args[++index]);
         if (arg === '--input') inputs.push(file);
         else if (arg === '--output') output = file;
         else if (arg === '--overlay') overlays.push(file);
-        else arenaSnapshot = file;
+        else if (arg === '--arena-snapshot') arenaSnapshot = file;
+        else configurations = file;
       }
-      const result = await buildCatalog({ inputs: inputs.length ? inputs : ['research/images.json', 'research/videos.json'].map((file) => resolve(root, file)), output, overlays, arenaSnapshot, check });
+      const result = await buildCatalog({ inputs: inputs.length ? inputs : ['research/images.json', 'research/videos.json'].map((file) => resolve(root, file)), output, overlays, arenaSnapshot, configurations, check });
       const summary = summarizeCatalog(result.catalog);
       console.log(`${check ? 'Checked saved inputs' : result.unchanged ? 'Unchanged' : 'Built from saved inputs'}: ${summary.leaderboards} leaderboards, ${summary.observations} observations, ${summary.pricedObservations} observed prices${check ? '' : ` -> ${output}`}`);
     } catch (error) {

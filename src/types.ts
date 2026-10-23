@@ -15,6 +15,15 @@ export interface Model {
   priceSourceUrl: string | null;
   modelUrl: string | null;
 }
+export interface ConfigurationSeries {
+  id: string;
+  name: string;
+  dimension: 'quality' | 'resolution' | 'mode';
+  sourceUrls: string[];
+  note: string;
+  // Membership is explicit and local to one leaderboard. A curve needs 2+ points.
+  points: { modelId: string; label: string; order: number }[];
+}
 export interface Leaderboard {
   id: string;
   media: Media;
@@ -29,6 +38,7 @@ export interface Leaderboard {
   priceUnit: string;
   notes: string[];
   entries: Model[];
+  series?: ConfigurationSeries[];
 }
 export interface Catalog {
   generatedAt: string;

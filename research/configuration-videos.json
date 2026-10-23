@@ -1,0 +1,1085 @@
+{
+  "schemaVersion": 1,
+  "kind": "research-configuration-series-proposal",
+  "researchedAt": "2026-10-23T06:28:23.078676+00:00",
+  "sourceSnapshot": {
+    "path": "research/videos.json",
+    "sha256": "6ab67c869d8c1db2a33fb444fabb95bc5b1403ea7e5b2b5d59d3ec862a241ae7",
+    "generatedAt": "2026-10-22T23:13:53.721617+00:00"
+  },
+  "fieldContract": {
+    "series": "Validated native mode families using exact existing observations. recommendedForDefault is false when current price evidence conflicts with the saved quote.",
+    "points": "entryId references one entry inside boardId. label is display text, level is the native tier identifier, order is ascending configuration order. sourceObservation is an exact copy for review.",
+    "dimension": "resolution, mode, or quality. Accepted Kling series use mode because the knob also changes output resolution and inference quality.",
+    "qualifiedCandidates": "Do not connect by default. Configuration mapping remains inferred or incomplete.",
+    "priceOnlyEvidence": "Creator quotes without a matched quality measurement. score is null and these are never additional points in a measured series."
+  },
+  "rules": [
+    "Connect only points inside one explicit series and boardId. Never discover families by fuzzy name matching.",
+    "Do not combine source, task, benchmark version, audio condition, model version, or engine identities.",
+    "A line joins observed configurations for orientation. It is not a fitted curve, a continuous quality scale, or a guarantee of improvement.",
+    "Keep missing prices unavailable. Do not join an Arena score to an AA or provider quote.",
+    "Two measured settings are enough. Never synthesize low, medium, high, max, reasoning effort, or 4K scores.",
+    "This research does not refresh or publish the catalog. Review price drift separately before adopting observations."
+  ],
+  "series": [
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-2-1-mode",
+      "name": "Kling 2.1",
+      "dimension": "mode",
+      "parameter": "mode",
+      "status": "validated-native-mode-labels",
+      "recommendedForDefault": true,
+      "identityValidation": "Provider documentation exposes Standard and Professional as modes of the same named model. Master, Turbo, Omni versus base, and dated model revisions are separate identities.",
+      "pool": {
+        "sourceName": "Artificial Analysis",
+        "sourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "methodologyUrl": "https://artificialanalysis.ai/methodology/video",
+        "task": "Image to video without audio (AA-Video-I2V-Silent v1.0)",
+        "shortTask": "Image to Video Silent",
+        "scoreType": "Elo",
+        "observedAt": "2026-10-22T18:40:31.947Z",
+        "sourceUpdatedAt": null
+      },
+      "audioCondition": "silent evaluation",
+      "evidenceURLs": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/release-note/release-notes/2025052696",
+        "https://kling.ai/document-api/apiReference/updateNotice?date=2026-02-11"
+      ],
+      "evidenceFiles": [
+        "research/evidence/videos-aa-i2v-silent-browser.json",
+        "research/evidence/quality-videos-aa-i2v-selected-live.json",
+        "research/evidence/quality-videos-kling21-release-primary-live.json"
+      ],
+      "points": [
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-2-1-standard",
+          "label": "Standard (720p)",
+          "level": "standard",
+          "order": 0,
+          "resolution": "720p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/release-note/release-notes/2025052696",
+            "https://kling.ai/document-api/apiReference/updateNotice?date=2026-02-11"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-2-1-standard",
+            "name": "Kling 2.1 Standard",
+            "provider": "KlingAI",
+            "rank": 58,
+            "score": 1174,
+            "confidenceLow": 1163,
+            "confidenceHigh": 1185,
+            "votes": 2228,
+            "price": 0.056,
+            "priceUnit": "second",
+            "priceNote": "Source price: $3.36 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.1 Standard.",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        },
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-2-1-pro",
+          "label": "Pro (1080p)",
+          "level": "pro",
+          "order": 1,
+          "resolution": "1080p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/release-note/release-notes/2025052696",
+            "https://kling.ai/document-api/apiReference/updateNotice?date=2026-02-11"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-2-1-pro",
+            "name": "Kling 2.1 Pro",
+            "provider": "KlingAI",
+            "rank": 55,
+            "score": 1185,
+            "confidenceLow": 1174,
+            "confidenceHigh": 1196,
+            "votes": 2178,
+            "price": 0.098,
+            "priceUnit": "second",
+            "priceNote": "Source price: $5.88 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.1 Pro.",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        }
+      ],
+      "conditions": [
+        "Use the exact existing entry score, interval, price, and price note. All values belong to the stored observation date.",
+        "Mode is one public configuration control, with coupled resolution and quality behavior. This is not a pure resolution-only causal experiment.",
+        "Full generation requests, clip durations, seeds, and all hidden inference settings are not published by the benchmark.",
+        "Order follows native configuration tiers, not Elo. Do not interpolate scores, add a middle tier, or call Pro the maximum supported setting.",
+        "The two score intervals overlap. A connected segment does not establish a statistically significant improvement.",
+        "AA prices are the displayed USD/min divided by 60. Its generic 1080p/default-creator-API footnote conflicts with explicitly named 720p rows; retain the exact row labels and footnote."
+      ]
+    },
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-2-6-january-mode",
+      "name": "Kling 2.6 (January)",
+      "dimension": "mode",
+      "parameter": "mode",
+      "status": "validated-native-mode-labels",
+      "recommendedForDefault": true,
+      "identityValidation": "Provider documentation exposes Standard and Professional as modes of the same named model. Master, Turbo, Omni versus base, and dated model revisions are separate identities.",
+      "pool": {
+        "sourceName": "Artificial Analysis",
+        "sourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "methodologyUrl": "https://artificialanalysis.ai/methodology/video",
+        "task": "Image to video without audio (AA-Video-I2V-Silent v1.0)",
+        "shortTask": "Image to Video Silent",
+        "scoreType": "Elo",
+        "observedAt": "2026-10-22T18:40:31.947Z",
+        "sourceUpdatedAt": null
+      },
+      "audioCondition": "silent evaluation",
+      "evidenceURLs": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+        "https://kling.ai/document-api/pricing/base/video"
+      ],
+      "evidenceFiles": [
+        "research/evidence/videos-aa-i2v-silent-browser.json",
+        "research/evidence/quality-videos-aa-i2v-selected-live.json",
+        "research/evidence/quality-videos-kling-i2v-legacy-primary-live.json",
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ],
+      "points": [
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-2-6-standard-january",
+          "label": "Standard (720p)",
+          "level": "standard",
+          "order": 0,
+          "resolution": "720p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-2-6-standard-january",
+            "name": "Kling 2.6 Standard (January)",
+            "provider": "KlingAI",
+            "rank": 27,
+            "score": 1265,
+            "confidenceLow": 1255,
+            "confidenceHigh": 1275,
+            "votes": 4100,
+            "price": 0.042,
+            "priceUnit": "second",
+            "priceNote": "Source price: $2.52 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Standard (January).",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        },
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-2-6-pro-january",
+          "label": "Pro (1080p)",
+          "level": "pro",
+          "order": 1,
+          "resolution": "1080p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-2-6-pro-january",
+            "name": "Kling 2.6 Pro (January)",
+            "provider": "KlingAI",
+            "rank": 25,
+            "score": 1266,
+            "confidenceLow": 1257,
+            "confidenceHigh": 1275,
+            "votes": 4732,
+            "price": 0.07,
+            "priceUnit": "second",
+            "priceNote": "Source price: $4.20 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 2.6 Pro (January).",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        }
+      ],
+      "conditions": [
+        "Use the exact existing entry score, interval, price, and price note. All values belong to the stored observation date.",
+        "Mode is one public configuration control, with coupled resolution and quality behavior. This is not a pure resolution-only causal experiment.",
+        "Full generation requests, clip durations, seeds, and all hidden inference settings are not published by the benchmark.",
+        "Order follows native configuration tiers, not Elo. Do not interpolate scores, add a middle tier, or call Pro the maximum supported setting.",
+        "The two score intervals overlap. A connected segment does not establish a statistically significant improvement.",
+        "AA prices are the displayed USD/min divided by 60. Its generic 1080p/default-creator-API footnote conflicts with explicitly named 720p rows; retain the exact row labels and footnote."
+      ]
+    },
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-3-0-mode",
+      "name": "Kling 3.0",
+      "dimension": "mode",
+      "parameter": "mode",
+      "status": "validated-native-mode-labels",
+      "recommendedForDefault": false,
+      "identityValidation": "Provider documentation exposes Standard and Professional as modes of the same named model. Master, Turbo, Omni versus base, and dated model revisions are separate identities.",
+      "pool": {
+        "sourceName": "Artificial Analysis",
+        "sourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "methodologyUrl": "https://artificialanalysis.ai/methodology/video",
+        "task": "Image to video without audio (AA-Video-I2V-Silent v1.0)",
+        "shortTask": "Image to Video Silent",
+        "scoreType": "Elo",
+        "observedAt": "2026-10-22T18:40:31.947Z",
+        "sourceUpdatedAt": null
+      },
+      "audioCondition": "silent evaluation",
+      "evidenceURLs": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+        "https://kling.ai/document-api/pricing/base/video"
+      ],
+      "evidenceFiles": [
+        "research/evidence/videos-aa-i2v-silent-browser.json",
+        "research/evidence/quality-videos-aa-i2v-selected-live.json",
+        "research/evidence/quality-videos-kling-i2v-legacy-primary-live.json",
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ],
+      "points": [
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-3-0-720p-standard",
+          "label": "Standard (720p)",
+          "level": "standard",
+          "order": 0,
+          "resolution": "720p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-3-0-720p-standard",
+            "name": "Kling 3.0 720p (Standard)",
+            "provider": "KlingAI",
+            "rank": 23,
+            "score": 1270,
+            "confidenceLow": 1261,
+            "confidenceHigh": 1279,
+            "votes": 7081,
+            "price": 0.168,
+            "priceUnit": "second",
+            "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 720p (Standard).",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        },
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-3-0-1080p-pro",
+          "label": "Pro (1080p)",
+          "level": "pro",
+          "order": 1,
+          "resolution": "1080p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-3-0-1080p-pro",
+            "name": "Kling 3.0 1080p (Pro)",
+            "provider": "KlingAI",
+            "rank": 17,
+            "score": 1277,
+            "confidenceLow": 1268,
+            "confidenceHigh": 1286,
+            "votes": 7240,
+            "price": 0.224,
+            "priceUnit": "second",
+            "priceNote": "Source price: $13.44 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 1080p (Pro).",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        }
+      ],
+      "conditions": [
+        "Use the exact existing entry score, interval, price, and price note. All values belong to the stored observation date.",
+        "Mode is one public configuration control, with coupled resolution and quality behavior. This is not a pure resolution-only causal experiment.",
+        "Full generation requests, clip durations, seeds, and all hidden inference settings are not published by the benchmark.",
+        "Order follows native configuration tiers, not Elo. Do not interpolate scores, add a middle tier, or call Pro the maximum supported setting.",
+        "The two score intervals overlap. A connected segment does not establish a statistically significant improvement.",
+        "AA prices are the displayed USD/min divided by 60. Its generic 1080p/default-creator-API footnote conflicts with explicitly named 720p rows; retain the exact row labels and footnote."
+      ],
+      "priceReviewRequired": "Saved AA Standard/Pro prices are $0.168/$0.224 per second. On 2026-10-23 the same AA Standard/Pro rows show $0.168/$0.112, while the creator silent list is $0.084/$0.112. Scores and samples are unchanged. Treat the existing series as a dated quote comparison; review both endpoint prices together before any refresh. Do not imply current Standard is cheaper according to the current AA rows."
+    },
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-3-0-omni-mode",
+      "name": "Kling 3.0 Omni",
+      "dimension": "mode",
+      "parameter": "mode",
+      "status": "validated-native-mode-labels",
+      "recommendedForDefault": false,
+      "identityValidation": "Provider documentation exposes Standard and Professional as modes of the same named model. Master, Turbo, Omni versus base, and dated model revisions are separate identities.",
+      "pool": {
+        "sourceName": "Artificial Analysis",
+        "sourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "methodologyUrl": "https://artificialanalysis.ai/methodology/video",
+        "task": "Image to video without audio (AA-Video-I2V-Silent v1.0)",
+        "shortTask": "Image to Video Silent",
+        "scoreType": "Elo",
+        "observedAt": "2026-10-22T18:40:31.947Z",
+        "sourceUpdatedAt": null
+      },
+      "audioCondition": "silent evaluation",
+      "evidenceURLs": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/document-api/api/video/3-0-omni/video-omni/legacy",
+        "https://kling.ai/document-api/pricing/base/video"
+      ],
+      "evidenceFiles": [
+        "research/evidence/videos-aa-i2v-silent-browser.json",
+        "research/evidence/quality-videos-aa-i2v-selected-live.json",
+        "research/evidence/quality-videos-kling-omni-legacy-primary-live.json",
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ],
+      "points": [
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-3-0-omni-720p-standard",
+          "label": "Standard (720p)",
+          "level": "standard",
+          "order": 0,
+          "resolution": "720p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/document-api/api/video/3-0-omni/video-omni/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-3-0-omni-720p-standard",
+            "name": "Kling 3.0 Omni 720p (Standard)",
+            "provider": "KlingAI",
+            "rank": 21,
+            "score": 1271,
+            "confidenceLow": 1261,
+            "confidenceHigh": 1281,
+            "votes": 4107,
+            "price": 0.168,
+            "priceUnit": "second",
+            "priceNote": "Source price: $10.08 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 Omni 720p (Standard).",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        },
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-kling-3-0-omni-1080p-pro",
+          "label": "Pro (1080p)",
+          "level": "pro",
+          "order": 1,
+          "resolution": "1080p",
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://kling.ai/document-api/api/video/3-0-omni/video-omni/legacy",
+            "https://kling.ai/document-api/pricing/base/video"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-kling-3-0-omni-1080p-pro",
+            "name": "Kling 3.0 Omni 1080p (Pro)",
+            "provider": "KlingAI",
+            "rank": 16,
+            "score": 1280,
+            "confidenceLow": 1270,
+            "confidenceHigh": 1290,
+            "votes": 4051,
+            "price": 0.224,
+            "priceUnit": "second",
+            "priceNote": "Source price: $13.44 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 Omni 1080p (Pro).",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        }
+      ],
+      "conditions": [
+        "Use the exact existing entry score, interval, price, and price note. All values belong to the stored observation date.",
+        "Mode is one public configuration control, with coupled resolution and quality behavior. This is not a pure resolution-only causal experiment.",
+        "Full generation requests, clip durations, seeds, and all hidden inference settings are not published by the benchmark.",
+        "Order follows native configuration tiers, not Elo. Do not interpolate scores, add a middle tier, or call Pro the maximum supported setting.",
+        "The two score intervals overlap. A connected segment does not establish a statistically significant improvement.",
+        "AA prices are the displayed USD/min divided by 60. Its generic 1080p/default-creator-API footnote conflicts with explicitly named 720p rows; retain the exact row labels and footnote."
+      ],
+      "priceReviewRequired": "Saved AA Standard/Pro prices are $0.168/$0.224 per second. On 2026-10-23 the same AA Standard/Pro rows show $0.168/$0.112, while the creator silent list is $0.084/$0.112. Scores and samples are unchanged. Treat the existing series as a dated quote comparison; review both endpoint prices together before any refresh. Do not imply current Standard is cheaper according to the current AA rows."
+    },
+    {
+      "boardId": "memebench-i2v-silent",
+      "id": "memebench-i2v-silent-kling-3-0-mode",
+      "name": "Kling 3.0",
+      "dimension": "mode",
+      "parameter": "mode",
+      "status": "validated-native-mode-labels",
+      "recommendedForDefault": true,
+      "identityValidation": "Provider documentation exposes Standard and Professional as modes of the same named model. Master, Turbo, Omni versus base, and dated model revisions are separate identities.",
+      "pool": {
+        "sourceName": "Video Arena (MemeBench)",
+        "sourceUrl": "https://video-arena.com/memebench/leaderboard",
+        "methodologyUrl": "https://video-arena.com/blog/memebench",
+        "task": "Image and motion prompt to silent video: short Chinese internet memes",
+        "shortTask": "Meme I2V Silent",
+        "scoreType": "Elo (regularized Bradley-Terry)",
+        "observedAt": "2026-10-22T23:12:28.549Z",
+        "sourceUpdatedAt": null
+      },
+      "audioCondition": "silent evaluation",
+      "evidenceURLs": [
+        "https://video-arena.com/memebench/leaderboard",
+        "https://video-arena.com/blog/memebench",
+        "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy"
+      ],
+      "evidenceFiles": [
+        "research/evidence/videos-memebench-browser.json",
+        "research/evidence/videos-memebench-pricing-browser.json",
+        "research/evidence/quality-videos-memebench-selected-live.json",
+        "research/evidence/quality-videos-memebench-pricing-live.json",
+        "research/evidence/quality-videos-kling-i2v-legacy-primary-live.json"
+      ],
+      "points": [
+        {
+          "entryId": "memebench-i2v-silent-kling-v3-standard",
+          "label": "Standard (720p)",
+          "level": "standard",
+          "order": 0,
+          "resolution": "720p",
+          "evidenceURLs": [
+            "https://video-arena.com/memebench/leaderboard",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy"
+          ],
+          "sourceObservation": {
+            "id": "memebench-i2v-silent-kling-v3-standard",
+            "name": "Kling 3.0 Standard (kling-v3-standard)",
+            "provider": "Kuaishou",
+            "rank": 8,
+            "score": 1327,
+            "confidenceLow": 1248,
+            "confidenceHigh": 1406,
+            "votes": 3833,
+            "price": 0.0882,
+            "priceUnit": "second",
+            "priceNote": "Source price: $0.0882 USD per output second, retained without conversion. Source model/configuration ID: kling-v3-standard. Source pricing basis: Unit: USD per output second; First-party public API, platform, or cloud list prices only; no Fal, WaveSpeed, or other third-party hosting prices except fal's own H3 Max; Resolution: 720p; Kling Pro endpoints use their actual 1080p tier, and MiniMax H3 and H3 Max use 768P; Audio: optional audio off; inseparable native audio remains included; Kling's official API price table states each point charge and its CNY equivalent; USD uses the fixed display rate; Fixed input fees are excluded; Grok image-to-video adds $0.01 per input image; Ray 3.2 is the official 5-second benchmark equivalent; its 10-second tier is non-linear; Prices checked: 2026-09-01. Temporary discounts, free quotas, off-peak rates, and subscriptions are excluded.",
+            "priceSourceUrl": "https://video-arena.com/memebench/leaderboard",
+            "modelUrl": null
+          }
+        },
+        {
+          "entryId": "memebench-i2v-silent-kling-v3-pro",
+          "label": "Pro (1080p)",
+          "level": "pro",
+          "order": 1,
+          "resolution": "1080p",
+          "evidenceURLs": [
+            "https://video-arena.com/memebench/leaderboard",
+            "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy"
+          ],
+          "sourceObservation": {
+            "id": "memebench-i2v-silent-kling-v3-pro",
+            "name": "Kling 3.0 Pro (kling-v3-pro)",
+            "provider": "Kuaishou",
+            "rank": 7,
+            "score": 1330,
+            "confidenceLow": 1251,
+            "confidenceHigh": 1409,
+            "votes": 6231,
+            "price": 0.1176,
+            "priceUnit": "second",
+            "priceNote": "Source price: $0.1176 USD per output second, retained without conversion. Source model/configuration ID: kling-v3-pro. Source pricing basis: Unit: USD per output second; First-party public API, platform, or cloud list prices only; no Fal, WaveSpeed, or other third-party hosting prices except fal's own H3 Max; Resolution: 720p; Kling Pro endpoints use their actual 1080p tier, and MiniMax H3 and H3 Max use 768P; Audio: optional audio off; inseparable native audio remains included; Kling's official API price table states each point charge and its CNY equivalent; USD uses the fixed display rate; Fixed input fees are excluded; Grok image-to-video adds $0.01 per input image; Ray 3.2 is the official 5-second benchmark equivalent; its 10-second tier is non-linear; Prices checked: 2026-09-01. Temporary discounts, free quotas, off-peak rates, and subscriptions are excluded.",
+            "priceSourceUrl": "https://video-arena.com/memebench/leaderboard",
+            "modelUrl": null
+          }
+        }
+      ],
+      "conditions": [
+        "Use the exact existing entry score, interval, price, and price note. All values belong to the stored observation date.",
+        "Mode is one public configuration control, with coupled resolution and quality behavior. This is not a pure resolution-only causal experiment.",
+        "Full generation requests, clip durations, seeds, and all hidden inference settings are not published by the benchmark.",
+        "Order follows native configuration tiers, not Elo. Do not interpolate scores, add a middle tier, or call Pro the maximum supported setting.",
+        "The two score intervals overlap. A connected segment does not establish a statistically significant improvement.",
+        "MemeBench evaluates silent playback of short Chinese meme image-and-motion-prompt clips. Its audience and sparse coverage limit generalization.",
+        "Source prices are USD/output-second, checked 2026-09-01. Standard uses 720p and Pro 1080p. Optional audio is off; source USD uses a fixed display conversion from official CNY point charges.",
+        "Fixed input fees, subscriptions, temporary discounts, free quota, and off-peak pricing are excluded. Do not replace this source quote with a current creator USD quote."
+      ]
+    }
+  ],
+  "qualifiedCandidates": [
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-hailuo-02-resolution",
+      "name": "Hailuo 02",
+      "dimension": "resolution",
+      "parameter": "resolution",
+      "status": "inferred-mapping",
+      "recommendedForDefault": false,
+      "points": [
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-hailuo-02-standard",
+          "label": "Standard (resolution unverified)",
+          "level": "standard",
+          "order": 0,
+          "resolution": null,
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://platform.minimax.io/docs/api-reference/video-generation-i2v",
+            "https://platform.minimax.io/docs/pricing/overview"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-hailuo-02-standard",
+            "name": "Hailuo 02 Standard",
+            "provider": "MiniMax",
+            "rank": 36,
+            "score": 1246,
+            "confidenceLow": 1235,
+            "confidenceHigh": 1257,
+            "votes": 4045,
+            "price": 0.04666666666666666,
+            "priceUnit": "second",
+            "priceNote": "Source price: $2.80 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 02 Standard.",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        },
+        {
+          "entryId": "aa-video-i2v-silent-v1-0-hailuo-02-pro",
+          "label": "Pro (resolution unverified)",
+          "level": "pro",
+          "order": 1,
+          "resolution": null,
+          "evidenceURLs": [
+            "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "https://platform.minimax.io/docs/api-reference/video-generation-i2v",
+            "https://platform.minimax.io/docs/pricing/overview"
+          ],
+          "sourceObservation": {
+            "id": "aa-video-i2v-silent-v1-0-hailuo-02-pro",
+            "name": "Hailuo 02 Pro",
+            "provider": "MiniMax",
+            "rank": 35,
+            "score": 1249,
+            "confidenceLow": 1238,
+            "confidenceHigh": 1260,
+            "votes": 3761,
+            "price": 0.08166666666666668,
+            "priceUnit": "second",
+            "priceNote": "Source price: $4.90 /min USD. Divided by 60 to obtain USD per second. Source configuration: API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Hailuo 02 Pro.",
+            "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+            "modelUrl": null
+          }
+        }
+      ],
+      "evidenceURLs": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://platform.minimax.io/docs/api-reference/video-generation-i2v",
+        "https://platform.minimax.io/docs/pricing/overview",
+        "https://replicate.com/minimax/hailuo-02/readme",
+        "https://fal.ai/models/fal-ai/minimax/hailuo-02/standard/image-to-video/api",
+        "https://fal.ai/models/fal-ai/minimax/hailuo-02/pro/image-to-video/api"
+      ],
+      "evidenceFiles": [
+        "research/evidence/videos-aa-i2v-silent-browser.json",
+        "research/evidence/quality-videos-aa-i2v-selected-live.json",
+        "research/evidence/quality-videos-aa-hailuo-tooltip-live.json",
+        "research/evidence/quality-videos-minimax-i2v-primary-live.json",
+        "research/evidence/quality-videos-minimax-hailuo-pricing-primary-live.json"
+      ],
+      "conditions": [
+        "MiniMax exposes MiniMax-Hailuo-02 with resolution and duration parameters. The 6-second request supports 512P, 768P, and 1080P.",
+        "Hosting documentation maps Standard to default 768P and Pro to 1080P, but Standard also supports 512P. These mappings do not disclose AA request parameters.",
+        "AA scores 1246/1249 and prices $2.80/$4.90 per minute match creator 768P/1080P 6-second equivalents. This is corroboration, not proof of evaluated resolution or duration.",
+        "AA tooltips say prompt enhancement was used. Preserve that source condition.",
+        "Keep as separate measured observations or a visibly qualified candidate. Do not describe the score difference as a controlled resolution-only effect."
+      ]
+    }
+  ],
+  "newObservations": [],
+  "observationUpdates": [
+    {
+      "kind": "existing-entry-price-change",
+      "reviewOnly": true,
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "entryId": "aa-video-i2v-silent-v1-0-kling-3-0-1080p-pro",
+      "observedAt": "2026-10-23T06:16:23.957Z",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+      "methodologyUrl": "https://artificialanalysis.ai/methodology/video",
+      "benchmark": "AA-Video-I2V-Silent v1.0",
+      "audioCondition": "silent evaluation",
+      "previousPrice": 0.224,
+      "entry": {
+        "id": "aa-video-i2v-silent-v1-0-kling-3-0-1080p-pro",
+        "name": "Kling 3.0 1080p (Pro)",
+        "provider": "KlingAI",
+        "rank": 17,
+        "score": 1277,
+        "confidenceLow": 1268,
+        "confidenceHigh": 1286,
+        "votes": 7240,
+        "price": 0.112,
+        "priceUnit": "second",
+        "priceNote": "Source price: $6.72 /min USD. Divided by 60 to obtain USD per second. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 1080p (Pro).",
+        "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "modelUrl": null
+      },
+      "rawRow": {
+        "cells": [
+          "17",
+          "15-24",
+          "Kling 3.0 1080p (Pro)",
+          "1277\n±9\n95% interval 1268 to 1286",
+          "7,240",
+          "Feb 2026",
+          "$6.72 /min"
+        ],
+        "logos": [
+          "KlingAI logo"
+        ]
+      },
+      "evidenceFile": "research/evidence/quality-videos-aa-i2v-selected-live.json",
+      "note": "No catalog mutation. Standard still has a conflicting source quote; do not refresh Pro alone or replace either price with a creator price without explicit provenance."
+    },
+    {
+      "kind": "existing-entry-price-change",
+      "reviewOnly": true,
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "entryId": "aa-video-i2v-silent-v1-0-kling-3-0-omni-1080p-pro",
+      "observedAt": "2026-10-23T06:16:23.957Z",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+      "methodologyUrl": "https://artificialanalysis.ai/methodology/video",
+      "benchmark": "AA-Video-I2V-Silent v1.0",
+      "audioCondition": "silent evaluation",
+      "previousPrice": 0.224,
+      "entry": {
+        "id": "aa-video-i2v-silent-v1-0-kling-3-0-omni-1080p-pro",
+        "name": "Kling 3.0 Omni 1080p (Pro)",
+        "provider": "KlingAI",
+        "rank": 16,
+        "score": 1280,
+        "confidenceLow": 1270,
+        "confidenceHigh": 1290,
+        "votes": 4051,
+        "price": 0.112,
+        "priceUnit": "second",
+        "priceNote": "Source price: $6.72 /min USD. Divided by 60 to obtain USD per second. 1 API Pricing reflects the cost to generate 1 minute of 1080p video on the model creator's API at the model's default settings. Exact source model/configuration label: Kling 3.0 Omni 1080p (Pro).",
+        "priceSourceUrl": "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "modelUrl": null
+      },
+      "rawRow": {
+        "cells": [
+          "16",
+          "13-22",
+          "Kling 3.0 Omni 1080p (Pro)",
+          "1280\n±10\n95% interval 1270 to 1290",
+          "4,051",
+          "Feb 2026",
+          "$6.72 /min"
+        ],
+        "logos": [
+          "KlingAI logo"
+        ]
+      },
+      "evidenceFile": "research/evidence/quality-videos-aa-i2v-selected-live.json",
+      "note": "No catalog mutation. Standard still has a conflicting source quote; do not refresh Pro alone or replace either price with a creator price without explicit provenance."
+    }
+  ],
+  "priceOnlyEvidence": [
+    {
+      "id": "kling-3-0-silent-list",
+      "model": "Kling 3.0",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator public Cash list, per output second; silent generation.",
+        "No reference-video input. Keep model identities separate. No measured 4K point was found."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "720p",
+          "order": 0,
+          "price": 0.084
+        },
+        {
+          "label": "1080p",
+          "order": 1,
+          "price": 0.112
+        },
+        {
+          "label": "4K",
+          "order": 2,
+          "price": 0.42
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ]
+    },
+    {
+      "id": "kling-3-0-native-audio-list",
+      "model": "Kling 3.0",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator public Cash list, per output second; native audio on.",
+        "No reference-video input or voice reference. Separate from silent generation and evaluation pools."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "720p",
+          "order": 0,
+          "price": 0.126
+        },
+        {
+          "label": "1080p",
+          "order": 1,
+          "price": 0.168
+        },
+        {
+          "label": "4K",
+          "order": 2,
+          "price": 0.42
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ]
+    },
+    {
+      "id": "kling-3-0-omni-silent-list",
+      "model": "Kling 3.0 Omni",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator public Cash list, per output second; silent generation.",
+        "No reference-video input. Keep model identities separate. No measured 4K point was found."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "720p",
+          "order": 0,
+          "price": 0.084
+        },
+        {
+          "label": "1080p",
+          "order": 1,
+          "price": 0.112
+        },
+        {
+          "label": "4K",
+          "order": 2,
+          "price": 0.42
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ]
+    },
+    {
+      "id": "kling-3-0-omni-native-audio-list",
+      "model": "Kling 3.0 Omni",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator public Cash list, per output second; native audio on.",
+        "No reference-video input or voice reference. Separate from silent generation and evaluation pools."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "720p",
+          "order": 0,
+          "price": 0.112
+        },
+        {
+          "label": "1080p",
+          "order": 1,
+          "price": 0.14
+        },
+        {
+          "label": "4K",
+          "order": 2,
+          "price": 0.42
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ]
+    },
+    {
+      "id": "kling-2-6-silent-list",
+      "model": "Kling 2.6",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator public Cash list, per output second; no native audio."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "720p",
+          "order": 0,
+          "price": 0.042
+        },
+        {
+          "label": "1080p",
+          "order": 1,
+          "price": 0.07
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-kling-pricing-cash-live.json"
+      ]
+    },
+    {
+      "id": "hailuo-02-6s-list",
+      "model": "MiniMax-Hailuo-02",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator legacy-model public list; fixed 6-second clips for every resolution.",
+        "Per-second values are arithmetic equivalents of per-clip prices. No measured 512P quality point was found."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "512P",
+          "order": 0,
+          "durationSeconds": 6,
+          "pricePerClip": 0.1,
+          "price": 0.016666666666666666
+        },
+        {
+          "label": "768P",
+          "order": 1,
+          "durationSeconds": 6,
+          "pricePerClip": 0.28,
+          "price": 0.04666666666666667
+        },
+        {
+          "label": "1080P",
+          "order": 2,
+          "durationSeconds": 6,
+          "pricePerClip": 0.49,
+          "price": 0.08166666666666667
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-minimax-hailuo-pricing-primary-live.json"
+      ]
+    },
+    {
+      "id": "hailuo-02-10s-list",
+      "model": "MiniMax-Hailuo-02",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator legacy-model public list; fixed 10-second clips. 1080P is not supported at this duration.",
+        "The 768P 10-second rate is $0.056/s, not the 6-second rate of $0.0466667/s. Do not scale a 6-second quote to all durations."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "512P",
+          "order": 0,
+          "durationSeconds": 10,
+          "pricePerClip": 0.15,
+          "price": 0.015
+        },
+        {
+          "label": "768P",
+          "order": 1,
+          "durationSeconds": 10,
+          "pricePerClip": 0.56,
+          "price": 0.05600000000000001
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-minimax-hailuo-pricing-primary-live.json"
+      ]
+    },
+    {
+      "id": "minimax-h3-output-list",
+      "model": "MiniMax-H3",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator direct output prices, excluding separately billed input media.",
+        "First five images are free; further images cost $0.04 each. Video inputs add $0.08/s at 768P or $0.13/s at 2K.",
+        "AA explicit 768p rows do not supply a measured 2K counterpart. Never copy their score to 2K or combine H3 and H3 Max."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "768P",
+          "order": 0,
+          "price": 0.08
+        },
+        {
+          "label": "2K",
+          "order": 1,
+          "price": 0.13
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-minimax-pricing-primary-live.json"
+      ]
+    },
+    {
+      "id": "minimax-h3-max-output-list",
+      "model": "MiniMax-H3-Max",
+      "dimension": "resolution",
+      "conditions": [
+        "Creator direct output prices, excluding separately billed input media.",
+        "First two images are free; further images cost $0.074 each. Video inputs add $0.0553/s at 480P or $0.143/s at 768P.",
+        "This creator route is not the saved Fal-hosted H3 Max observation. No measured 480P counterpart is identified."
+      ],
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "sourceUpdatedAt": null,
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "currency": "USD",
+      "priceUnit": "second",
+      "score": null,
+      "qualityMatch": "unavailable",
+      "useInMeasuredSeries": false,
+      "points": [
+        {
+          "label": "480P",
+          "order": 0,
+          "price": 0.05
+        },
+        {
+          "label": "768P",
+          "order": 1,
+          "price": 0.08
+        }
+      ],
+      "evidenceFiles": [
+        "research/evidence/quality-videos-minimax-pricing-primary-live.json"
+      ]
+    }
+  ],
+  "unusableCandidates": [
+    {
+      "family": "Kling 2.1 Master",
+      "reason": "A distinct model identifier, kling-v2-1-master, not a third mode of kling-v2-1. AA also has no price for this observation.",
+      "evidenceURLs": [
+        "https://kling.ai/release-note/release-notes/2025052696",
+        "https://kling.ai/document-api/apiReference/updateNotice?date=2026-02-11"
+      ]
+    },
+    {
+      "family": "Kling 2.6 December versus January",
+      "reason": "Different dated revisions. Pair January Standard only with January Pro; do not add December Pro as a level.",
+      "evidenceURLs": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all"
+      ]
+    },
+    {
+      "family": "Veo base / Fast / Lite; Hailuo Fast; LTX Fast / Pro; Vidu Turbo / Pro; H3 / H3 Max; FLUX 3 / FLUX 3 Max",
+      "reason": "Separate models, engines, or insufficient same-model setting evidence. Names and speed/price tiers do not establish a reasoning-effort parameter.",
+      "evidenceURLs": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://platform.minimax.io/docs/api-reference/video-generation-i2v",
+        "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/veo/3-1-generate"
+      ]
+    },
+    {
+      "family": "Arena Veo 3.1 audio unsuffixed versus audio-1080p, including Fast within its own engine",
+      "boardIds": [
+        "arena-text-to-video",
+        "arena-image-to-video"
+      ],
+      "reason": "The dataset and Arena changelog do not establish the unsuffixed resolution or disclose the sole differing parameter. Google defaults cannot establish Arena configuration. Arena also has no prices.",
+      "evidenceURLs": [
+        "https://arena.ai/company/leaderboard-changelog",
+        "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/blob/main/README.md#schema"
+      ]
+    },
+    {
+      "family": "Arena Hailuo 02 Standard / Pro",
+      "boardIds": [
+        "arena-text-to-video",
+        "arena-image-to-video"
+      ],
+      "reason": "Provider mapping is corroborated but exact Arena resolution/duration are undisclosed. All existing prices are null; no cost-quality series without inventing a cross-source join.",
+      "evidenceURLs": [
+        "https://platform.minimax.io/docs/api-reference/video-generation-i2v",
+        "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/blob/main/README.md#schema"
+      ]
+    },
+    {
+      "family": "Design Arena and World Model Arena",
+      "reason": "No exact same-video-model configuration pair with disclosed matching settings and costs is present in the existing evidence. World Model Arena evaluates specialized first-person tasks with no prices.",
+      "evidenceURLs": [
+        "https://www.designarena.ai/leaderboard",
+        "https://www.warena.ai/about"
+      ]
+    },
+    {
+      "family": "4K, 512P, or other price-only tiers",
+      "reason": "Provider support and price do not supply a source-specific quality score. No new same-pool quality observation was found.",
+      "evidenceURLs": [
+        "https://kling.ai/document-api/pricing/base/video",
+        "https://platform.minimax.io/docs/pricing/overview"
+      ]
+    }
+  ]
+}

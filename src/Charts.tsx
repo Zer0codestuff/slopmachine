@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { frontier, identity, money, number, shortName } from './data';
+import { configurationFor, modelGroups, settingSymbol } from './configurations';
 import type { Leaderboard, Model } from './types';
 
 function useSize() {
@@ -20,10 +21,11 @@ interface Props {
   pareto: boolean;
   labels: boolean;
   confidence: boolean;
+  connected: boolean;
   onInspect: (model: Model) => void;
 }
 
-export function ScatterChart({ models, board, log, pareto, labels, confidence, onInspect }: Props) {
+export function ScatterChart({ models, board, log, pareto, labels, confidence, connected, onInspect }: Props) {
   const { ref, width, height } = useSize();
   const [hovered, setHovered] = useState<string | null>(null);
   const data = models.filter(m => m.price !== null && (log ? m.price > 0 : m.price >= 0));
@@ -50,7 +52,11 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, o
   let xticks = log ? [0.0001, 0.0002, 0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000].filter(v => v >= xmin && v <= xmax) : Array.from({ length: 6 }, (_, i) => xmax * i / 5);
   const maxTicks = compact ? 3 : 9;
   if (xticks.length > maxTicks) xticks = Array.from({ length: maxTicks }, (_, index) => xticks[Math.round(index * (xticks.length - 1) / (maxTicks - 1))]);
-  const labelData = [...data].sort((a, b) => b.score - a.score).slice(0, Math.max(1, Math.floor((bottom - top) / 23)));
+  const groups = modelGroups(data, board.series);
+  const labelGroups = connected ? groups : modelGroups(data);
+  const labelNames = new Map(labelGroups.map(group => { const endpoint = group.models.at(-1)!; return [endpoint.id, group.series && group.models.length > 1 ? group.name : group.name === endpoint.name ? endpoint.name : `${group.name} · ${configurationFor(board, endpoint.id)!.point.label}`]; }));
+  const labelData = [...labelGroups].sort((a, b) => Number(Boolean(b.series && b.models.length > 1)) - Number(Boolean(a.series && a.models.length > 1)) || b.models.at(-1)!.score - a.models.at(-1)!.score)
+    .slice(0, Math.max(1, Math.floor((bottom - top) / 23))).map(group => group.models.at(-1)!).sort((a, b) => b.score - a.score);
   const labelY = new Map<string, number>();
   let previousY = top - 24;
   labelData.forEach(m => { const pos = Math.max(y(m.score), previousY + 23); labelY.set(m.id, pos); previousY = pos; });
@@ -58,7 +64,8 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, o
   [...labelData].reverse().forEach(m => { const pos = Math.min(labelY.get(m.id)!, nextY - 23); labelY.set(m.id, pos); nextY = pos; });
   const frontierModels = frontier(data);
   const current = data.find(m => m.id === hovered);
-  const active = (m: Model) => !hovered || hovered === m.id;
+  const hoveredSeries = hovered ? configurationFor(board, hovered)?.series.id : null;
+  const active = (m: Model) => !hovered || hovered === m.id || Boolean(hoveredSeries && configurationFor(board, m.id)?.series.id === hoveredSeries);
 
   return <div className="scatter-container" ref={ref}>
     {data.length ? <svg className="chart-svg" data-export-chart="true" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${board.scoreType} versus cost in USD per ${board.priceUnit}`}>
@@ -68,8 +75,10 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, o
       {xticks.map(t => <g key={t}><line className="axis-line" x1={x(t)} x2={x(t)} y1={bottom} y2={bottom + 5} /><text className="axis-tick" x={x(t)} y={bottom + 24} textAnchor="middle">{money(t)}</text></g>)}
       <text className="axis-title" x={(left + plotRight) / 2} y={height - 9} textAnchor="middle">Cost per {board.priceUnit} (USD{log ? ', log scale' : ''})</text>
       {pareto && <polyline data-testid="pareto-line" points={frontierModels.map(m => `${x(m.price!)},${y(m.score)}`).join(' ')} fill="none" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="4 5" opacity={0.7} />}
+      {connected && groups.filter(group => group.series && group.models.length >= 2).map(group => <polyline key={group.id} data-configuration-series={group.id} aria-label={`${group.name}: measured ${group.series!.dimension} configurations`} points={group.models.map(model => `${x(model.price!)},${y(model.score)}`).join(' ')} fill="none" stroke={identity(group.models[0].provider)[0]} strokeWidth={hoveredSeries === group.id ? 2.5 : 1.8} opacity={!hovered || hoveredSeries === group.id ? 0.8 : 0.15} />)}
       {data.map(m => {
         const [color] = identity(m.provider);
+        const configuration = configurationFor(board, m.id);
         const px = x(m.price!); const py = y(m.score);
         return <g key={m.id} opacity={active(m) ? 1 : 0.2} className="chart-series">
           {confidence && m.confidenceLow !== null && m.confidenceHigh !== null && <g stroke={color} opacity={0.4}><line x1={px} x2={px} y1={y(m.confidenceLow)} y2={y(m.confidenceHigh)} /><line x1={px - 3} x2={px + 3} y1={y(m.confidenceLow)} y2={y(m.confidenceLow)} /><line x1={px - 3} x2={px + 3} y1={y(m.confidenceHigh)} y2={y(m.confidenceHigh)} /></g>}
@@ -77,11 +86,12 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, o
           <g role="button" tabIndex={0} aria-label={`${m.name}, ${board.scoreType} ${m.score}, ${money(m.price!)} per ${board.priceUnit}`} onMouseEnter={() => setHovered(m.id)} onMouseLeave={() => setHovered(null)} onFocus={() => setHovered(m.id)} onBlur={() => setHovered(null)} onClick={() => onInspect(m)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onInspect(m); } }} className="chart-point">
             <circle cx={px} cy={py} r={13} fill="transparent" />
             <circle cx={px} cy={py} r={hovered === m.id ? 6 : 4.5} fill={color} stroke="var(--bg)" strokeWidth={1.5} />
+            {connected && configuration && (!compact || hovered === m.id) && <text className="setting-point-label" x={px + 7} y={py - 8} fill={color} aria-hidden="true">{settingSymbol(configuration.point.label)}</text>}
             {hovered === m.id && <circle cx={px} cy={py} r={10} fill="none" stroke={color} strokeWidth={1} opacity={0.5} />}
           </g>
           {labels && labelY.has(m.id) && <g className={`series-label ${compact ? 'compact-label' : ''}`} role="button" tabIndex={0} aria-label={`Inspect ${m.name}`} onMouseEnter={() => setHovered(m.id)} onMouseLeave={() => setHovered(null)} onClick={() => onInspect(m)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onInspect(m); } }}>
             <text className="provider-mark" fill={color} x={plotRight + (compact ? 13 : 26)} y={labelY.get(m.id)! + 4}>{identity(m.provider)[1]}</text>
-            <text className="model-label" fill={color} x={plotRight + (compact ? 29 : 49)} y={labelY.get(m.id)! + 4}>{(() => { const name = shortName(m.name).replace(/^GPT Image /, compact ? 'GPT Img ' : 'GPT Image '); const max = compact ? 18 : width < 950 ? 22 : 27; return name.length > max ? `${name.slice(0, max - 1)}…` : name; })()}</text>
+            <text className="model-label" fill={color} x={plotRight + (compact ? 29 : 49)} y={labelY.get(m.id)! + 4}>{(() => { const name = shortName(labelNames.get(m.id) ?? m.name).replace(/^GPT Image /, compact ? 'GPT Img ' : 'GPT Image '); const max = compact ? 18 : width < 950 ? 22 : 27; return name.length > max ? `${name.slice(0, max - 1)}…` : name; })()}</text>
           </g>}
         </g>;
       })}
@@ -91,6 +101,13 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, o
 }
 
 interface BarProps { models: Model[]; board: Leaderboard; cost: boolean; confidence: boolean; quantity: number; onInspect: (m: Model) => void }
+function barLabel(model: Model, board: Leaderboard, limit: number) {
+  const configuration = configurationFor(board, model.id);
+  const name = shortName(configuration?.series.name ?? model.name);
+  const suffix = configuration ? ` · ${configuration.point.label}` : '';
+  const available = Math.max(4, limit - suffix.length);
+  return `${name.length > available ? `${name.slice(0, available - 1)}…` : name}${suffix}`;
+}
 export function BarChart({ models, board, cost, confidence, quantity, onInspect }: BarProps) {
   const { ref, width, height } = useSize();
   const data = [...models].filter(m => !cost || m.price !== null).sort((a, b) => cost ? a.price! - b.price! : b.score - a.score);
@@ -109,7 +126,7 @@ export function BarChart({ models, board, cost, confidence, quantity, onInspect 
         <rect className="bar-hover" x={0} y={cy - 16} width={width} height={row - 2} rx={3} fill="transparent" />
         <text className="rank-number" x={compact ? 0 : 8} y={cy + 4}>{cost ? i + 1 : m.rank}</text>
         {!compact && <text className="provider-mark" x={32} y={cy + 4} fill={color}>{mark}</text>}
-        <text className="bar-label" x={compact ? 23 : 58} y={cy + 4}>{shortName(m.name).slice(0, compact ? 20 : 29)}</text>
+        <text className="bar-label" x={compact ? 23 : 58} y={cy + 4}>{barLabel(m, board, compact ? 20 : 29)}</text>
         <rect x={left} y={cy - 5} width={Math.max(2, x(value) - left)} height={10} rx={1} fill={color} opacity={0.72} />
         {!cost && confidence && m.confidenceLow !== null && m.confidenceHigh !== null && <g stroke={color} strokeWidth={1.5}><line x1={x(m.confidenceLow)} x2={x(m.confidenceHigh)} y1={cy} y2={cy} /><line x1={x(m.confidenceLow)} x2={x(m.confidenceLow)} y1={cy - 6} y2={cy + 6} /><line x1={x(m.confidenceHigh)} x2={x(m.confidenceHigh)} y1={cy - 6} y2={cy + 6} /></g>}
         <text className="bar-value" x={right + 12} y={cy + 4} fill={color}>{cost ? money(value) : number(value)}</text>

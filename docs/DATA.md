@@ -111,3 +111,26 @@ Existing `data:build` and `data:validate` scripts can keep their current command
 ```
 
 No runtime dependency is added. Arena refresh has no extra dependency. AA refresh optionally uses `playwright@1.64.1` and its Chromium download. If the project chooses to keep it installed, add it to `devDependencies`; otherwise use the no-save setup above. The standard application build does not import Playwright.
+
+## Configuration comparisons
+
+`research/configurations.json` declares board-local configuration membership. The builder loads it after observation overlays, or accepts `--configurations FILE`. Each series has a stable ID, family name, dimension (`quality`, `resolution`, or `mode`), source URLs, a qualification note, and explicit ordered model IDs. Single-point series identify a documented setting; a chart needs at least two visible priced points to draw a curve.
+
+```sh
+node scripts/build-catalog.mjs --configurations research/configurations.json --check
+node scripts/build-catalog.mjs --configurations research/configurations.json --output /tmp/slop-config-candidate.json
+node scripts/validate-data.mjs /tmp/slop-config-candidate.json
+```
+
+Validation rejects cross-board references, duplicate membership, duplicate orders, and unknown fields. It never infers family membership from model names. An overlay that removes a referenced model fails validation rather than silently dropping its setting. Curves retain setting order even when a more expensive setting has a lower measured score. Quality filters use the documented source labels; video resolution and Standard/Pro modes are not relabeled low/medium reasoning.
+
+`research/configuration-prices.json` is a separate provider-quote input, bundled with the interface. Each family records its source URL, observation time, denominator, generation configuration, and price qualifications. Default `npm run data:validate` also validates these provider quotes. The separate cost chart has no Elo axis, and its CSV explicitly marks benchmark scores unavailable. Official output-image estimates can exclude input tokens; video quotes can depend on duration, resolution, audio, mode, or credit bundle. They do not replace the benchmark's own matched pricing.
+
+### October 23 integration decisions
+
+- Included all 51 ranked, rendered Design Arena editing rows in their own pool. Registry image quotes are matched by exact source model ID. No confidence intervals are derived from standard errors or percentage margins.
+- Retained only the three already ranked Design Arena generation P-Image settings. The two response-only Low/Medium points have no source ranks and remain research evidence. AA supplies all five measured settings independently.
+- Recollected all 82 rows of AA I2V Silent v1.0 through the public browser page. Scores, intervals, counts and ranks were unchanged. Both Kling 3.0 Pro quotes changed from $0.224/s to $0.112/s; Veo 3.1 Lite lost its reported API price. The source's Standard quote remains $0.168/s and differs from creator pricing. Both source conditions stay visible.
+- Current video pages have no category selector. Acquisition accepts that absence for video only, while rejecting a present non-Overall category, incorrect audio filters, unknown headers, and a changed benchmark.
+- Excluded conditional Grok Auto/Medium and Hailuo mode connections, historical Arena Low scores, and unmeasured provider settings from measured curves. Provider-only quotes remain available without scores.
+- Imported 91 numeric image configuration quotes and 24 video quotes. Auto or unsupported settings without a fixed price remain in research notes, outside numeric cost charts.

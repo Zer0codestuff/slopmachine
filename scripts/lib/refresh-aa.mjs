@@ -43,7 +43,9 @@ export function normalizeAABoard(capture, template) {
   const image = template.media === 'image';
   const checked = capture.filters?.checked;
   const audio = new URL(template.sourceUrl).searchParams.get('audio-output') === 'false' ? 'No Audio' : 'With Audio';
-  if (capture.filters?.category !== 'Category: Overall' || !checked?.includes('All')
+  // Video pages have no category selector. A present selector must still be Overall.
+  const overall = capture.filters?.category === 'Category: Overall' || (!image && capture.filters?.category === undefined);
+  if (!overall || !checked?.includes('All')
     || (image ? !checked.includes('Available models') : !checked.includes(audio))) {
     throw new Error(`${template.id}: category, model availability, or audio filter changed`);
   }

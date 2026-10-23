@@ -1,0 +1,523 @@
+{
+  "series": [
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-p-image-ideogram-quality",
+      "name": "P-Image-Ideogram",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
+        "https://developer.ideogram.ai/api-reference/images/generate/p-image-ideogram",
+        "https://artificialanalysis.ai/methodology/image"
+      ],
+      "note": "Five source-labeled quality settings of P-Image-Ideogram. Very High has a slightly lower measured score than High; scores are preserved in setting order. AA lists representative 1024-square API prices, while its methodology evaluates the highest supported resolution. These quotes do not establish actual evaluation-run spend.",
+      "points": [
+        {
+          "modelId": "p-image-ideogram-very-low-053f7732b9",
+          "label": "Very low",
+          "order": 1
+        },
+        {
+          "modelId": "p-image-ideogram-low-e39d9b836d",
+          "label": "Low",
+          "order": 2
+        },
+        {
+          "modelId": "p-image-ideogram-medium-28a4d65b56",
+          "label": "Medium",
+          "order": 3
+        },
+        {
+          "modelId": "p-image-ideogram-high-d0240a7ab0",
+          "label": "High",
+          "order": 4
+        },
+        {
+          "modelId": "p-image-ideogram-very-high-303fff4c23",
+          "label": "Very high",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-ideogram-4-rendering",
+      "name": "Ideogram 4.0",
+      "dimension": "mode",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developer.ideogram.ai/api-reference/images/generate/ideogram-4",
+        "https://ideogram.ai/models/4.0/",
+        "https://artificialanalysis.ai/methodology/image"
+      ],
+      "note": "Default and Quality are rendering-speed settings of native Ideogram 4.0. The unlabeled AA row is interpreted as Default under its default-settings policy; exact evaluated requests are unpublished. Turbo has a provider quote but no measured counterpart here.",
+      "points": [
+        {
+          "modelId": "ideogram-4-0-4237233ef4",
+          "label": "Default",
+          "order": 2
+        },
+        {
+          "modelId": "ideogram-4-0-quality-1913d2d98f",
+          "label": "Quality",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-ideogram-4-fast-rendering",
+      "name": "Ideogram 4.0 Fast",
+      "dimension": "mode",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://fal.ai/models/ideogram/v4/fast/api",
+        "https://huggingface.co/fal/ideogram-v4-fast",
+        "https://artificialanalysis.ai/methodology/image"
+      ],
+      "note": "Balanced (default) and Quality are rendering presets within the separate Ideogram 4.0 Fast model. The unlabeled row follows the documented default-settings policy. Representative 1K API prices do not establish the cost of the highest-resolution benchmark requests.",
+      "points": [
+        {
+          "modelId": "ideogram-4-0-fast-6927a964c5",
+          "label": "Balanced (default)",
+          "order": 2
+        },
+        {
+          "modelId": "ideogram-4-0-fast-quality-1908bfeb2a",
+          "label": "Quality",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "boardId": "design-arena-image-generation",
+      "id": "design-arena-image-generation-p-image-ideogram-quality",
+      "name": "P-Image-Ideogram",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://www.designarena.ai/leaderboard?tab=image",
+        "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
+        "https://developer.ideogram.ai/api-reference/images/generate/p-image-ideogram"
+      ],
+      "note": "Three ranked settings from the October 22 source snapshot. Low and Medium appear in the newer public response without published ranks and are excluded from this chart. Evaluation resolution, checkpoint and exact request settings are unpublished. Source price quotes are not certified evaluation-run costs.",
+      "points": [
+        {
+          "modelId": "p-image-ideogram-very-low-a3acff7e1c",
+          "label": "Very low",
+          "order": 1
+        },
+        {
+          "modelId": "p-image-ideogram-high-715300a7de",
+          "label": "High",
+          "order": 4
+        },
+        {
+          "modelId": "p-image-ideogram-very-high-4d7531e2b8",
+          "label": "Very high",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "boardId": "design-arena-image-editing",
+      "id": "design-arena-image-editing-ideogram-4-5-quality",
+      "name": "Ideogram 4.5",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://www.designarena.ai/leaderboard/image-to-image",
+        "https://ideogram.ai/models/4.5/",
+        "https://developer.ideogram.ai/api-reference/images/generate/ideogram-4-5"
+      ],
+      "note": "Very Low and High are documented quality modes of Ideogram 4.5, measured separately in this editing pool. Low and Medium have provider prices but no measured score here. The arena does not publish evaluation resolution or endpoint. Source price quotes may use different generation conditions.",
+      "points": [
+        {
+          "modelId": "design-edit-ladybug-0b2319dc",
+          "label": "Very low",
+          "order": 1
+        },
+        {
+          "modelId": "design-edit-dragonfly-e2ca6aec",
+          "label": "High",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-2-1-mode",
+      "name": "Kling 2.1",
+      "dimension": "mode",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/release-note/release-notes/2025052696",
+        "https://kling.ai/document-api/apiReference/updateNotice?date=2026-02-11"
+      ],
+      "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs.",
+      "points": [
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-2-1-standard",
+          "label": "Standard (720p)",
+          "order": 1
+        },
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-2-1-pro",
+          "label": "Pro (1080p)",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-2-6-january-mode",
+      "name": "Kling 2.6 (January)",
+      "dimension": "mode",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+        "https://kling.ai/document-api/pricing/base/video"
+      ],
+      "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs.",
+      "points": [
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-2-6-standard-january",
+          "label": "Standard (720p)",
+          "order": 1
+        },
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-2-6-pro-january",
+          "label": "Pro (1080p)",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-3-0-mode",
+      "name": "Kling 3.0",
+      "dimension": "mode",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy",
+        "https://kling.ai/document-api/pricing/base/video"
+      ],
+      "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs. The full October 23 AA capture reports Pro at $0.112/s and Standard at $0.168/s. Creator silent list prices differ: 720p $0.084/s, 1080p $0.112/s. Preserve these AA quotes without substituting creator prices.",
+      "points": [
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-720p-standard",
+          "label": "Standard (720p)",
+          "order": 1
+        },
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-1080p-pro",
+          "label": "Pro (1080p)",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "boardId": "aa-video-i2v-silent-v1-0",
+      "id": "aa-video-i2v-silent-v1-0-kling-3-0-omni-mode",
+      "name": "Kling 3.0 Omni",
+      "dimension": "mode",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false&models=all",
+        "https://artificialanalysis.ai/methodology/video",
+        "https://kling.ai/document-api/api/video/3-0-omni/video-omni/legacy",
+        "https://kling.ai/document-api/pricing/base/video"
+      ],
+      "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs. The full October 23 AA capture reports Pro at $0.112/s and Standard at $0.168/s. Creator silent list prices differ: 720p $0.084/s, 1080p $0.112/s. Preserve these AA quotes without substituting creator prices.",
+      "points": [
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-omni-720p-standard",
+          "label": "Standard (720p)",
+          "order": 1
+        },
+        {
+          "modelId": "aa-video-i2v-silent-v1-0-kling-3-0-omni-1080p-pro",
+          "label": "Pro (1080p)",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "boardId": "memebench-i2v-silent",
+      "id": "memebench-i2v-silent-kling-3-0-mode",
+      "name": "Kling 3.0",
+      "dimension": "mode",
+      "sourceUrls": [
+        "https://video-arena.com/memebench/leaderboard",
+        "https://video-arena.com/blog/memebench",
+        "https://kling.ai/document-api/api/video/3-0-omni/image-to-video/legacy"
+      ],
+      "note": "Standard and Pro are native modes with coupled resolution and inference settings. Full evaluation requests are unpublished. Paired confidence intervals overlap. Source prices are representative API quotes, not verified evaluation-run costs.",
+      "points": [
+        {
+          "modelId": "memebench-i2v-silent-kling-v3-standard",
+          "label": "Standard (720p)",
+          "order": 1
+        },
+        {
+          "modelId": "memebench-i2v-silent-kling-v3-pro",
+          "label": "Pro (1080p)",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-2-5-sunburst-quality",
+      "name": "GPT Image 2.5 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-5-sunburst-max-882f01c259",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-2-5-flare-quality",
+      "name": "GPT Image 2.5 Flare",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-5-flare-max-582ae6023b",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-2-quality",
+      "name": "GPT Image 2",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-high-8261247915",
+          "label": "High",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-1-5-quality",
+      "name": "GPT Image 1.5",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-1-5-high-d20abff009",
+          "label": "High",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-1-quality",
+      "name": "GPT Image 1",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-1-high-354f18eb60",
+          "label": "High",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-1-mini-quality",
+      "name": "GPT Image 1 Mini",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-1-mini-medium-25c5875847",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-2-5-sunburst-quality",
+      "name": "GPT Image 2.5 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-5-sunburst-max-882f01c259",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-2-5-flare-quality",
+      "name": "GPT Image 2.5 Flare",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-5-flare-max-582ae6023b",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-2-quality",
+      "name": "GPT Image 2",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-high-8261247915",
+          "label": "High",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-1-5-quality",
+      "name": "GPT Image 1.5",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-1-5-high-d20abff009",
+          "label": "High",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-1-quality",
+      "name": "GPT Image 1",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-1-high-354f18eb60",
+          "label": "High",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-1-mini-quality",
+      "name": "GPT Image 1 Mini",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-1-mini-medium-25c5875847",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "arena-image-text-to-image",
+      "id": "arena-image-text-to-image-gpt-image-2-quality",
+      "name": "GPT Image 2",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://arena.ai/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-medium-4c6f379b18",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "arena-image-editing",
+      "id": "arena-image-editing-gpt-image-2-quality",
+      "name": "GPT Image 2",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://arena.ai/leaderboard/image-edit",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-medium-2b4ed04fce",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

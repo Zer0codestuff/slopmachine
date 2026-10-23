@@ -1,0 +1,940 @@
+{
+  "families": [
+    {
+      "id": "gpt-image-2-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 2",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:22:20.480Z",
+      "note": "Official interactive calculator image-output estimate at Standard processing. Input text, reference images, mainline-model usage and partial images are additional. Actual output token use can vary. Auto has no fixed quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00588
+        },
+        {
+          "label": "Medium",
+          "price": 0.05268
+        },
+        {
+          "label": "High",
+          "price": 0.21072
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-standard-1536x1024",
+      "media": "image",
+      "name": "GPT Image 2",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1536x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:22:20.480Z",
+      "note": "Official interactive calculator image-output estimate at Standard processing. Input text, reference images, mainline-model usage and partial images are additional. Actual output token use can vary. Auto has no fixed quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00474
+        },
+        {
+          "label": "Medium",
+          "price": 0.04116
+        },
+        {
+          "label": "High",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-standard-1024x1536",
+      "media": "image",
+      "name": "GPT Image 2",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1536",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:22:20.480Z",
+      "note": "Official interactive calculator image-output estimate at Standard processing. Input text, reference images, mainline-model usage and partial images are additional. Actual output token use can vary. Auto has no fixed quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00474
+        },
+        {
+          "label": "Medium",
+          "price": 0.04116
+        },
+        {
+          "label": "High",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-standard-2048x2048",
+      "media": "image",
+      "name": "GPT Image 2",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 2048x2048",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:22:20.480Z",
+      "note": "Official interactive calculator image-output estimate at Standard processing. Input text, reference images, mainline-model usage and partial images are additional. Actual output token use can vary. Auto has no fixed quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.01191
+        },
+        {
+          "label": "Medium",
+          "price": 0.10704
+        },
+        {
+          "label": "High",
+          "price": 0.42816
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-sunburst-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 2.5 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00588
+        },
+        {
+          "label": "Medium",
+          "price": 0.01317
+        },
+        {
+          "label": "High",
+          "price": 0.05268
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.09366
+        },
+        {
+          "label": "Max",
+          "price": 0.21072
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-sunburst-standard-1536x1024",
+      "media": "image",
+      "name": "GPT Image 2.5 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1536x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00474
+        },
+        {
+          "label": "Medium",
+          "price": 0.01029
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-sunburst-standard-1024x1536",
+      "media": "image",
+      "name": "GPT Image 2.5 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1536",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00474
+        },
+        {
+          "label": "Medium",
+          "price": 0.01029
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-sunburst-standard-2048x2048",
+      "media": "image",
+      "name": "GPT Image 2.5 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 2048x2048",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.01191
+        },
+        {
+          "label": "Medium",
+          "price": 0.02676
+        },
+        {
+          "label": "High",
+          "price": 0.10704
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.19029
+        },
+        {
+          "label": "Max",
+          "price": 0.42816
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-flare-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 2.5 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00588
+        },
+        {
+          "label": "Medium",
+          "price": 0.01317
+        },
+        {
+          "label": "High",
+          "price": 0.05268
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.09366
+        },
+        {
+          "label": "Max",
+          "price": 0.21072
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-flare-standard-1536x1024",
+      "media": "image",
+      "name": "GPT Image 2.5 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1536x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00474
+        },
+        {
+          "label": "Medium",
+          "price": 0.01029
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-flare-standard-1024x1536",
+      "media": "image",
+      "name": "GPT Image 2.5 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1536",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.00474
+        },
+        {
+          "label": "Medium",
+          "price": 0.01029
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-5-flare-standard-2048x2048",
+      "media": "image",
+      "name": "GPT Image 2.5 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 2048x2048",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-10-23T06:21:35.398Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.01191
+        },
+        {
+          "label": "Medium",
+          "price": 0.02676
+        },
+        {
+          "label": "High",
+          "price": 0.10704
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.19029
+        },
+        {
+          "label": "Max",
+          "price": 0.42816
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-1-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 1",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/models/gpt-image-1",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Published image-output cost at Standard processing. Prompt and reference-image inputs, and Responses mainline model, are billed separately.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.011
+        },
+        {
+          "label": "Medium",
+          "price": 0.042
+        },
+        {
+          "label": "High",
+          "price": 0.167
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-1-5-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 1.5",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/models/gpt-image-1.5",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Published image-output cost at Standard processing. Prompt and reference-image inputs, and Responses mainline model, are billed separately.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.009
+        },
+        {
+          "label": "Medium",
+          "price": 0.034
+        },
+        {
+          "label": "High",
+          "price": 0.133
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-1-mini-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 1 Mini",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/models/gpt-image-1-mini",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Published image-output cost at Standard processing. Prompt and reference-image inputs, and Responses mainline model, are billed separately.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.005
+        },
+        {
+          "label": "Medium",
+          "price": 0.011
+        },
+        {
+          "label": "High",
+          "price": 0.036
+        }
+      ]
+    },
+    {
+      "id": "grok-imagine-image-2-0-1k",
+      "media": "image",
+      "name": "Grok Imagine Image 2.0",
+      "provider": "xAI",
+      "dimension": "quality",
+      "context": "1K",
+      "unit": "image",
+      "sourceUrl": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Image output price; each input reference adds $0.01. Model page lists 1.5K while the generation guide documents request values 1k and 2k. Do not infer a 1.5K request parameter.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.04
+        },
+        {
+          "label": "Medium",
+          "price": 0.06
+        }
+      ]
+    },
+    {
+      "id": "grok-imagine-image-2-0-1-5k",
+      "media": "image",
+      "name": "Grok Imagine Image 2.0",
+      "provider": "xAI",
+      "dimension": "quality",
+      "context": "1.5K",
+      "unit": "image",
+      "sourceUrl": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Image output price; each input reference adds $0.01. Model page lists 1.5K while the generation guide documents request values 1k and 2k. Do not infer a 1.5K request parameter.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.05
+        },
+        {
+          "label": "Medium",
+          "price": 0.07
+        }
+      ]
+    },
+    {
+      "id": "grok-imagine-image-2-0-2k",
+      "media": "image",
+      "name": "Grok Imagine Image 2.0",
+      "provider": "xAI",
+      "dimension": "quality",
+      "context": "2K",
+      "unit": "image",
+      "sourceUrl": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Image output price; each input reference adds $0.01. Model page lists 1.5K while the generation guide documents request values 1k and 2k. Do not infer a 1.5K request parameter.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.06
+        },
+        {
+          "label": "Medium",
+          "price": 0.08
+        }
+      ]
+    },
+    {
+      "id": "grok-imagine-image-published-output-image-rates",
+      "media": "image",
+      "name": "Grok Imagine Image",
+      "provider": "xAI",
+      "dimension": "resolution",
+      "context": "Published output image rates",
+      "unit": "image",
+      "sourceUrl": "https://docs.x.ai/developers/models/grok-imagine-image",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Distinct model ID, not a Low/High quality level. Each reference input adds $0.002. The Quality model and Pro alias migrate on 2026-11-02; preserve observation-date identity.",
+      "points": [
+        {
+          "label": "1024x1024",
+          "price": 0.02
+        },
+        {
+          "label": "2048x2048",
+          "price": 0.02
+        }
+      ]
+    },
+    {
+      "id": "grok-imagine-image-quality-published-output-image-rates",
+      "media": "image",
+      "name": "Grok Imagine Image Quality",
+      "provider": "xAI",
+      "dimension": "resolution",
+      "context": "Published output image rates",
+      "unit": "image",
+      "sourceUrl": "https://docs.x.ai/developers/models/grok-imagine-image-quality",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Distinct model ID, not a Low/High quality level. Each reference input adds $0.01. The Quality model and Pro alias migrate on 2026-11-02; preserve observation-date identity.",
+      "points": [
+        {
+          "label": "1024x1024",
+          "price": 0.05
+        },
+        {
+          "label": "1408x1408",
+          "price": 0.06
+        },
+        {
+          "label": "2048x2048",
+          "price": 0.07
+        }
+      ]
+    },
+    {
+      "id": "p-image-ideogram-1k",
+      "media": "image",
+      "name": "P-Image-Ideogram",
+      "provider": "Pruna",
+      "dimension": "quality",
+      "context": "1K",
+      "unit": "image",
+      "sourceUrl": "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Pruna per-generated-image price at an explicit thinking level and resolution tier. Native Ideogram exposes the corresponding quality enum. Pruna default descriptions conflict, so explicit settings are required.",
+      "points": [
+        {
+          "label": "Very low",
+          "price": 0.003
+        },
+        {
+          "label": "Low",
+          "price": 0.0075
+        },
+        {
+          "label": "Medium",
+          "price": 0.01
+        },
+        {
+          "label": "High",
+          "price": 0.015
+        },
+        {
+          "label": "Very high",
+          "price": 0.033
+        }
+      ]
+    },
+    {
+      "id": "p-image-ideogram-2k",
+      "media": "image",
+      "name": "P-Image-Ideogram",
+      "provider": "Pruna",
+      "dimension": "quality",
+      "context": "2K",
+      "unit": "image",
+      "sourceUrl": "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Pruna per-generated-image price at an explicit thinking level and resolution tier. Native Ideogram exposes the corresponding quality enum. Pruna default descriptions conflict, so explicit settings are required.",
+      "points": [
+        {
+          "label": "Very low",
+          "price": 0.006
+        },
+        {
+          "label": "Low",
+          "price": 0.015
+        },
+        {
+          "label": "Medium",
+          "price": 0.02
+        },
+        {
+          "label": "High",
+          "price": 0.03
+        },
+        {
+          "label": "Very high",
+          "price": 0.066
+        }
+      ]
+    },
+    {
+      "id": "ideogram-4-0-published-output-image-rates",
+      "media": "image",
+      "name": "Ideogram 4.0",
+      "provider": "Ideogram",
+      "dimension": "mode",
+      "context": "Published output image rates",
+      "unit": "image",
+      "sourceUrl": "https://ideogram.ai/models/4.0/",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Native provider flat per-image rate; both 1024 and 2048 square are documented. No Turbo benchmark score found in AA v2.1.",
+      "points": [
+        {
+          "label": "Turbo",
+          "price": 0.03
+        },
+        {
+          "label": "Default",
+          "price": 0.06
+        },
+        {
+          "label": "Quality",
+          "price": 0.1
+        }
+      ]
+    },
+    {
+      "id": "ideogram-4-5-text-to-image",
+      "media": "image",
+      "name": "Ideogram 4.5",
+      "provider": "Ideogram",
+      "dimension": "quality",
+      "context": "text-to-image",
+      "unit": "image",
+      "sourceUrl": "https://ideogram.ai/models/4.5/",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Native provider per-image quote for prompt-only generation; Very Low requires source images. The product page says fixed price independent of output resolution, while the API reference describes 1K/2K billing tiers without rates; retain this documentation inconsistency. Evaluation endpoint and resolution are unpublished.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.03
+        },
+        {
+          "label": "Medium",
+          "price": 0.06
+        },
+        {
+          "label": "High",
+          "price": 0.1
+        }
+      ]
+    },
+    {
+      "id": "ideogram-4-5-image-editing",
+      "media": "image",
+      "name": "Ideogram 4.5",
+      "provider": "Ideogram",
+      "dimension": "quality",
+      "context": "image-editing",
+      "unit": "image",
+      "sourceUrl": "https://ideogram.ai/models/4.5/",
+      "observedAt": "2026-10-23T06:19:12Z",
+      "note": "Native provider per-image quote for generation with references or Precise Edit. The product page says fixed price independent of output resolution, while the API reference describes 1K/2K billing tiers without rates; retain this documentation inconsistency. Evaluation endpoint and resolution are unpublished.",
+      "points": [
+        {
+          "label": "Very Low",
+          "price": 0.008
+        },
+        {
+          "label": "Low",
+          "price": 0.03
+        },
+        {
+          "label": "Medium",
+          "price": 0.06
+        },
+        {
+          "label": "High",
+          "price": 0.22
+        }
+      ]
+    },
+    {
+      "id": "kling-3-0-silent-list",
+      "media": "video",
+      "name": "Kling 3.0",
+      "provider": "Kling",
+      "dimension": "resolution",
+      "context": "Silent; no reference video",
+      "unit": "second",
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator public Cash list, per output second; silent generation. No reference-video input. Keep model identities separate. No measured 4K point was found.",
+      "points": [
+        {
+          "label": "720p",
+          "price": 0.084
+        },
+        {
+          "label": "1080p",
+          "price": 0.112
+        },
+        {
+          "label": "4K",
+          "price": 0.42
+        }
+      ]
+    },
+    {
+      "id": "kling-3-0-native-audio-list",
+      "media": "video",
+      "name": "Kling 3.0",
+      "provider": "Kling",
+      "dimension": "resolution",
+      "context": "Native audio; no reference video",
+      "unit": "second",
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator public Cash list, per output second; native audio on. No reference-video input or voice reference. Separate from silent generation and evaluation pools.",
+      "points": [
+        {
+          "label": "720p",
+          "price": 0.126
+        },
+        {
+          "label": "1080p",
+          "price": 0.168
+        },
+        {
+          "label": "4K",
+          "price": 0.42
+        }
+      ]
+    },
+    {
+      "id": "kling-3-0-omni-silent-list",
+      "media": "video",
+      "name": "Kling 3.0 Omni",
+      "provider": "Kling",
+      "dimension": "resolution",
+      "context": "Silent; no reference video",
+      "unit": "second",
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator public Cash list, per output second; silent generation. No reference-video input. Keep model identities separate. No measured 4K point was found.",
+      "points": [
+        {
+          "label": "720p",
+          "price": 0.084
+        },
+        {
+          "label": "1080p",
+          "price": 0.112
+        },
+        {
+          "label": "4K",
+          "price": 0.42
+        }
+      ]
+    },
+    {
+      "id": "kling-3-0-omni-native-audio-list",
+      "media": "video",
+      "name": "Kling 3.0 Omni",
+      "provider": "Kling",
+      "dimension": "resolution",
+      "context": "Native audio; no reference video",
+      "unit": "second",
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator public Cash list, per output second; native audio on. No reference-video input or voice reference. Separate from silent generation and evaluation pools.",
+      "points": [
+        {
+          "label": "720p",
+          "price": 0.112
+        },
+        {
+          "label": "1080p",
+          "price": 0.14
+        },
+        {
+          "label": "4K",
+          "price": 0.42
+        }
+      ]
+    },
+    {
+      "id": "kling-2-6-silent-list",
+      "media": "video",
+      "name": "Kling 2.6",
+      "provider": "Kling",
+      "dimension": "resolution",
+      "context": "Silent",
+      "unit": "second",
+      "sourceUrl": "https://kling.ai/document-api/pricing/base/video",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator public Cash list, per output second; no native audio.",
+      "points": [
+        {
+          "label": "720p",
+          "price": 0.042
+        },
+        {
+          "label": "1080p",
+          "price": 0.07
+        }
+      ]
+    },
+    {
+      "id": "hailuo-02-6s-list",
+      "media": "video",
+      "name": "MiniMax-Hailuo-02",
+      "provider": "MiniMax",
+      "dimension": "resolution",
+      "context": "Fixed 6-second clips",
+      "unit": "second",
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator legacy-model public list; fixed 6-second clips for every resolution. Per-second values are arithmetic equivalents of per-clip prices. No measured 512P quality point was found. Clip quotes: 512P: $0.1 per 6-second clip; 768P: $0.28 per 6-second clip; 1080P: $0.49 per 6-second clip.",
+      "points": [
+        {
+          "label": "512P",
+          "price": 0.016666666666666666
+        },
+        {
+          "label": "768P",
+          "price": 0.04666666666666667
+        },
+        {
+          "label": "1080P",
+          "price": 0.08166666666666667
+        }
+      ]
+    },
+    {
+      "id": "hailuo-02-10s-list",
+      "media": "video",
+      "name": "MiniMax-Hailuo-02",
+      "provider": "MiniMax",
+      "dimension": "resolution",
+      "context": "Fixed 10-second clips",
+      "unit": "second",
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator legacy-model public list; fixed 10-second clips. 1080P is not supported at this duration. The 768P 10-second rate is $0.056/s, not the 6-second rate of $0.0466667/s. Do not scale a 6-second quote to all durations. Clip quotes: 512P: $0.15 per 10-second clip; 768P: $0.56 per 10-second clip.",
+      "points": [
+        {
+          "label": "512P",
+          "price": 0.015
+        },
+        {
+          "label": "768P",
+          "price": 0.05600000000000001
+        }
+      ]
+    },
+    {
+      "id": "minimax-h3-output-list",
+      "media": "video",
+      "name": "MiniMax-H3",
+      "provider": "MiniMax",
+      "dimension": "resolution",
+      "context": "Output only",
+      "unit": "second",
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator direct output prices, excluding separately billed input media. First five images are free; further images cost $0.04 each. Video inputs add $0.08/s at 768P or $0.13/s at 2K. AA explicit 768p rows do not supply a measured 2K counterpart. Never copy their score to 2K or combine H3 and H3 Max.",
+      "points": [
+        {
+          "label": "768P",
+          "price": 0.08
+        },
+        {
+          "label": "2K",
+          "price": 0.13
+        }
+      ]
+    },
+    {
+      "id": "minimax-h3-max-output-list",
+      "media": "video",
+      "name": "MiniMax-H3-Max",
+      "provider": "MiniMax",
+      "dimension": "resolution",
+      "context": "Output only; direct creator route",
+      "unit": "second",
+      "sourceUrl": "https://platform.minimax.io/docs/pricing/overview",
+      "observedAt": "2026-10-23T06:28:23.078676+00:00",
+      "note": "Creator direct output prices, excluding separately billed input media. First two images are free; further images cost $0.074 each. Video inputs add $0.0553/s at 480P or $0.143/s at 768P. This creator route is not the saved Fal-hosted H3 Max observation. No measured 480P counterpart is identified.",
+      "points": [
+        {
+          "label": "480P",
+          "price": 0.05
+        },
+        {
+          "label": "768P",
+          "price": 0.08
+        }
+      ]
+    }
+  ]
+}
