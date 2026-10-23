@@ -2,7 +2,9 @@
 
 Target: [https://gabrielemonni.me/slopmachine](https://gabrielemonni.me/slopmachine), published from `Zer0codestuff/slopmachine`.
 
-The workflow is prepared. Repository setup, the first successful deployment, and live-site verification remain required; this document does not record a completed publication.
+Published and verified on October 23, 2026. The first deployment of commit `6c8c433` passed both build and deploy jobs: [workflow run](https://github.com/Zer0codestuff/slopmachine/actions/runs/39950817118). The HTTPS target and assets returned successfully. The live 19-pool, 800-observation catalog matches the committed bytes. Image/video configuration curves, setting filters, separate provider quotes, and a 390px mobile viewport were checked in the live browser.
+
+The repository is public, Pages uses GitHub Actions with HTTPS enforced, and the `github-pages` environment permits `main`. The existing user-site repository and DNS were not changed.
 
 ## First-time setup
 
