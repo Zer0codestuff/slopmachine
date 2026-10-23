@@ -1,5 +1,7 @@
 # Slop Machine
 
+**[Open the dashboard](https://gabrielemonni.me/slopmachine/)**
+
 **The price of pixels.** Image and video model analytics in the compact, chart-first style of [Slopalytics](https://slopalytics.com/).
 
 Compare generation quality, API cost, and the price/quality frontier using attributed observations from [Artificial Analysis](https://artificialanalysis.ai/), [Arena](https://arena.ai/), [Design Arena](https://www.designarena.ai/leaderboard?tab=image), and specialized video arenas. Each source, task, benchmark version, and audio condition has its own leaderboard.
@@ -55,7 +57,7 @@ npm run data:validate
 
 Configuration membership is explicit in `research/configurations.json`; names alone never create a curve. Provider-only price quotes live in `research/configuration-prices.json` and appear under **Unscored settings & prices**. They have no borrowed or estimated benchmark scores. Detailed inclusion decisions are in `research/configuration-images.md` and `research/configuration-videos.md`.
 
-Collection and refresh procedures, source coverage, and attribution are documented in [docs/DATA.md](docs/DATA.md). Rebuilding a catalog does not refresh source observations.
+Collection and refresh procedures, source coverage, and attribution are documented in [docs/DATA.md](docs/DATA.md). GitHub Pages setup is documented in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). Rebuilding a catalog does not refresh source observations.
 
 Elo values are comparable only within their source benchmark pool. A narrow rank difference or overlapping confidence interval does not establish a meaningful quality difference. Cost estimates use the source's published generation conditions, so check each model's pricing details before budgeting.
 
