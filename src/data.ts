@@ -1,4 +1,4 @@
-import type { ConfigurationSeries, Leaderboard, Model } from './types';
+import type { ConfigurationSeries, Leaderboard, Media, Model } from './types';
 
 const colors = ['purple', 'orange', 'green', 'blue', 'cyan', 'yellow', 'pink', 'teal', 'lime', 'red'];
 const palette = colors.map(color => `var(--chart-${color})`);
@@ -22,7 +22,7 @@ export function identity(provider: string): [string, string] {
 }
 export const money = (n: number) => `$${n >= 1000 ? `${(n / 1000).toFixed(1)}k` : n >= 1 ? Number(n.toFixed(2)) : Number(n.toFixed(4))}`;
 export const number = (n: number) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(n);
-export const shortName = (s: string) => s.replace(/\b(Google|OpenAI|ByteDance|Black Forest Labs|Kuaishou|Alibaba|Tencent)\s+/gi, '').replace(/\s*\([^)]{15,}\)/g, '');
+export const shortName = (s: string) => s.replace(/\b(Google|OpenAI|ByteDance|Black Forest Labs|Kuaishou|Alibaba|Tencent)\s+/gi, '').replace(/\s*\([^)]{15,}\)/g, '').replace(/^Dreamina\s+/i, '');
 export function frontier(models: Model[]) {
   let best = -Infinity;
   return models.filter(m => m.price !== null).sort((a, b) => a.price! - b.price! || b.score - a.score).filter(m => {
@@ -32,7 +32,7 @@ export function frontier(models: Model[]) {
   });
 }
 export function defaultSelection(models: Model[], series: ConfigurationSeries[] = []) {
-  const selected = new Set([...models.slice(0, 8), ...frontier(models)].map(model => model.id));
+  const selected = new Set([...models.slice(0, 12), ...frontier(models)].map(model => model.id));
   const ranked = new Map(models.map(model => [model.id, model.rank]));
   const curves = series.filter(family => family.points.length >= 2).sort((a, b) => b.points.length - a.points.length || Math.min(...a.points.map(point => ranked.get(point.modelId) ?? Infinity)) - Math.min(...b.points.map(point => ranked.get(point.modelId) ?? Infinity)));
   for (const family of curves.slice(0, 4)) for (const point of family.points) selected.add(point.modelId);
@@ -55,4 +55,19 @@ export function download(content: Blob, filename: string) {
   const a = Object.assign(document.createElement('a'), { href: url, download: filename });
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+export function matchesModelQuery(text: string, query: string) {
+  const normalize = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const needle = normalize(query);
+  return needle ? normalize(text).includes(needle) : query.trim() === '';
+}
+
+export function preferredMediaBoard(boards: Leaderboard[], media: Media, sourceName: string) {
+  const candidates = boards.filter(board => board.media === media);
+  const sameSource = candidates.filter(board => board.sourceName === sourceName);
+  const family = media === 'video' ? 'text-to-video' : 'image-generation';
+  const preferred = (pool: Leaderboard[]) => pool.find(board => taskFamily(board) === family && audioCondition(board) === 'audio')
+    ?? pool.find(board => taskFamily(board) === family) ?? pool[0];
+  return preferred(sameSource) ?? preferred(candidates);
 }

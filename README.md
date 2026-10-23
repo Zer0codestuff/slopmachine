@@ -34,11 +34,12 @@ npm run preview
 - Inspect quality rankings, confidence intervals, generation-cost estimates, and sortable data.
 - Compare measured quality, resolution, or mode settings with connected model curves and configuration filters.
 - Compare unscored provider settings in a separate cost chart, retaining their generation conditions.
-- Search and toggle model families or complete provider groups.
+- Search every benchmark pool, including other tasks and media, with source and task labels.
+- Toggle model families or complete provider groups, or open All data for the full active pool.
 - Download charts as PNG, selected observations as CSV, or the full catalog as JSON.
 - Use dark or light mode, mobile filters, and shareable task/view URLs.
 
-The initial selection includes leading models, the observed price/quality frontier, and complete measured configuration families. Solid lines join settings of the same model within one benchmark pool, in documented setting order. They do not estimate results between points. The dashed Pareto line is a separate comparison. Select all models in the sidebar to explore the complete source pool. Press `/` to search models.
+The initial selection includes the leading 12 observations, the observed price/quality frontier, and complete measured configuration families. Solid lines join settings of the same model within one benchmark pool, in documented setting order. They do not estimate results between points. The dashed Pareto line is a separate comparison. Select all models in the sidebar to explore the complete source pool. Press `/` to search models. The first Video view opens Text to Video Audio, where Seedance 2.5 is included. Session choices are remembered when switching media or sources. Use the task selector above the chart for other audio conditions and configuration curves. Models without source prices remain visible in the quality ranking.
 
 ## Data
 

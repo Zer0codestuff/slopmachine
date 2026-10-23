@@ -16,9 +16,12 @@ Slop Machine compares image and video generation models using attributed public 
 Published to GitHub Pages and verified locally and on the live site. The catalog has 800 observations in 19 pools across Artificial Analysis, Arena, Design Arena, World Model Arena, and Video Arena (MemeBench), with 480 prices or source quotes. A separate provider-pricing input contains 115 quotes in 34 configuration groups. Research lives in `research/`; the browser consumes `public/data/catalog.json`. Source observations and leaderboard publication dates must remain distinct. The authorized public repository is `Zer0codestuff/slopmachine`.
 
 ## Recent changes
+- Increased chart labels to 15px on desktop and 12px in compact charts, widened model controls, and strengthened configuration lines and label connectors. The task selector is now directly above the chart.
+- Fixed Seedance 2.5 discovery: it already exists in nine pools. The old automatic Silent pool choice hid it. Global search now spans all pools, tolerates name separators, and opens a result in its exact source/task with the target selected.
+- All data opens the full pool. Models without source prices have a visible quality-ranking link. Remember source/task choices before audio fallbacks, and do not reset the active media tab.
 - Renamed the public repository to `Zer0codestuff/slopmachine` for the requested Pages path. Added artifact-based GitHub Pages publication to the existing CI workflow, with main-only deployment and inherited custom domain. No changes to the existing user-site repository or DNS.
 - Replaced the muted provider palette with saturated chart colors, stronger configuration lines, and more opaque cost bars. Light mode uses darker equivalents for readable colored labels. The user rejected washed-out chart colors.
-- Added explicit configuration families, low/medium and native-mode filters, connected setting curves, family toggles, sibling details, and configuration metadata in CSV/PNG exports. Defaults include complete measured families, and switching media prefers a pool with measured configuration curves.
+- Added explicit configuration families, low/medium and native-mode filters, connected setting curves, family toggles, sibling details, and configuration metadata in CSV/PNG exports. Defaults include the leading 12 observations, frontier entries, and complete measured families. New video visits prefer the broad Text to Video Audio pool; media and source/task choices are remembered during the session.
 - Added the 51-row Design Arena image-editing pool. Refreshed all 82 AA silent I2V rows on October 23, preserving source prices even when they differ from creator lists. The two Kling 3.0 Pro quotes are now $0.112/s; Veo 3.1 Lite has no reported price.
 - Added separate provider-setting cost charts and CSV exports for unscored configurations, with source conditions and exact quoted precision.
 - The builder merges `research/configurations.json` idempotently after overlays and rejects conflicting definitions or invalid membership. Default data validation also checks `research/configuration-prices.json`.
@@ -29,6 +32,7 @@ Published to GitHub Pages and verified locally and on the live site. The catalog
 - Visually checked desktop and narrow mobile layouts. A source-reported zero price is retained; zero-price models are excluded from logarithmic axes with a visible notice and included on linear axes.
 
 ## Preferences and constraints
+- Keep readable chart labels and lines: 15px desktop / 12px compact model labels, 14px model controls, and 3px configuration curves. Never revert to 9px compact labels.
 - Keep the full-screen chart, narrow model sidebar, black default theme, vivid, saturated provider colors with theme-aware contrast, and DM Sans typography.
 - Keep different sources, tasks, benchmark versions, and audio conditions in separate scoring pools.
 - Configuration membership must be explicit and board-local. Connect at least two visible measured points in setting order, including non-monotonic scores. Provider-only prices have no attached Elo score.
@@ -44,6 +48,7 @@ Published to GitHub Pages and verified locally and on the live site. The catalog
 - Compare image prices directly with video prices or combine Elo scores from different pools.
 - Add decorative imagery, marketing sections, or a second visual identity.
 - Restore the muted provider palette or weaken series colors with low default opacity.
+- Hide important models behind an automatic legacy Silent default, limit discovery search to the active pool, or present a selected subset as the initial All data table.
 - Publish credentials or authenticated source responses.
 - Require an AA API key for this project. The collection workflow uses public browser pages.
 - Treat a catalog rebuild as a fresh source collection or automatically publish refreshed data without reviewing its source changes.

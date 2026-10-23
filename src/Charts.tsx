@@ -30,8 +30,8 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, c
   const [hovered, setHovered] = useState<string | null>(null);
   const data = models.filter(m => m.price !== null && (log ? m.price > 0 : m.price >= 0));
   const compact = width < 640;
-  const left = compact ? 43 : 64;
-  const right = labels ? compact ? 132 : Math.min(230, width * 0.25) : 24;
+  const left = compact ? 46 : 72;
+  const right = labels ? compact ? Math.min(158, width * 0.44) : Math.min(285, width * 0.3) : 24;
   const top = 40;
   const bottom = height - 62;
   const plotRight = width - right;
@@ -41,9 +41,9 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, c
   const xmin = log ? minimum * 0.65 : 0;
   const xmax = Math.max(maximum * (log ? 1.6 : 1.15), 0.001);
   const scores = data.flatMap(m => [confidence ? m.confidenceLow ?? m.score : m.score, confidence ? m.confidenceHigh ?? m.score : m.score]);
-  const minScore = Math.min(...scores, 1000);
-  const maxScore = Math.max(...scores, 1000);
-  const step = maxScore - minScore > 600 ? 200 : maxScore - minScore > 300 ? 100 : 50;
+  const minScore = scores.length ? Math.min(...scores) : 1000;
+  const maxScore = scores.length ? Math.max(...scores) : 1000;
+  const step = maxScore - minScore > 800 ? 200 : maxScore - minScore > 400 ? 100 : maxScore - minScore > 160 ? 50 : 25;
   const ymin = Math.floor((minScore - step * 0.4) / step) * step;
   const ymax = Math.ceil((maxScore + step * 0.4) / step) * step;
   const x = (v: number) => left + ((log ? Math.log(v) - Math.log(xmin) : v - xmin) / (log ? Math.log(xmax) - Math.log(xmin) : xmax - xmin)) * (plotRight - left);
@@ -54,14 +54,15 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, c
   if (xticks.length > maxTicks) xticks = Array.from({ length: maxTicks }, (_, index) => xticks[Math.round(index * (xticks.length - 1) / (maxTicks - 1))]);
   const groups = modelGroups(data, board.series);
   const labelGroups = connected ? groups : modelGroups(data);
-  const labelNames = new Map(labelGroups.map(group => { const endpoint = group.models.at(-1)!; return [endpoint.id, group.series && group.models.length > 1 ? group.name : group.name === endpoint.name ? endpoint.name : `${group.name} · ${configurationFor(board, endpoint.id)!.point.label}`]; }));
+  const labelNames = new Map(labelGroups.map(group => { const endpoint = group.models.at(-1)!; return [endpoint.id, group.series && group.series.points.length > 1 && group.models.length === 1 ? `${group.name} · ${configurationFor(board, endpoint.id)!.point.label}` : group.name]; }));
+  const labelGap = compact ? 27 : 30;
   const labelData = [...labelGroups].sort((a, b) => Number(Boolean(b.series && b.models.length > 1)) - Number(Boolean(a.series && a.models.length > 1)) || b.models.at(-1)!.score - a.models.at(-1)!.score)
-    .slice(0, Math.max(1, Math.floor((bottom - top) / 23))).map(group => group.models.at(-1)!).sort((a, b) => b.score - a.score);
+    .slice(0, Math.max(1, Math.floor((bottom - top) / labelGap))).map(group => group.models.at(-1)!).sort((a, b) => b.score - a.score);
   const labelY = new Map<string, number>();
-  let previousY = top - 24;
-  labelData.forEach(m => { const pos = Math.max(y(m.score), previousY + 23); labelY.set(m.id, pos); previousY = pos; });
-  let nextY = bottom + 23;
-  [...labelData].reverse().forEach(m => { const pos = Math.min(labelY.get(m.id)!, nextY - 23); labelY.set(m.id, pos); nextY = pos; });
+  let previousY = top - labelGap;
+  labelData.forEach(m => { const pos = Math.max(y(m.score), previousY + labelGap); labelY.set(m.id, pos); previousY = pos; });
+  let nextY = bottom + labelGap;
+  [...labelData].reverse().forEach(m => { const pos = Math.min(labelY.get(m.id)!, nextY - labelGap); labelY.set(m.id, pos); nextY = pos; });
   const frontierModels = frontier(data);
   const current = data.find(m => m.id === hovered);
   const hoveredSeries = hovered ? configurationFor(board, hovered)?.series.id : null;
@@ -74,24 +75,24 @@ export function ScatterChart({ models, board, log, pareto, labels, confidence, c
       <line className="axis-line" x1={left} x2={plotRight} y1={bottom} y2={bottom} />
       {xticks.map(t => <g key={t}><line className="axis-line" x1={x(t)} x2={x(t)} y1={bottom} y2={bottom + 5} /><text className="axis-tick" x={x(t)} y={bottom + 24} textAnchor="middle">{money(t)}</text></g>)}
       <text className="axis-title" x={(left + plotRight) / 2} y={height - 9} textAnchor="middle">Cost per {board.priceUnit} (USD{log ? ', log scale' : ''})</text>
-      {pareto && <polyline data-testid="pareto-line" points={frontierModels.map(m => `${x(m.price!)},${y(m.score)}`).join(' ')} fill="none" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="4 5" opacity={0.7} />}
-      {connected && groups.filter(group => group.series && group.models.length >= 2).map(group => <polyline key={group.id} data-configuration-series={group.id} aria-label={`${group.name}: measured ${group.series!.dimension} configurations`} points={group.models.map(model => `${x(model.price!)},${y(model.score)}`).join(' ')} fill="none" stroke={identity(group.models[0].provider)[0]} strokeWidth={hoveredSeries === group.id ? 2.8 : 2} opacity={!hovered || hoveredSeries === group.id ? 0.96 : 0.15} />)}
+      {pareto && <polyline data-testid="pareto-line" points={frontierModels.map(m => `${x(m.price!)},${y(m.score)}`).join(' ')} fill="none" stroke="var(--accent)" strokeWidth={2.2} strokeDasharray="5 6" opacity={0.9} />}
+      {connected && groups.filter(group => group.series && group.models.length >= 2).map(group => <polyline key={group.id} data-configuration-series={group.id} aria-label={`${group.name}: measured ${group.series!.dimension} configurations`} points={group.models.map(model => `${x(model.price!)},${y(model.score)}`).join(' ')} fill="none" stroke={identity(group.models[0].provider)[0]} strokeWidth={hoveredSeries === group.id ? 4 : 3} opacity={!hovered || hoveredSeries === group.id ? 0.96 : 0.15} />)}
       {data.map(m => {
         const [color] = identity(m.provider);
         const configuration = configurationFor(board, m.id);
         const px = x(m.price!); const py = y(m.score);
         return <g key={m.id} opacity={active(m) ? 1 : 0.2} className="chart-series">
           {confidence && m.confidenceLow !== null && m.confidenceHigh !== null && <g stroke={color} opacity={0.4}><line x1={px} x2={px} y1={y(m.confidenceLow)} y2={y(m.confidenceHigh)} /><line x1={px - 3} x2={px + 3} y1={y(m.confidenceLow)} y2={y(m.confidenceLow)} /><line x1={px - 3} x2={px + 3} y1={y(m.confidenceHigh)} y2={y(m.confidenceHigh)} /></g>}
-          {labels && labelY.has(m.id) && <path d={`M${px + 6},${py} L${plotRight + (compact ? 7 : 14)},${labelY.get(m.id)}`} fill="none" stroke={color} strokeWidth={0.6} opacity={hovered === m.id ? 0.8 : 0.22} />}
+          {labels && labelY.has(m.id) && <path d={`M${px + 6},${py} L${plotRight + (compact ? 7 : 14)},${labelY.get(m.id)}`} fill="none" stroke={color} strokeWidth={1.2} opacity={hovered === m.id ? 0.95 : 0.5} />}
           <g role="button" tabIndex={0} aria-label={`${m.name}, ${board.scoreType} ${m.score}, ${money(m.price!)} per ${board.priceUnit}`} onMouseEnter={() => setHovered(m.id)} onMouseLeave={() => setHovered(null)} onFocus={() => setHovered(m.id)} onBlur={() => setHovered(null)} onClick={() => onInspect(m)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onInspect(m); } }} className="chart-point">
             <circle cx={px} cy={py} r={13} fill="transparent" />
-            <circle cx={px} cy={py} r={hovered === m.id ? 6 : 4.8} fill={color} stroke="var(--bg)" strokeWidth={1.5} />
+            <circle cx={px} cy={py} r={hovered === m.id ? 7 : 5.5} fill={color} stroke="var(--bg)" strokeWidth={1.5} />
             {connected && configuration && (!compact || hovered === m.id) && <text className="setting-point-label" x={px + 7} y={py - 8} fill={color} aria-hidden="true">{settingSymbol(configuration.point.label)}</text>}
             {hovered === m.id && <circle cx={px} cy={py} r={10} fill="none" stroke={color} strokeWidth={1} opacity={0.5} />}
           </g>
           {labels && labelY.has(m.id) && <g className={`series-label ${compact ? 'compact-label' : ''}`} role="button" tabIndex={0} aria-label={`Inspect ${m.name}`} onMouseEnter={() => setHovered(m.id)} onMouseLeave={() => setHovered(null)} onClick={() => onInspect(m)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onInspect(m); } }}>
             <text className="provider-mark" fill={color} x={plotRight + (compact ? 13 : 26)} y={labelY.get(m.id)! + 4}>{identity(m.provider)[1]}</text>
-            <text className="model-label" fill={color} x={plotRight + (compact ? 29 : 49)} y={labelY.get(m.id)! + 4}>{(() => { const name = shortName(labelNames.get(m.id) ?? m.name).replace(/^GPT Image /, compact ? 'GPT Img ' : 'GPT Image '); const max = compact ? 18 : width < 950 ? 22 : 27; return name.length > max ? `${name.slice(0, max - 1)}…` : name; })()}</text>
+            <text className="model-label" fill={color} x={plotRight + (compact ? 29 : 49)} y={labelY.get(m.id)! + 4}>{(() => { const name = shortName(labelNames.get(m.id) ?? m.name).replace(/^GPT Image /, compact ? 'GPT Img ' : 'GPT Image '); const max = Math.max(12, Math.floor((right - (compact ? 35 : 54)) / (compact ? 6.4 : 8.1))); return name.length > max ? `${name.slice(0, max - 1)}…` : name; })()}</text>
           </g>}
         </g>;
       })}
@@ -112,9 +113,9 @@ export function BarChart({ models, board, cost, confidence, quantity, onInspect 
   const { ref, width, height } = useSize();
   const data = [...models].filter(m => !cost || m.price !== null).sort((a, b) => cost ? a.price! - b.price! : b.score - a.score);
   const compact = width < 640;
-  const labelWidth = compact ? Math.min(156, width * 0.44) : Math.min(250, width * 0.31);
+  const labelWidth = compact ? Math.min(175, width * 0.46) : Math.min(290, width * 0.35);
   const left = labelWidth; const right = width - (compact ? 56 : 85);
-  const totalHeight = Math.max(height, data.length * (compact ? 38 : 34) + 55);
+  const totalHeight = Math.max(height, data.length * (compact ? 44 : 42) + 55);
   const row = (totalHeight - 55) / Math.max(data.length, 1);
   const min = cost ? 0 : Math.floor((Math.min(...data.map(m => m.confidenceLow ?? m.score)) - 50) / 100) * 100;
   const max = cost ? Math.max(...data.map(m => m.price! * quantity), 0.01) * 1.04 : Math.ceil((Math.max(...data.map(m => m.confidenceHigh ?? m.score)) + 30) / 100) * 100;
@@ -126,7 +127,7 @@ export function BarChart({ models, board, cost, confidence, quantity, onInspect 
         <rect className="bar-hover" x={0} y={cy - 16} width={width} height={row - 2} rx={3} fill="transparent" />
         <text className="rank-number" x={compact ? 0 : 8} y={cy + 4}>{cost ? i + 1 : m.rank}</text>
         {!compact && <text className="provider-mark" x={32} y={cy + 4} fill={color}>{mark}</text>}
-        <text className="bar-label" x={compact ? 23 : 58} y={cy + 4}>{barLabel(m, board, compact ? 20 : 29)}</text>
+        <text className="bar-label" x={compact ? 23 : 58} y={cy + 4}>{barLabel(m, board, compact ? 21 : 30)}</text>
         <rect x={left} y={cy - 5} width={Math.max(2, x(value) - left)} height={10} rx={1} fill={color} opacity={0.92} />
         {!cost && confidence && m.confidenceLow !== null && m.confidenceHigh !== null && <g stroke={color} strokeWidth={1.5}><line x1={x(m.confidenceLow)} x2={x(m.confidenceHigh)} y1={cy} y2={cy} /><line x1={x(m.confidenceLow)} x2={x(m.confidenceLow)} y1={cy - 6} y2={cy + 6} /><line x1={x(m.confidenceHigh)} x2={x(m.confidenceHigh)} y1={cy - 6} y2={cy + 6} /></g>}
         <text className="bar-value" x={right + 12} y={cy + 4} fill={color}>{cost ? money(value) : number(value)}</text>
