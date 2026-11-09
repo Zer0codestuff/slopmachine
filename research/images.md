@@ -1,6 +1,29 @@
 # Image benchmark research
 
-## Ready data
+## November 9, 2026 refresh
+
+`research/images.json` now holds six pools, 471 observations and 308 source prices or quotes. Every image pool was collected again on 2026-11-09 (UTC) from public pages or the official public dataset, with no API key or login. The October notes below describe the earlier method and remain the reference for source-specific caveats.
+
+| Pool | Rows | Priced | Source publication | Observed at, UTC |
+| --- | ---: | ---: | --- | --- |
+| AA T2I v2.1 | 108 | 103 | Not published | 2026-11-09 17:23:02 |
+| AA Editing v2.1 | 79 | 76 | Not published | 2026-11-09 17:23:04 |
+| Arena T2I, overall | 84 | 0 | 2026-11-08 | 2026-11-09 17:20:30 |
+| Arena image edit, overall | 63 | 0 | 2026-11-08 | 2026-11-09 17:20:30 |
+| Design Arena image generation | 84 | 83 | 2026-11-09 17:09 GMT+1 label | 2026-11-09 17:25:55 |
+| Design Arena image editing | 53 | 46 | 2026-11-09 16:12:03 UTC | 2026-11-09 17:26:05 |
+
+New since October include GPT Image 2.6 Sunburst and Flare (all three sources), FLUX 3 Image and FLUX 3 Image Klein (AA), MAI-Image-2.7-Preview (AA and Arena editing, no API price), Qwen Image 3.0 Pro (Design Arena) and FLUX 3 Image Klein Edit (Design Arena editing).
+
+- **AA:** the public table renamed `API Pricing` to `Pricing` and replaced the Available models radio with `Hide research previews` (checked by default on image pages) and `Hide derived models` (unchecked). The extractor accepts both layouts and requires these defaults, which keep the former available-models view. Benchmark versions are unchanged.
+- **Arena:** the Dataset Viewer rows feed returned HTTP 502/503 for most subsets on 2026-11-09, so the official `latest` Parquet files were decoded at pinned revision `6bec3cfe5fa82bef0d388082632009919a6b94b8` (repository modified 2026-11-09 04:07:44 UTC). Every overall row has publication date 2026-11-08. Where the feed answered at the same revision (video I2V and editing), all ranks, scores, bounds and battles matched exactly. The T2I subset now publishes display names instead of slugs (for example `gpt-image-2 (medium)` became `GPT-Image-2 (Medium)`), so those catalog IDs changed. Names are retained exactly as published.
+- **Design Arena:** captured from the rendered tables after Show More. Each rendered row was matched to exactly one public leaderboard response row with identical Elo and battles, then to the registry by source model ID for `image.perImage`. Rows present only in the response, without a rendered rank, are excluded and listed in pool notes (for example GPT Image 2.6 Sunburst Auto, two GPT Image 2.6 Flare Low settings, four P-Image-Ideogram levels and Ideogram 4.5 Very Low). Generation keeps the displayed update label; editing keeps the response `lastUpdateTime`, as in October.
+
+Local evidence: `scripts/evidence/refresh/2026-11-09T17-23-13-748Z-d6e9ccde/` (AA) and `scripts/evidence/manual-2026-11-09/` (Arena Parquet with SHA-256, Design Arena captures and responses, OpenAI calculator readings).
+
+## October 2026 collection
+
+### Ready data
 
 `research/images.json` matches the `Catalog`, `Leaderboard`, and `Model` interfaces in `src/types.ts`. It currently contains five separate scoring pools across three sources, 404 model observations, and 254 source-priced observations. All prices use USD per image. No API key or authenticated source was used.
 
