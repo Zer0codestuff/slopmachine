@@ -100,22 +100,12 @@
         "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
         "https://developer.ideogram.ai/api-reference/images/generate/p-image-ideogram"
       ],
-      "note": "Three ranked settings from the October 22 source snapshot. Low and Medium appear in the newer public response without published ranks and are excluded from this chart. Evaluation resolution, checkpoint and exact request settings are unpublished. Source price quotes are not certified evaluation-run costs.",
+      "note": "Only High is ranked in the November 9 source snapshot. Very Low, Low, Medium and Very High appear in the public response without published ranks and are excluded. Evaluation resolution, checkpoint and exact request settings are unpublished. Source price quotes are not certified evaluation-run costs.",
       "points": [
-        {
-          "modelId": "p-image-ideogram-very-low-a3acff7e1c",
-          "label": "Very low",
-          "order": 1
-        },
         {
           "modelId": "p-image-ideogram-high-715300a7de",
           "label": "High",
           "order": 4
-        },
-        {
-          "modelId": "p-image-ideogram-very-high-4d7531e2b8",
-          "label": "Very high",
-          "order": 5
         }
       ]
     },
@@ -129,13 +119,8 @@
         "https://ideogram.ai/models/4.5/",
         "https://developer.ideogram.ai/api-reference/images/generate/ideogram-4-5"
       ],
-      "note": "Very Low and High are documented quality modes of Ideogram 4.5, measured separately in this editing pool. Low and Medium have provider prices but no measured score here. The arena does not publish evaluation resolution or endpoint. Source price quotes may use different generation conditions.",
+      "note": "High is a documented quality mode of Ideogram 4.5. In the November 9 source snapshot, Very Low appears in the public response without a published rank and is excluded. Low and Medium have provider prices but no measured score here. The arena does not publish evaluation resolution or endpoint. Source price quotes may use different generation conditions.",
       "points": [
-        {
-          "modelId": "design-edit-ladybug-0b2319dc",
-          "label": "Very low",
-          "order": 1
-        },
         {
           "modelId": "design-edit-dragonfly-e2ca6aec",
           "label": "High",
@@ -495,7 +480,7 @@
       "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
       "points": [
         {
-          "modelId": "gpt-image-2-medium-4c6f379b18",
+          "modelId": "gpt-image-2-medium-2b4ed04fce",
           "label": "Medium",
           "order": 1
         }
@@ -515,6 +500,186 @@
         {
           "modelId": "gpt-image-2-medium-2b4ed04fce",
           "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-2-6-sunburst-quality",
+      "name": "GPT Image 2.6 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-sunburst-max-8c7934ebc6",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-text-to-image",
+      "id": "aa-image-text-to-image-gpt-image-2-6-flare-quality",
+      "name": "GPT Image 2.6 Flare",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-flare-max-1f4b50d37a",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-2-6-sunburst-quality",
+      "name": "GPT Image 2.6 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-sunburst-max-8c7934ebc6",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "aa-image-editing",
+      "id": "aa-image-editing-gpt-image-2-6-flare-quality",
+      "name": "GPT Image 2.6 Flare",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://artificialanalysis.ai/image/leaderboard/editing",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-flare-max-1f4b50d37a",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "arena-image-text-to-image",
+      "id": "arena-image-text-to-image-gpt-image-2-6-sunburst-quality",
+      "name": "GPT Image 2.6 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://arena.ai/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-sunburst-medium-3af54223aa",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "arena-image-text-to-image",
+      "id": "arena-image-text-to-image-gpt-image-2-6-flare-quality",
+      "name": "GPT Image 2.6 Flare",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://arena.ai/leaderboard/text-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-flare-medium-25089bc845",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "arena-image-editing",
+      "id": "arena-image-editing-gpt-image-2-6-sunburst-quality",
+      "name": "GPT Image 2.6 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://arena.ai/leaderboard/image-edit",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-sunburst-medium-3af54223aa",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "arena-image-editing",
+      "id": "arena-image-editing-gpt-image-2-6-flare-quality",
+      "name": "GPT Image 2.6 Flare",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://arena.ai/leaderboard/image-edit",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-flare-medium-25089bc845",
+          "label": "Medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "design-arena-image-generation",
+      "id": "design-arena-image-generation-gpt-image-2-6-sunburst-quality",
+      "name": "GPT Image 2.6 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://www.designarena.ai/leaderboard?tab=image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve. The source label also states complexity: high, the provider default. The ranked Flare row uses quality: auto, which has no fixed setting and is not classified; unranked Sunburst Auto and Flare Low rows remain research evidence.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-sunburst-quality-max-complexity-high-46c3c9fc59",
+          "label": "Max",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "design-arena-image-editing",
+      "id": "design-arena-image-editing-gpt-image-2-6-sunburst-quality",
+      "name": "GPT Image 2.6 Sunburst",
+      "dimension": "quality",
+      "sourceUrls": [
+        "https://www.designarena.ai/leaderboard/image-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve. The source label also states complexity: high, the provider default. The ranked Flare row uses quality: auto, which has no fixed setting and is not classified; unranked Sunburst Auto and Flare Low rows remain research evidence.",
+      "points": [
+        {
+          "modelId": "design-edit-rowan-4ce5019f",
+          "label": "Max",
           "order": 1
         }
       ]

@@ -1,8 +1,35 @@
 # Video benchmark research
 
+## November 9, 2026 refresh
+
+`videos.json` now holds 15 pools, 433 observations and 263 source prices. All AA, Arena and MemeBench pools were collected again on 2026-11-09 (UTC). World Model Arena returned Cloudflare error 522 (origin unreachable) on every attempt that day, so its three October 22 pools are retained unchanged with their original observation times.
+
+| Pool | Rows | Priced | Source publication | Observed at, UTC |
+| --- | ---: | ---: | --- | --- |
+| AA T2V v2.1, audio | 33 | 31 | Not published | 2026-11-09 17:23:07 |
+| AA T2V-Silent v2.1 | 38 | 36 | Not published | 2026-11-09 17:23:09 |
+| AA I2V v2.1, audio (new pool) | 34 | 32 | Not published | 2026-11-09 17:23:24 |
+| AA I2V-Silent v2.1 (new pool) | 39 | 37 | Not published | 2026-11-09 17:23:26 |
+| AA I2V v1.1, audio (archive) | 24 | 23 | Not published | 2026-10-22 18:41:13 |
+| AA I2V-Silent v1.0 (archive) | 82 | 68 | Not published | 2026-10-23 06:31:00 |
+| AA Editing v1.1, audio | 10 | 10 | Not published | 2026-11-09 17:23:11 |
+| AA Editing-Silent v1.1 | 10 | 10 | Not published | 2026-11-09 17:23:13 |
+| Arena T2V, overall | 50 | 0 | 2026-11-08 | 2026-11-09 17:20:30 |
+| Arena I2V, overall | 50 | 0 | 2026-11-08 | 2026-11-09 17:20:30 |
+| Arena editing, overall | 11 | 0 | 2026-11-08 | 2026-11-09 17:20:30 |
+| MemeBench, silent | 16 | 16 | 2026-11-07 06:38:52 (computed_at) | 2026-11-09 17:28:08 |
+
+- **AA I2V version change:** the public image-to-video URLs now serve AA-Video-I2V v2.1 and AA-Video-I2V-Silent v2.1. These are new benchmark versions and new pools. The October v1.1 and v1.0 snapshots stay as clearly labeled archives, because v2.1 no longer measures the Kling Standard settings behind four configuration curves. `refresh-data.mjs` skips the archives.
+- **AA layout:** video pages now show a category control (Overall, or All on editing), the `Pricing` header, and the footnote "1 minute of video on the model creator's API at the settings we benchmark (1080p where offered)". Each refreshed price note retains that wording. `Hide research previews` and `Hide derived models` are unchecked on video pages, matching `models=all`.
+- **New AA rows** include HeyGen Video 1, FLUX 3 Max, SkyReels V4, P-Video-2-Pro, Pika H3 Flex, Utopai X (no API) and Bach 1.0 Pro. AA renamed `FLUX 3 Max (720p)` to `FLUX 3 Max` and `HeyGen Video (ultraquality)` to `HeyGen Video 1`; the new labels are retained as published.
+- **Arena:** decoded from the official Parquet files at revision `6bec3cfe5fa82bef0d388082632009919a6b94b8` because the Dataset Viewer feed was failing; see `images.md`. New rows include Gemini Omni 1.2 Flash, now first in the T2V and I2V pools and third in editing. The T2V and I2V subsets switched from slug identifiers to display names, so their catalog IDs changed.
+- **MemeBench:** the same 16 rendered models, with updated votes and small Elo changes. Prices and the 2026-09-01 pricing check are unchanged. The public leaderboard response that feeds the page states `computed_at` 2026-11-07T06:38:52.396Z for snapshot `leaderboard-current`; it is now used as `sourceUpdatedAt`. Five response rows without a rendered rank are excluded.
+
+## October 2026 collection
+
 `videos.json` matches the exact `Catalog`, `Leaderboard`, and `Model` shapes in `src/types.ts`. It contains 13 independent pools, 345 model observations, and 184 published prices. A model appearing in several pools is several observations, not several unique models.
 
-## Included snapshots
+### Included snapshots
 
 | Source and task | Rows | Priced | Source publication | Observed at, UTC |
 | --- | ---: | ---: | --- | --- |

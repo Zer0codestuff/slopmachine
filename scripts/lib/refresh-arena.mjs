@@ -19,7 +19,7 @@ export function arenaSubset(board) {
   return subset;
 }
 
-export async function fetchArenaRows(subset, { fetchImpl = fetch, timeoutMs = 30_000 } = {}) {
+export async function fetchArenaRows(subset, { fetchImpl = fetch, timeoutMs = 30_000, retries = 6, retryDelayMs = 5_000 } = {}) {
   if (![...subsets.values()].includes(subset)) throw new Error(`Unsupported Arena subset: ${subset}`);
   const rows = [];
   const pages = [];
@@ -28,7 +28,17 @@ export async function fetchArenaRows(subset, { fetchImpl = fetch, timeoutMs = 30
   for (let offset = 0; total === null || offset < total; offset += 100) {
     const url = new URL('https://datasets-server.huggingface.co/rows');
     url.search = new URLSearchParams({ dataset: ARENA_DATASET, config: subset, split: 'latest', offset: String(offset), length: '100' });
-    const response = await fetchImpl(url, { signal: AbortSignal.timeout(timeoutMs), headers: { Accept: 'application/json' } });
+    // The public viewer intermittently returns 5xx or stalls while it reprocesses a new revision.
+    let response;
+    for (let attempt = 0; ; attempt++) {
+      try {
+        response = await fetchImpl(url, { signal: AbortSignal.timeout(timeoutMs), headers: { Accept: 'application/json' } });
+        if (response.status < 500 || attempt >= retries) break;
+      } catch (error) {
+        if (!['TimeoutError', 'AbortError'].includes(error?.name) || attempt >= retries) throw error;
+      }
+      await new Promise((done) => setTimeout(done, retryDelayMs * (attempt + 1)));
+    }
     if (!response.ok) throw new Error(`${subset}: public dataset feed returned HTTP ${response.status}`);
     const pageRevision = response.headers.get('x-revision');
     if (!/^[a-f0-9]{40}$/.test(pageRevision ?? '')) throw new Error(`${subset}: missing dataset revision header`);

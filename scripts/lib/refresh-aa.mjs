@@ -1,7 +1,8 @@
 import { modelId } from './aa-browser.mjs';
 import { assertCatalog } from './catalog.mjs';
 
-const headers = ['', 'Range', 'Model', 'Elo', 'Samples', 'Released', 'API Pricing 1'];
+// AA renamed the price column from "API Pricing" to "Pricing" in November 2026. Both layouts are accepted.
+const headerSets = [['', 'Range', 'Model', 'Elo', 'Samples', 'Released', 'API Pricing 1'], ['', 'Range', 'Model', 'Elo', 'Samples', 'Released', 'Pricing 1']];
 const countPattern = /^(?:\d+|\d{1,3}(?:,\d{3})+)$/;
 const moneyPattern = '(?:\\d+|\\d{1,3}(?:,\\d{3})+)(?:\\.\\d+)?';
 
@@ -22,6 +23,9 @@ export function captureAAPage() {
     filters: {
       category: [...document.querySelectorAll('button')].map((button) => clean(button.textContent)).find((text) => text.startsWith('Category:')),
       checked: [...document.querySelectorAll('[role="radio"][aria-checked="true"]')].map((element) => clean(element.textContent)),
+      toggles: Object.fromEntries([...document.querySelectorAll('[role="checkbox"],[role="switch"]')]
+        .map((element) => [clean(element.textContent || element.getAttribute('aria-label') || element.parentElement?.textContent || ''), element.getAttribute('aria-checked') === 'true'])
+        .filter(([label]) => label)),
     },
     rows: [...table.querySelectorAll('tbody tr')].map((row) => {
       const cells = [...row.querySelectorAll('td')];
@@ -39,17 +43,23 @@ export function normalizeAABoard(capture, template) {
   const benchmark = `${template.scoreType} ${template.task}`.match(/AA-(?:Image|Video)-[A-Za-z0-9-]+ v\d+\.\d+/)?.[0];
   const actualBenchmark = (capture.heading ?? capture.title ?? '').match(/^AA-(?:Image|Video)-[A-Za-z0-9-]+ v\d+\.\d+/)?.[0];
   if (!benchmark || actualBenchmark !== benchmark) throw new Error(`${template.id}: benchmark changed from ${benchmark} to ${actualBenchmark}; inspect the source and update the research definition`);
-  if (JSON.stringify(capture.headers) !== JSON.stringify(headers)) throw new Error(`${template.id}: public table columns changed`);
+  if (!headerSets.some((headers) => JSON.stringify(capture.headers) === JSON.stringify(headers))) throw new Error(`${template.id}: public table columns changed`);
   const image = template.media === 'image';
   const checked = capture.filters?.checked;
   const audio = new URL(template.sourceUrl).searchParams.get('audio-output') === 'false' ? 'No Audio' : 'With Audio';
-  // Video pages have no category selector. A present selector must still be Overall.
-  const overall = capture.filters?.category === 'Category: Overall' || (!image && capture.filters?.category === undefined);
-  if (!overall || !checked?.includes('All')
-    || (image ? !checked.includes('Available models') : !checked.includes(audio))) {
+  // Video pages may have no category selector, or label the unfiltered view All. Image pages must be Overall.
+  const overall = capture.filters?.category === 'Category: Overall' || (!image && [undefined, 'Category: All'].includes(capture.filters?.category));
+  // Since November 2026 AA replaced the "Available models" radio with two checkboxes. Images keep
+  // research previews hidden (the former available-models view); video keeps models=all. Derived
+  // models are never hidden.
+  const toggles = capture.filters?.toggles;
+  const availability = toggles && Object.keys(toggles).length
+    ? toggles['Hide derived models'] === false && toggles['Hide research previews'] === image
+    : (image ? checked?.includes('Available models') : true);
+  if (!overall || !checked?.includes('All') || !availability || (!image && !checked.includes(audio))) {
     throw new Error(`${template.id}: category, model availability, or audio filter changed`);
   }
-  const contextPattern = image ? /1,000 images.*1024x1024.*default settings/ : /1 minute of 1080p video.*default settings/;
+  const contextPattern = image ? /1,000 images.*1024x1024.*default settings/ : /1 minute of (?:1080p video.*default settings|video.*settings we benchmark \(1080p where offered\))/;
   if (!Array.isArray(capture.priceContext) || !capture.priceContext.some((note) => contextPattern.test(note))) throw new Error(`${template.id}: missing or changed price denominator/configuration footnote`);
   if (!Array.isArray(capture.rows) || !capture.rows.length) throw new Error(`${template.id}: empty public table`);
   const knownIds = new Map(template.entries.map((entry) => [entry.name, entry.id]));
@@ -83,7 +93,7 @@ export function normalizeAABoard(capture, template) {
   const board = {
     ...template, observedAt: capture.observedAt, sourceUpdatedAt: null, entries,
     notes: [
-      `Attribution: Artificial Analysis, https://artificialanalysis.ai/. Public browser capture of ${benchmark}; Overall category, ${image ? 'all providers and available models' : `all models and ${audio.toLowerCase()}`}. All ${entries.length} rendered rows are included.`,
+      `Attribution: Artificial Analysis, https://artificialanalysis.ai/. Public browser capture of ${benchmark}; Overall category, ${image ? 'all providers and available models (research previews hidden, derived models shown)' : `all models and ${audio.toLowerCase()}`}. All ${entries.length} rendered rows are included.`,
       'Retrieval time is observedAt. No leaderboard publication date is stated by this public table; model release dates and Updated badges are not publication timestamps.',
       `Displayed USD per ${image ? '1,000 images is divided by 1,000' : 'minute is divided by 60'}. Each price retains its exact row variant and the public configuration footnote. No cross-source price joins are applied.`,
       'Samples are source-reported preference appearances, not unique voters. Source 95% confidence bounds are preserved; fixed Anchor rows have null bounds. Overlapping intervals do not establish a distinct rank.',
@@ -113,6 +123,7 @@ export async function scrapeAA(templates, { headed = false, timeoutMs = 45_000, 
       await page.waitForFunction((expected) => document.querySelector('h2')?.textContent.startsWith(expected)
         && document.querySelector('table tbody tr')
         && [...document.querySelectorAll('p')].some((p) => p.textContent.includes('API Pricing reflects')), benchmark, { timeout: timeoutMs });
+      await page.waitForTimeout(2_000); // Let client-side filters settle before reading every row.
       const capture = await page.evaluate(captureAAPage);
       boards.push(normalizeAABoard(capture, template));
       await onCapture(template.id, capture);

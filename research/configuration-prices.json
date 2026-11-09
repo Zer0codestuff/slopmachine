@@ -377,6 +377,278 @@
       ]
     },
     {
+      "id": "gpt-image-2-6-sunburst-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 2.6 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.02469
+        },
+        {
+          "label": "Medium",
+          "price": 0.04347
+        },
+        {
+          "label": "High",
+          "price": 0.05268
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.09366
+        },
+        {
+          "label": "Max",
+          "price": 0.21072
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-sunburst-standard-1536x1024",
+      "media": "image",
+      "name": "GPT Image 2.6 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1536x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.01992
+        },
+        {
+          "label": "Medium",
+          "price": 0.03396
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-sunburst-standard-1024x1536",
+      "media": "image",
+      "name": "GPT Image 2.6 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1536",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.01992
+        },
+        {
+          "label": "Medium",
+          "price": 0.03396
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-sunburst-standard-2048x2048",
+      "media": "image",
+      "name": "GPT Image 2.6 Sunburst",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 2048x2048",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.05001
+        },
+        {
+          "label": "Medium",
+          "price": 0.08832
+        },
+        {
+          "label": "High",
+          "price": 0.10704
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.19029
+        },
+        {
+          "label": "Max",
+          "price": 0.42816
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-flare-standard-1024x1024",
+      "media": "image",
+      "name": "GPT Image 2.6 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.02469
+        },
+        {
+          "label": "Medium",
+          "price": 0.04347
+        },
+        {
+          "label": "High",
+          "price": 0.05268
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.09366
+        },
+        {
+          "label": "Max",
+          "price": 0.21072
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-flare-standard-1536x1024",
+      "media": "image",
+      "name": "GPT Image 2.6 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1536x1024",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.01992
+        },
+        {
+          "label": "Medium",
+          "price": 0.03396
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-flare-standard-1024x1536",
+      "media": "image",
+      "name": "GPT Image 2.6 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 1024x1536",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.01992
+        },
+        {
+          "label": "Medium",
+          "price": 0.03396
+        },
+        {
+          "label": "High",
+          "price": 0.04116
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.07377
+        },
+        {
+          "label": "Max",
+          "price": 0.16464
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-flare-standard-2048x2048",
+      "media": "image",
+      "name": "GPT Image 2.6 Flare",
+      "provider": "OpenAI",
+      "dimension": "quality",
+      "context": "standard, 2048x2048",
+      "unit": "image",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation#cost-and-latency",
+      "observedAt": "2026-11-09T17:30:04.561Z",
+      "note": "Official interactive calculator output-only estimate at Standard $30 per million image output tokens. Excludes prompt, image input, Responses mainline model and partial-image charges. The calculator groups Sunburst and Flare; actual token use may differ. Complexity (low, medium, high; default high) has no separate fee. Not a fixed request quote.",
+      "points": [
+        {
+          "label": "Low",
+          "price": 0.05001
+        },
+        {
+          "label": "Medium",
+          "price": 0.08832
+        },
+        {
+          "label": "High",
+          "price": 0.10704
+        },
+        {
+          "label": "Xhigh",
+          "price": 0.19029
+        },
+        {
+          "label": "Max",
+          "price": 0.42816
+        }
+      ]
+    },
+    {
       "id": "gpt-image-1-standard-1024x1024",
       "media": "image",
       "name": "GPT Image 1",

@@ -54,6 +54,28 @@ GPT Image 2/2.5 estimates were verified in the official interactive calculator, 
 
 Legacy Low/Medium output prices across square and either documented rectangle are: Image 1, $0.011-0.016 / $0.042-0.063; Image 1.5, $0.009-0.013 / $0.034-0.050; Mini, $0.005-0.006 / $0.011-0.015. Prompt tokens, reference-image tokens, Responses mainline-model usage and streaming partial images are additional where applicable. Auto has no fixed estimate. [Image 1](https://developers.openai.com/api/docs/models/gpt-image-1), [Image 1.5](https://developers.openai.com/api/docs/models/gpt-image-1.5), [Mini](https://developers.openai.com/api/docs/models/gpt-image-1-mini), [billing](https://developers.openai.com/api/docs/pricing).
 
+## GPT Image 2.6, November 9 update
+
+OpenAI released GPT Image 2.6 Sunburst and Flare on November 4, 2026. Both support Low, Medium, High, Xhigh and Max quality, plus a separate `complexity` field (low, medium, high; default high) that controls planning before rendering and has no separate fee. [Official guide](https://developers.openai.com/api/docs/guides/image-generation).
+
+The official calculator was rechecked on 2026-11-09 at 17:30 UTC. Its GPT Image 2.5 values reproduced every saved October estimate exactly. GPT Image 2.6 uses more output tokens than 2.5 at Low and Medium, and the same counts from High upward. Standard output-only estimates, USD per image:
+
+| Size | Low | Medium | High | Xhigh | Max |
+| --- | --- | --- | --- | --- | --- |
+| 1024x1024 | 0.02469 | 0.04347 | 0.05268 | 0.09366 | 0.21072 |
+| 1536x1024 and 1024x1536 | 0.01992 | 0.03396 | 0.04116 | 0.07377 | 0.16464 |
+| 2048x2048 | 0.05001 | 0.08832 | 0.10704 | 0.19029 | 0.42816 |
+
+The calculator groups Sunburst and Flare, so both families carry the same estimates. They are separate provider quotes in `configuration-prices.json`, with no attached benchmark score.
+
+Measured settings, each a single-point series in its own pool:
+
+- AA generation and editing: Sunburst (max) and Flare (max).
+- Arena generation and editing: GPT-Image-2.6 Sunburst (Medium) and Flare (Medium).
+- Design Arena generation and editing: only Sunburst (quality: max, complexity: high) is classified. The ranked Flare row is quality: auto, which has no fixed setting. Sunburst Auto, Flare Low/low complexity and Flare Low/medium complexity appear only in the public response without published ranks and remain research evidence.
+
+No pool measures two fixed quality levels of the same 2.6 model, so no 2.6 curve is drawn. Design Arena's own registry quotes ($0.211 Max, $0.053 Auto, $0.025 Low) stay attached to its rows as source quotes.
+
 ## Grok: current controls and historical Low evidence
 
 Image 2.0 supports Low, Medium and Auto, with no documented High setting. Low output costs $0.04/$0.05/$0.06 at the provider's 1K/1.5K/2K tiers; Medium costs $0.06/$0.07/$0.08. Each reference image adds $0.01. Pricing lists 1.5K while the generation guide documents `1k` and `2k` request values, so no 1.5K parameter is inferred. [Model pricing](https://docs.x.ai/developers/models/grok-imagine-image-2.0).

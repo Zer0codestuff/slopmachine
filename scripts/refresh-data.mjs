@@ -9,6 +9,8 @@ import { arenaSubset, fetchArenaRows, normalizeArenaBoard } from './lib/refresh-
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const defaultInputs = ['research/images.json', 'research/videos.json'].map((file) => resolve(root, file));
+// Archived pools keep a superseded benchmark version. Their public URL now serves the successor.
+export const ARCHIVED_POOLS = new Set(['aa-video-i2v-v1-1', 'aa-video-i2v-silent-v1-0']);
 
 /** Acquisition is a separate step from building the public catalog. */
 export async function refreshData({
@@ -25,7 +27,7 @@ export async function refreshData({
   assertCatalog({ generatedAt: new Date().toISOString(), leaderboards: templates });
   const selected = templates.filter((board) => {
     const host = new URL(board.sourceUrl).hostname;
-    return ['artificialanalysis.ai', 'arena.ai'].includes(host)
+    return !ARCHIVED_POOLS.has(board.id) && ['artificialanalysis.ai', 'arena.ai'].includes(host)
       && (media === 'all' || board.media === media) && (source === 'all' || host === (source === 'aa' ? 'artificialanalysis.ai' : 'arena.ai'));
   });
   const skippedPools = templates.filter((board) => !selected.includes(board)).map((board) => board.id);
