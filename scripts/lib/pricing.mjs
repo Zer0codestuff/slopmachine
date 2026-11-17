@@ -12,7 +12,7 @@ export function assertPricing(input) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(family.id) || ids.has(family.id)) fail(`${path}.id: invalid or duplicate`);
     ids.add(family.id);
     if (!['image', 'video'].includes(family.media) || family.unit !== (family.media === 'image' ? 'image' : 'second')) fail(`${path}: incompatible media and unit`);
-    if (!['quality', 'resolution', 'mode'].includes(family.dimension)) fail(`${path}.dimension: unknown`);
+    if (!['quality', 'resolution', 'mode', 'complexity'].includes(family.dimension)) fail(`${path}.dimension: unknown`);
     try { if (new URL(family.sourceUrl).protocol !== 'https:') fail(`${path}.sourceUrl: expected HTTPS`); } catch { fail(`${path}.sourceUrl: invalid`); }
     if (!/^\d{4}-\d\d-\d\dT/.test(family.observedAt) || !Number.isFinite(Date.parse(family.observedAt))) fail(`${path}.observedAt: expected ISO timestamp`);
     if (!Array.isArray(family.points) || !family.points.length) fail(`${path}.points: empty`);

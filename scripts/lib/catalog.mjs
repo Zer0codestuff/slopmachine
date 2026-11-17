@@ -119,7 +119,8 @@ export function validateCatalog(catalog, { now = Date.now() } = {}) {
       for (const field of ['name', 'provider']) text(entry[field], `${entryPath}.${field}`);
       if (entryNames.has(entry.name)) fail(`${entryPath}.name`, 'duplicate model variant in this leaderboard');
       entryNames.add(entry.name);
-      if (!Number.isSafeInteger(entry.rank) || entry.rank < 1) fail(`${entryPath}.rank`, 'must be a positive safe integer; tied ranks are allowed');
+      // Null marks a scored row without a source rank; a rank is never inferred from score order.
+      if (entry.rank !== null && (!Number.isSafeInteger(entry.rank) || entry.rank < 1)) fail(`${entryPath}.rank`, 'must be a positive safe integer or null; tied ranks are allowed');
       if (!finite(entry.score)) fail(`${entryPath}.score`, 'must be a finite number');
       for (const field of ['confidenceLow', 'confidenceHigh']) {
         if (entry[field] !== null && !finite(entry[field])) fail(`${entryPath}.${field}`, 'must be a finite number or null');
@@ -158,7 +159,7 @@ export function validateCatalog(catalog, { now = Date.now() } = {}) {
         seriesIds.add(series.id);
         text(series.name, `${seriesPath}.name`);
         text(series.note, `${seriesPath}.note`);
-        if (!['quality', 'resolution', 'mode'].includes(series.dimension)) fail(`${seriesPath}.dimension`, 'must be quality, resolution, or mode');
+        if (!['quality', 'resolution', 'mode', 'complexity'].includes(series.dimension)) fail(`${seriesPath}.dimension`, 'must be quality, resolution, mode, or complexity');
         if (!Array.isArray(series.sourceUrls) || series.sourceUrls.length === 0) {
           fail(`${seriesPath}.sourceUrls`, 'must be a nonempty array of source URLs');
         } else {

@@ -4,7 +4,8 @@ export interface Model {
   id: string;
   name: string;
   provider: string;
-  rank: number;
+  // Null when the source publishes a score without a rank (for example a public response row hidden from its table).
+  rank: number | null;
   score: number;
   confidenceLow: number | null;
   confidenceHigh: number | null;
@@ -18,7 +19,7 @@ export interface Model {
 export interface ConfigurationSeries {
   id: string;
   name: string;
-  dimension: 'quality' | 'resolution' | 'mode';
+  dimension: 'quality' | 'resolution' | 'mode' | 'complexity';
   sourceUrls: string[];
   note: string;
   // Membership is explicit and local to one leaderboard. A curve needs 2+ points.

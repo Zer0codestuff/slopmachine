@@ -100,12 +100,32 @@
         "https://docs.pruna.ai/en/stable/docs_pruna_endpoints/performance_models/p-image-ideogram.html",
         "https://developer.ideogram.ai/api-reference/images/generate/p-image-ideogram"
       ],
-      "note": "Only High is ranked in the November 9 source snapshot. Very Low, Low, Medium and Very High appear in the public response without published ranks and are excluded. Evaluation resolution, checkpoint and exact request settings are unpublished. Source price quotes are not certified evaluation-run costs.",
+      "note": "Five source-labeled quality settings of p-image-ideogram in one Design Arena pool. Only High is ranked in the November 17 source snapshot; Very Low, Low, Medium and Very High are unranked rows from the same public leaderboard response and keep their Elo and battles without an inferred rank. Very High scores below High and Low scores above Medium; scores are preserved in setting order. Evaluation resolution, checkpoint and exact request settings are unpublished. Source price quotes are not certified evaluation-run costs.",
       "points": [
+        {
+          "modelId": "p-image-ideogram-very-low-a3acff7e1c",
+          "label": "Very low",
+          "order": 1
+        },
+        {
+          "modelId": "p-image-ideogram-low-def054127d",
+          "label": "Low",
+          "order": 2
+        },
+        {
+          "modelId": "p-image-ideogram-medium-5bdef495c3",
+          "label": "Medium",
+          "order": 3
+        },
         {
           "modelId": "p-image-ideogram-high-715300a7de",
           "label": "High",
           "order": 4
+        },
+        {
+          "modelId": "p-image-ideogram-very-high-4d7531e2b8",
+          "label": "Very high",
+          "order": 5
         }
       ]
     },
@@ -119,8 +139,13 @@
         "https://ideogram.ai/models/4.5/",
         "https://developer.ideogram.ai/api-reference/images/generate/ideogram-4-5"
       ],
-      "note": "High is a documented quality mode of Ideogram 4.5. In the November 9 source snapshot, Very Low appears in the public response without a published rank and is excluded. Low and Medium have provider prices but no measured score here. The arena does not publish evaluation resolution or endpoint. Source price quotes may use different generation conditions.",
+      "note": "Very Low and High are documented quality modes of Ideogram 4.5. High is ranked; Very Low is an unranked row from the same public leaderboard response, with no inferred rank. Low and Medium have provider prices but no measured score here. The arena does not publish evaluation resolution or endpoint. Source price quotes may use different generation conditions.",
       "points": [
+        {
+          "modelId": "design-edit-ladybug-0b2319dc",
+          "label": "Very low",
+          "order": 1
+        },
         {
           "modelId": "design-edit-dragonfly-e2ca6aec",
           "label": "High",
@@ -657,12 +682,35 @@
         "https://www.designarena.ai/leaderboard?tab=image",
         "https://developers.openai.com/api/docs/guides/image-generation"
       ],
-      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve. The source label also states complexity: high, the provider default. The ranked Flare row uses quality: auto, which has no fixed setting and is not classified; unranked Sunburst Auto and Flare Low rows remain research evidence.",
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve. The source label also states complexity: high, the provider default. The unranked Sunburst row uses quality: auto, which has no fixed setting, so it is not part of this series.",
       "points": [
         {
           "modelId": "gpt-image-2-6-sunburst-quality-max-complexity-high-46c3c9fc59",
           "label": "Max",
           "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "design-arena-image-generation",
+      "id": "design-arena-image-generation-gpt-image-2-6-flare-low-complexity",
+      "name": "GPT Image 2.6 Flare, Low quality",
+      "dimension": "complexity",
+      "sourceUrls": [
+        "https://www.designarena.ai/leaderboard?tab=image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Two source-labeled complexity settings of GPT Image 2.6 Flare at fixed quality: low. Complexity controls planning before rendering; OpenAI documents low, medium and high (default) with no separate fee, so the same source quote applies to both points. Both rows are unranked in the rendered table and come from the same public leaderboard response; no rank is inferred. The ranked Flare row uses quality: auto and is not part of this series. Evaluation resolution and exact requests are unpublished.",
+      "points": [
+        {
+          "modelId": "gpt-image-2-6-flare-quality-low-complexity-low-4a2200e76e",
+          "label": "Low complexity",
+          "order": 1
+        },
+        {
+          "modelId": "gpt-image-2-6-flare-quality-low-complexity-medium-57a6cac547",
+          "label": "Medium complexity",
+          "order": 2
         }
       ]
     },
@@ -675,12 +723,35 @@
         "https://www.designarena.ai/leaderboard/image-to-image",
         "https://developers.openai.com/api/docs/guides/image-generation"
       ],
-      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve. The source label also states complexity: high, the provider default. The ranked Flare row uses quality: auto, which has no fixed setting and is not classified; unranked Sunburst Auto and Flare Low rows remain research evidence.",
+      "note": "Only this explicit quality setting has a measured observation in this source pool. Other provider settings have no matched score here. Do not join scores from another arena or invent a quality curve. The source label also states complexity: high, the provider default. The unranked Sunburst row uses quality: auto, which has no fixed setting, so it is not part of this series.",
       "points": [
         {
           "modelId": "design-edit-rowan-4ce5019f",
           "label": "Max",
           "order": 1
+        }
+      ]
+    },
+    {
+      "boardId": "design-arena-image-editing",
+      "id": "design-arena-image-editing-gpt-image-2-6-flare-low-complexity",
+      "name": "GPT Image 2.6 Flare, Low quality",
+      "dimension": "complexity",
+      "sourceUrls": [
+        "https://www.designarena.ai/leaderboard/image-to-image",
+        "https://developers.openai.com/api/docs/guides/image-generation"
+      ],
+      "note": "Two source-labeled complexity settings of GPT Image 2.6 Flare at fixed quality: low. Complexity controls planning before rendering; OpenAI documents low, medium and high (default) with no separate fee, so the same source quote applies to both points. Both rows are unranked in the rendered table and come from the same public leaderboard response; no rank is inferred. The ranked Flare row uses quality: auto and is not part of this series. Evaluation resolution and exact requests are unpublished.",
+      "points": [
+        {
+          "modelId": "design-edit-alder-bf2d13c0",
+          "label": "Low complexity",
+          "order": 1
+        },
+        {
+          "modelId": "design-edit-spruce-230cff7a",
+          "label": "Medium complexity",
+          "order": 2
         }
       ]
     }

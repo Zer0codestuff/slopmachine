@@ -114,7 +114,7 @@ No runtime dependency is added. Arena refresh has no extra dependency. AA refres
 
 ## Configuration comparisons
 
-`research/configurations.json` declares board-local configuration membership. The builder loads it after observation overlays, or accepts `--configurations FILE`. Each series has a stable ID, family name, dimension (`quality`, `resolution`, or `mode`), source URLs, a qualification note, and explicit ordered model IDs. Single-point series identify a documented setting; a chart needs at least two visible priced points to draw a curve.
+`research/configurations.json` declares board-local configuration membership. The builder loads it after observation overlays, or accepts `--configurations FILE`. Each series has a stable ID, family name, dimension (`quality`, `resolution`, `mode`, or `complexity`), source URLs, a qualification note, and explicit ordered model IDs. Single-point series identify a documented setting; a chart needs at least two visible priced points to draw a curve.
 
 ```sh
 node scripts/build-catalog.mjs --configurations research/configurations.json --check
@@ -144,3 +144,9 @@ Validation rejects cross-board references, duplicate membership, duplicate order
 - Design Arena rows are matched to source model IDs through identical Elo and battles in the public leaderboard response, then to registry prices by ID. Response-only rows without a rendered rank stay excluded. The Design Arena P-Image-Ideogram and Ideogram 4.5 series shrink to their single remaining ranked High point.
 - MemeBench `sourceUpdatedAt` now uses the `computed_at` of the public leaderboard snapshot that feeds the page. Prices and the 2026-09-01 pricing check are unchanged.
 - Added single-point GPT Image 2.6 series: Max in AA and Design Arena (Sunburst only for Design Arena; its ranked Flare row is Auto), Medium in Arena. Added 40 OpenAI calculator quotes for GPT Image 2.6 Sunburst and Flare at four sizes; the calculator reproduced every saved 2.5 estimate.
+
+### November 17 integration decisions
+
+- AA and Arena refreshed through `refresh-data.mjs` without code changes; the Dataset Viewer feed worked again. Design Arena and MemeBench were recaptured in the T3 Code browser and saved through browser downloads to `scripts/evidence/manual-2026-11-17/`. World Model Arena still returned Cloudflare 522.
+- `rank` may now be null. It marks a scored row that the source publishes without a rank, currently the Design Arena rows present in the public leaderboard response but not in the rendered table. These rows keep their response Elo and battles, sort after ranked rows, and display as NR or Unranked. A rank is never derived from score order. Rows with no votes or from a different modality (the hidden MemeBench text-to-video rows) stay excluded.
+- Configuration series accept a fourth dimension, `complexity`, for OpenAI's GPT Image 2.6 planning setting. It is kept separate from quality, so a complexity label never matches a quality filter. The first series connects GPT Image 2.6 Flare at quality low with complexity low and medium in both Design Arena pools. The P-Image-Ideogram (generation) and Ideogram 4.5 (editing) Design Arena series regain their unranked levels.

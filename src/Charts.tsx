@@ -125,7 +125,7 @@ export function BarChart({ models, board, cost, confidence, quantity, onInspect 
       {Array.from({ length: 5 }, (_, i) => min + (max - min) * i / 4).map(t => <g key={t}><line className="gridline" x1={x(t)} x2={x(t)} y1={29} y2={totalHeight - 10} /><text className="axis-tick" x={x(t)} y={15} textAnchor="middle">{cost ? money(t) : number(t)}</text></g>)}
       {data.map((m, i) => { const cy = 43 + i * row; const value = cost ? m.price! * quantity : m.score; const [color, mark] = identity(m.provider); return <g role="button" tabIndex={0} aria-label={`Inspect ${m.name}`} className="bar-row" key={m.id} onClick={() => onInspect(m)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onInspect(m); } }}>
         <rect className="bar-hover" x={0} y={cy - 16} width={width} height={row - 2} rx={3} fill="transparent" />
-        <text className="rank-number" x={compact ? 0 : 8} y={cy + 4}>{cost ? i + 1 : m.rank}</text>
+        <text className="rank-number" x={compact ? 0 : 8} y={cy + 4}>{cost ? i + 1 : m.rank ?? 'NR'}</text>
         {!compact && <text className="provider-mark" x={32} y={cy + 4} fill={color}>{mark}</text>}
         <text className="bar-label" x={compact ? 23 : 58} y={cy + 4}>{barLabel(m, board, compact ? 21 : 30)}</text>
         <rect x={left} y={cy - 5} width={Math.max(2, x(value) - left)} height={10} rx={1} fill={color} opacity={0.92} />

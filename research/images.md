@@ -1,8 +1,29 @@
 # Image benchmark research
 
+## November 17, 2026 refresh
+
+`research/images.json` now holds six pools, 503 observations and 333 source prices or quotes. Every image pool was collected again on 2026-11-17 (UTC) from public pages or the official public dataset, with no API key or login.
+
+| Pool | Rows | Priced | Source publication | Observed at, UTC |
+| --- | ---: | ---: | --- | --- |
+| AA T2I v2.1 | 114 | 107 | Not published | 2026-11-17 15:42:42 |
+| AA Editing v2.1 | 85 | 80 | Not published | 2026-11-17 15:42:44 |
+| Arena T2I, overall | 85 | 0 | 2026-11-12 | 2026-11-17 15:42:36 |
+| Arena image edit, overall | 64 | 0 | 2026-11-12 | 2026-11-17 15:42:36 |
+| Design Arena image generation | 87 ranked + 8 unranked | 94 | 2026-11-17 9:15 GMT+1 label | 2026-11-17 15:44:19 |
+| Design Arena image editing | 54 ranked + 6 unranked | 52 | 2026-11-17 09:04:58 UTC | 2026-11-17 15:45:22 |
+
+New rows: Kling Image 4.0 (preview, no price), Canva Craft, Seedream 5.5, MiniMax H3-Image and H3-Image Highspeed, and ADM 3 Cloud (Image, no price) in AA; HiDream-O1-Edit-2.0 in AA editing; MiniMax H3-Image in both Arena pools; SenseNova U1 Pro, Seedream 5.5, MiniMax H3-Image and Recraft V4.1 Flash V2 in Design Arena. Design Arena removed its duplicate `qwen-image-3` row ("Qwen Image 3 Pro"); `qwen-image-3.0-pro` remains.
+
+- **AA:** the refresh script passed unchanged. Unchecking `Hide research previews` on the T2I page added no GPT Image rows, so AA still measures GPT Image 2.6 only at Max, 2 only at High and 1 Mini only at Medium.
+- **Arena:** the Dataset Viewer feed worked again; image pools are published 2026-11-12. The full historical splits of `text_to_image` and `image_edit` were also scanned for OpenAI rows: every GPT Image observation since 2025 carries a single quality label (Medium, High Fidelity or none), so Arena has no second quality level for any GPT Image model.
+- **Design Arena, unranked rows:** the page's public leaderboard response contains rows that the rendered table does not rank. Since this refresh they are included with `rank: null` and shown as unranked (NR), keeping the response Elo and battles. They share one Bradley-Terry fit with the ranked rows. The source gives no reason for hiding them, and no rank is ever inferred from Elo order. This adds GPT Image 2.6 Flare at quality low with complexity low and medium, GPT Image 2.6 Sunburst at quality auto, four p-image-ideogram levels, Ideogram 4.5 Very Low, Riverflow 2.5 Pro and Krea 3 (editing). Provider labels for these rows come from the registry `providers` map (`da-registry-providers.json`). The response now also carries `avgCostUsd` per model; it is kept in evidence and not used as a price.
+
+Local evidence: `scripts/evidence/refresh/2026-11-17T15-42-37-430Z-4766ceab/` (Arena), `scripts/evidence/refresh/2026-11-17T15-42-58-249Z-1e78a1f7/` (AA) and `scripts/evidence/manual-2026-11-17/` (Design Arena captures with leaderboard responses and registry subsets, MemeBench capture).
+
 ## November 9, 2026 refresh
 
-`research/images.json` now holds six pools, 471 observations and 308 source prices or quotes. Every image pool was collected again on 2026-11-09 (UTC) from public pages or the official public dataset, with no API key or login. The October notes below describe the earlier method and remain the reference for source-specific caveats.
+`research/images.json` then held six pools, 471 observations and 308 source prices or quotes. Every image pool was collected again on 2026-11-09 (UTC) from public pages or the official public dataset, with no API key or login. The October notes below describe the earlier method and remain the reference for source-specific caveats.
 
 | Pool | Rows | Priced | Source publication | Observed at, UTC |
 | --- | ---: | ---: | --- | --- |

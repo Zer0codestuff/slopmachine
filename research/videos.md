@@ -1,8 +1,29 @@
 # Video benchmark research
 
+## November 17, 2026 refresh
+
+`videos.json` now holds 15 pools, 443 observations and 270 source prices. AA, Arena and MemeBench pools were collected again on 2026-11-17 (UTC). World Model Arena again returned Cloudflare error 522, so its October 22 pools are unchanged.
+
+| Pool | Rows | Priced | Source publication | Observed at, UTC |
+| --- | ---: | ---: | --- | --- |
+| AA T2V v2.1, audio | 35 | 32 | Not published | 2026-11-17 15:42:47 |
+| AA T2V-Silent v2.1 | 40 | 37 | Not published | 2026-11-17 15:42:49 |
+| AA I2V v2.1, audio | 35 | 33 | Not published | 2026-11-17 15:42:51 |
+| AA I2V-Silent v2.1 | 40 | 38 | Not published | 2026-11-17 15:42:53 |
+| AA Editing v1.1, audio | 12 | 12 | Not published | 2026-11-17 15:42:55 |
+| AA Editing-Silent v1.1 | 11 | 11 | Not published | 2026-11-17 15:42:58 |
+| Arena T2V, overall | 50 | 0 | 2026-11-09 | 2026-11-17 15:42:37 |
+| Arena I2V, overall | 50 | 0 | 2026-11-09 | 2026-11-17 15:42:37 |
+| Arena editing, overall | 12 | 0 | 2026-11-10 | 2026-11-17 15:42:37 |
+| MemeBench, silent | 16 | 16 | 2026-11-10 18:38:36 (computed_at) | 2026-11-17 15:45:45 |
+
+- **New AA rows:** Gemini Omni Flash 1.2 in all four T2V/I2V pools and in editing with audio ($6.26/min), Hyperflow H3 by Video Rebirth in both T2V pools (no price), and Pika H3 Flex in editing with audio. AA now quotes FLUX 3 Max at $8.70/min instead of $4.35/min in all four v2.1 pools; the source change is retained.
+- **Arena:** SkyReels V4 entered video editing. T2V and I2V have no new rows.
+- **MemeBench:** the same 16 rendered models and prices; votes and `computed_at` updated. The five unrendered response rows are text-to-video entries with zero votes and remain excluded, unlike the Design Arena unranked rows, which have real battles in the same category.
+
 ## November 9, 2026 refresh
 
-`videos.json` now holds 15 pools, 433 observations and 263 source prices. All AA, Arena and MemeBench pools were collected again on 2026-11-09 (UTC). World Model Arena returned Cloudflare error 522 (origin unreachable) on every attempt that day, so its three October 22 pools are retained unchanged with their original observation times.
+`videos.json` then held 15 pools, 433 observations and 263 source prices. All AA, Arena and MemeBench pools were collected again on 2026-11-09 (UTC). World Model Arena returned Cloudflare error 522 (origin unreachable) on every attempt that day, so its three October 22 pools are retained unchanged with their original observation times.
 
 | Pool | Rows | Priced | Source publication | Observed at, UTC |
 | --- | ---: | ---: | --- | --- |
