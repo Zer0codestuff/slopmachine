@@ -76,6 +76,20 @@ Measured settings, each a single-point series in its own pool:
 
 No pool measures two fixed quality levels of the same 2.6 model, so no 2.6 curve is drawn. Design Arena's own registry quotes ($0.211 Max, $0.053 Auto, $0.025 Low) stay attached to its rows as source quotes.
 
+## GPT Image settings, November 17 update
+
+All three arenas were searched again for GPT Image observations at more than one setting. AA (including research previews) and Arena (latest and full historical splits) still measure each GPT Image model at a single quality level. Design Arena is the only source with several GPT Image 2.6 settings, and they are now imported as unranked rows (see `images.md`):
+
+| Design Arena row | Generation Elo / battles | Editing Elo / battles | Registry quote, USD/image |
+| --- | --- | --- | --- |
+| Sunburst, quality max, complexity high (ranked) | 1382 / 2,892 | 1348 / 1,574 | 0.211 |
+| Sunburst, quality auto, complexity high | 1371 / 3,260 | 1339 / 2,138 | 0.053 |
+| Flare, quality auto, complexity high (ranked) | 1356 / 2,989 | 1337 / 3,244 | 0.053 |
+| Flare, quality low, complexity medium | 1338 / 2,975 | 1311 / 3,164 | 0.025 |
+| Flare, quality low, complexity low | 1315 / 3,266 | 1292 / 3,322 | 0.025 |
+
+The two Flare Low rows form a new `complexity` series in each Design Arena pool: same quality, same quote, different planning effort. In both pools medium complexity scores about 20 Elo above low complexity at no listed extra cost; the gap is a point estimate with no published interval. Auto has no fixed setting and stays out of every series, so no Sunburst or Flare quality curve is drawn. Scores from other arenas are never joined to these rows. The OpenAI calculator values above (Low $0.02469 at 1024 square) agree with the registry Low quote; OpenAI's per-token rates were unchanged on 2026-11-17.
+
 ## Grok: current controls and historical Low evidence
 
 Image 2.0 supports Low, Medium and Auto, with no documented High setting. Low output costs $0.04/$0.05/$0.06 at the provider's 1K/1.5K/2K tiers; Medium costs $0.06/$0.07/$0.08. Each reference image adds $0.01. Pricing lists 1.5K while the generation guide documents `1k` and `2k` request values, so no 1.5K parameter is inferred. [Model pricing](https://docs.x.ai/developers/models/grok-imagine-image-2.0).

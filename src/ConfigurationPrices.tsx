@@ -8,7 +8,7 @@ export interface PricingFamily {
   media: Media;
   name: string;
   provider: string;
-  dimension: 'quality' | 'resolution' | 'mode';
+  dimension: 'quality' | 'resolution' | 'mode' | 'complexity';
   context: string;
   unit: 'image' | 'second';
   sourceUrl: string;

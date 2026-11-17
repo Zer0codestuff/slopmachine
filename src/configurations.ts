@@ -29,6 +29,7 @@ export function settingSymbol(label: string) {
   if (label.startsWith('Standard')) return 'S';
   if (label.startsWith('Pro')) return 'P';
   if (label.startsWith('Balanced')) return 'B';
+  if (/ complexity$/i.test(label)) return `C${label.charAt(0).toUpperCase()}`;
   const known: Record<string, string> = { 'very low': 'VL', low: 'L', medium: 'M', high: 'H', xhigh: 'XH', 'very high': 'VH', max: 'Mx', default: 'D', standard: 'S', quality: 'Q', fast: 'F', pro: 'P' };
   return known[settingKey(label)] ?? label.match(/\d{3,4}p|[24]K/i)?.[0] ?? label.slice(0, 3);
 }
@@ -47,5 +48,5 @@ export function modelGroups(models: Model[], series: ConfigurationSeries[] = [])
     result.push({ id: family.id, name: family.name, models: points, series: family });
   }
   for (const model of models) if (!grouped.has(model.id)) result.push({ id: model.id, name: model.name, models: [model], series: null });
-  return result.sort((a, b) => Math.min(...a.models.map(model => model.rank)) - Math.min(...b.models.map(model => model.rank)));
+  return result.sort((a, b) => Math.min(...a.models.map(model => model.rank ?? Infinity)) - Math.min(...b.models.map(model => model.rank ?? Infinity)));
 }

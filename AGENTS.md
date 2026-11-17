@@ -13,9 +13,11 @@ Slop Machine compares image and video generation models using attributed public 
 - `npm run data:refresh -- --source aa`: scrape public AA tables with the optional browser setup in `docs/DATA.md`.
 
 ## Current status
-Published to GitHub Pages and verified locally and on the live site. The catalog has 904 observations in 21 pools across Artificial Analysis, Arena, Design Arena, World Model Arena, and Video Arena (MemeBench), with 571 prices or source quotes. All pools except World Model Arena were refreshed on November 9, 2026. Two archived AA I2V pools (v1.1, v1.0) keep their October snapshot. A separate provider-pricing input contains 155 quotes in 42 configuration groups. Research lives in `research/`; the browser consumes `public/data/catalog.json`. Source observations and leaderboard publication dates must remain distinct. The authorized public repository is `Zer0codestuff/slopmachine`.
+Published to GitHub Pages and verified locally and on the live site. The catalog has 946 observations in 21 pools across Artificial Analysis, Arena, Design Arena, World Model Arena, and Video Arena (MemeBench), with 603 prices or source quotes. All pools except World Model Arena were refreshed on November 17, 2026. Two archived AA I2V pools (v1.1, v1.0) keep their October snapshot. A separate provider-pricing input contains 155 quotes in 42 configuration groups. Research lives in `research/`; the browser consumes `public/data/catalog.json`. Source observations and leaderboard publication dates must remain distinct. The authorized public repository is `Zer0codestuff/slopmachine`.
 
 ## Recent changes
+- November 17 data refresh: AA, Arena (images published November 12), Design Arena and MemeBench. Added Kling Image 4.0, Canva Craft, Seedream 5.5, MiniMax H3-Image, SenseNova U1 Pro, HiDream-O1-Edit-2.0, Gemini Omni Flash 1.2 (AA video), Hyperflow H3, SkyReels V4 (Arena editing) and others. AA FLUX 3 Max video quote doubled to $8.70/min.
+- `rank` can be null for scored rows published without a source rank. Design Arena response-only rows are now imported as unranked (NR), which adds GPT Image 2.6 Flare Low at low and medium complexity, Sunburst Auto, and the missing P-Image-Ideogram and Ideogram 4.5 levels. New `complexity` series dimension; GPT Image 2.6 Flare Low has a two-point complexity curve in both Design Arena pools.
 - November 9 data refresh: AA, Arena (published November 8), Design Arena and MemeBench. Added GPT Image 2.6 Sunburst/Flare, Gemini Omni 1.2 Flash, FLUX 3 Image/Klein, MAI-Image-2.7-Preview, Qwen Image 3.0 Pro, HeyGen Video 1, Pika H3 Flex and other new rows. AA I2V moved to v2.1, added as new pools; the old versions are labeled archives skipped by refresh. AA extractor accepts the renamed Pricing column and new research-preview/derived-model checkboxes. Arena came from pinned official Parquet files because the Dataset Viewer feed failed. Added GPT Image 2.6 single-point series and official calculator quotes.
 - Increased chart labels to 15px on desktop and 12px in compact charts, widened model controls, and strengthened configuration lines and label connectors. The task selector is now directly above the chart.
 - Fixed Seedance 2.5 discovery: it already exists in nine pools. The old automatic Silent pool choice hid it. Global search now spans all pools, tolerates name separators, and opens a result in its exact source/task with the target selected.
@@ -36,6 +38,7 @@ Published to GitHub Pages and verified locally and on the live site. The catalog
 - Keep readable chart labels and lines: 15px desktop / 12px compact model labels, 14px model controls, and 3px configuration curves. Never revert to 9px compact labels.
 - Keep the full-screen chart, narrow model sidebar, black default theme, vivid, saturated provider colors with theme-aware contrast, and DM Sans typography.
 - Keep different sources, tasks, benchmark versions, and audio conditions in separate scoring pools.
+- Unranked rows (`rank: null`) show as NR. Never infer a rank from score order.
 - Configuration membership must be explicit and board-local. Connect at least two visible measured points in setting order, including non-monotonic scores. Provider-only prices have no attached Elo score.
 - Attribute every observation. Show missing prices as unavailable and exclude them from cost charts.
 - Show Design Arena pricing as source quotes with unspecified resolution/quality. Keep world-model and MemeBench scope qualifications visible.
@@ -44,7 +47,7 @@ Published to GitHub Pages and verified locally and on the live site. The catalog
 
 ## Do not
 - Invent scores, prices, latency, environmental estimates, or historical trends.
-- Infer configuration families from names, relabel Standard/Pro as low/medium reasoning, join cross-source quality levels, or assign ranks to public-response-only rows.
+- Infer configuration families from names, relabel Standard/Pro as low/medium reasoning, merge GPT Image complexity with quality, join cross-source quality levels, or assign ranks to public-response-only rows.
 - Imply a snapshot is a live feed, or that overlapping confidence intervals prove a ranking difference.
 - Compare image prices directly with video prices or combine Elo scores from different pools.
 - Add decorative imagery, marketing sections, or a second visual identity.
@@ -57,7 +60,7 @@ Published to GitHub Pages and verified locally and on the live site. The catalog
 ## Known limits and next steps
 - The bundled data is a dated snapshot. Automated refresh supports AA and Arena; the other source pools require a reviewed manual browser capture.
 - Arena's public website can return security verification; use its official public leaderboard dataset as documented.
-- World Model Arena returned Cloudflare 522 on November 9; its pools are still the October 22 snapshot. Arena's Hugging Face Dataset Viewer feed was failing the same day; retry it before falling back to the pinned Parquet artifacts.
-- GPT Image 2/2.5/2.6 have no verified multi-quality series in a single bundled pool. Their low/medium provider prices appear in the separate unscored chart. Design Arena generation Low/Medium response-only points and historical Arena Grok observations remain research evidence, not ranked catalog entries.
+- World Model Arena returned Cloudflare 522 on November 9 and November 17; its pools are still the October 22 snapshot. If Arena's Hugging Face Dataset Viewer feed fails, retry it before falling back to the pinned Parquet artifacts.
+- No source measures two fixed quality levels of one GPT Image model; AA and Arena (including Arena's full history) measure one level each. The only measured GPT effort curve is Design Arena's GPT Image 2.6 Flare Low complexity series (unranked rows). Low/medium provider prices for other GPT models appear in the separate unscored chart. Historical Arena Grok observations remain research evidence.
 - Some sources omit confidence intervals, prices, or publication dates. Preserve nulls and source-specific qualifications.
 - GitHub Pages publication was requested at `https://gabrielemonni.me/slopmachine/`. The public repository is `Zer0codestuff/slopmachine`; Pages inherits the custom domain from the existing user site. The workflow validates and builds once, then publishes the artifact from main. Pages, HTTPS, and the main-only deployment environment are configured. The first deployment passed on October 23, 2026; the live catalog matches the committed bytes, and image/video curves, provider quotes, filters, assets, and mobile bounds were browser-verified. The local preview uses port 4173.
